@@ -1,6 +1,8 @@
 from typing import List
 import math, random
 
+import numpy as np
+
 """
 Definir o problema: implementar Multilayer Perceptron (MLP)
 Autor: Hugo Cardoso Ferreira de Araújo (15459500)
@@ -52,6 +54,19 @@ class MathFunctions:
             sum += list_1[i] * list_2[i]
 
         return sum
+    
+    def sigmoid(x: float) -> float: #essa versão de implementação é mais estável numericamente do que a versão tradicional
+        if x >= 0:
+            z = math.exp(-x)
+            return 1 / (1 + z)
+        else:
+            z = math.exp(x)
+            return z / (1 + z)
+        
+    def sigmoid_derivada(x: float) -> float:
+        s = MathFunctions.sigmoid(x)
+        return s * (1 - s)
+
 
 class PerceptronLayer:
     def __init__(
@@ -124,10 +139,10 @@ class MultilayerPerceptron:
         self, layer_topology : List[int], last_layer_size : int,
         activation_function, derivative_activation_function
     ):
-        # Layer_topology documenta o número de neurônios e de camadas [2, 3, 4] significa 2 neuronios na camada 0 (entrada), 3 na camada 1 (oculta) e 4 na camada de saída por exemplo
+        # Layer_topology documenta o número de neurônios e de camadas [3, 4] significa 3 na camada 1 (oculta) e 4 na camada de saída por exemplo
         self.layer_topology = layer_topology
         self.layers = []
-        self.last_layer_size = last_layer_size
+        self.last_layer_size = last_layer_size #representa o número de entradas de uma camada, considerando o número de saídas da camada anterior
 
         #Start the hidden layers & exit
         for number_of_neurons in layer_topology:
@@ -218,6 +233,25 @@ class MultilayerPerceptron:
                 if (mse <= stop_error):
                     break
 
+
+
+class DataLoader:
+    
+    #Método que retorna um dataset com os dados do conjunto CARACTERES COMPLETO. Usamos o arquivo .npy
+    def carregar_dados_alfabeto(caminho_x, caminho_y):
+        x_raw = np.load(caminho_x)
+        y_raw = np.load(caminho_y)
+        
+        #usamos o método shape para ver o formato dos dados e depois reshape para deixar no formato certo
+        x_flat = x_raw.reshape(1326, 120) #Achata as imagens de 10x12 para um vetor de 120 posições, sendo 1326 amostras
+
+        dataset_CARACTERES = []
+
+        for i in range(len(x_flat)):
+            dataset_CARACTERES.append([x_flat[i].tolist(), y_raw[i].tolist()]) #adiciona ao dataset a entrada (a letra) e o rótulo. São 120 entradas e 26 saídas.
+
+        return dataset_CARACTERES
+
 dataset = [
     [[0, 0], 0],
     [[0, 1], 1],
@@ -227,6 +261,8 @@ dataset = [
 
 number_of_exit_neuron = 1
 number_of_entry_neuron = len([dataset[0]])
+
+dataset_CARACTERES = DataLoader.carregar_dados_alfabeto('X.npy', 'Y_classe.npy')
 
 random.seed(314159265)
 mlp = MultilayerPerceptron([4, 1], 2, MathFunctions.leakyRELU, MathFunctions.leakyRELUDerivative) # 4 neuronios na camada oculta, 1 na saida, recebendo 2 entradas
@@ -238,3 +274,13 @@ print("\n--- RESULTADOS APÓS 10.000 ÉPOCAS ---")
 for entry, dk in dataset:
     resultado = mlp.forward(entry)
     print(f"Entrada: {entry} | Alvo: {dk} | Saída Rede: {resultado[0]:.4f}")
+
+
+
+y_classe = np.load('Y_classe.npy')
+
+# Encontra todos os valores únicos presentes no array
+valores_encontrados = np.unique(y_classe)
+
+print(f"Valores únicos no arquivo Y_classe.npy: {valores_encontrados}")
+print(f"Formato do arquivo (shape): {y_classe.shape}")
