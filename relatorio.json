@@ -1,0 +1,7958 @@
+[
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9561,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9866,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9946,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9506,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9633,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9527,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9339,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9536,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8622,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9294,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9983,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 16,
+        "confianca": 0.0316,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.7742,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9642,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.8482,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9844,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9684,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9196,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.8842,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9692,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9439,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8787,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.7094,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9733,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9947,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8852,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9241,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9186,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9931,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9304,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9389,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9457,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.8287,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9747,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9906,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9714,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9372,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9186,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9566,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9425,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9958,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9934,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.8641,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9833,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9327,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9773,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9435,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9931,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9901,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9778,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9806,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9376,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.919,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9259,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9795,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9826,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9953,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9811,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9927,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9729,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.921,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9373,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.8886,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9566,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 11,
+        "confianca": 0.2247,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9916,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9654,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.894,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9812,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9896,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.8955,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9849,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9334,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9386,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9906,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9897,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9961,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 21,
+        "confianca": 0.6356,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9602,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.915,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9743,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9801,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.4348,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.934,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9909,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8431,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9646,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9599,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9946,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9849,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9949,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9331,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9249,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9857,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9781,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.8764,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.8479,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9956,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9702,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9647,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9252,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9954,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9947,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9781,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9063,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9806,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9895,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9922,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9556,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9863,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9492,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9604,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9503,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9622,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9805,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9981,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9878,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.93,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9779,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9868,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9892,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9924,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9979,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9591,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9405,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9585,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9764,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9899,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9288,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9823,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8622,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.8921,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.92,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9942,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9802,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9933,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9777,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9814,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.8725,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9986,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9695,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9137,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9329,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9108,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9485,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.8807,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9237,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9394,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9014,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9596,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9353,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9273,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9202,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9344,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.8851,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 1,
+        "confianca": 0.3156,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9561,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.964,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9928,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9356,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9301,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9959,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9969,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9973,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9457,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9554,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9934,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8622,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.8607,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9535,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9738,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9963,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9811,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9959,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9663,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9975,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9954,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9762,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9965,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9686,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9235,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.913,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9795,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9731,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9893,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9465,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9425,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9788,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.8676,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9488,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.8818,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9579,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.4712,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9069,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9979,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9233,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.964,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9951,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9413,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9956,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9968,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9986,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9721,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9366,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9172,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9929,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9284,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9964,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9469,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9833,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9414,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9989,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9712,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9984,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9974,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9523,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9067,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9923,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9947,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9707,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9962,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9884,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9719,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9943,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9906,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.918,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9949,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9808,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9753,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9936,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9979,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9884,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9961,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9944,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9891,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9193,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9989,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.99,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.8741,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9979,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9653,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9984,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9951,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9929,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9715,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9506,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9759,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9821,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8508,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9853,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9957,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9498,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9708,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.8833,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.99,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9584,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9069,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9984,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9929,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9599,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9724,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9965,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9821,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9963,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9957,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9743,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9964,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9809,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9912,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8488,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9336,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9901,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9692,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9832,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9528,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9929,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.989,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9877,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9962,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9408,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9092,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9496,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9549,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9481,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.8818,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.8944,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9923,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 19,
+        "confianca": 0.1093,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9726,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.94,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.953,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9905,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9834,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 14,
+        "confianca": 0.8273,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9077,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9576,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9383,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9269,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9957,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9254,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9457,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9883,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9321,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.95,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.8876,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.837,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9811,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9368,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9489,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.6801,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.8196,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9155,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9884,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9938,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9969,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.8973,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9706,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9982,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.952,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9685,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9143,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.8389,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9947,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.938,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.8961,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9684,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9986,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9926,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9027,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.8552,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9973,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9946,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8841,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9707,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9944,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9938,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9833,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9669,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9939,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9906,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9508,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9839,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9921,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9641,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9853,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9526,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9452,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.905,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9798,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9612,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9734,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.6862,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9986,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9927,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9153,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9042,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9553,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9234,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9386,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9081,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9866,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.8925,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9986,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.85,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9603,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9227,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9862,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9438,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9483,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9311,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9082,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 14,
+        "confianca": 0.9621,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9021,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8488,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9859,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9915,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9878,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9979,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.8564,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9785,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9555,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9038,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.8852,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.99,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.7505,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9851,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9889,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9982,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9684,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9062,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 7,
+        "confianca": 0.0869,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.8968,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 11,
+        "confianca": 0.015,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8598,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 15,
+        "confianca": 0.1096,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.907,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.8386,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 25,
+        "confianca": 0.0951,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9855,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9177,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9626,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.8599,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9267,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9669,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 12,
+        "confianca": 0.0212,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9782,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9081,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.8996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.0359,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.3436,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9708,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.931,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9363,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.8757,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9072,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9961,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9961,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9889,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9477,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9989,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.7212,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9141,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9676,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 11,
+        "confianca": 0.3133,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9491,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9938,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9951,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9938,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9147,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9854,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.8745,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9462,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9404,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9982,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9981,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9781,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9965,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.6493,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9791,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.982,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9518,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9213,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9424,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9146,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.7331,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9989,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9083,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9838,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9446,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9771,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9968,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9938,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9816,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9927,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9665,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9956,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9953,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9926,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.7377,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9002,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9103,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9736,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9953,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9941,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9341,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9881,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9578,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.6927,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.99,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9959,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.398,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9703,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.949,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9982,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9647,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9357,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9459,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9777,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9878,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9315,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.8604,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9889,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.7819,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.8925,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9536,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9906,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9571,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9627,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9693,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.8488,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.4102,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9714,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9787,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9892,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9952,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9949,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9932,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9248,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.95,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.8545,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9911,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9948,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.5753,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9861,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9947,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8852,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9634,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9832,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9887,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9421,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9259,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9515,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9678,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.8654,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9419,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.1348,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9452,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9944,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9774,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9698,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9067,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9843,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9947,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9707,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9893,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9767,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9565,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9963,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9902,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9906,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9596,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9673,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9958,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.8753,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9848,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9948,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9301,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.4159,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9314,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9874,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.8866,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9501,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.93,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.8924,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9729,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9941,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9598,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.919,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 14,
+        "confianca": 0.9143,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9693,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 11,
+        "confianca": 0.0488,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 24,
+        "confianca": 0.0814,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9592,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9704,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9266,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9408,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9891,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9208,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9895,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9952,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9508,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.8863,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9881,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9494,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 8,
+        "confianca": 0.8643,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9935,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9961,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.8931,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9742,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.8907,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9387,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9826,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 15,
+        "confianca": 0.3676,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9522,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9804,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9531,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9071,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9799,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 10,
+        "confianca": 0.0302,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9671,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.8949,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9937,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9964,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9407,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.7344,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8952,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.8992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9833,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9144,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8274,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.8436,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9776,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.897,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9878,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9702,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9982,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9494,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.1669,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9653,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9513,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9387,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9414,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9425,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9531,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9841,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9944,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9774,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9698,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9067,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9843,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9947,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9707,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9893,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9767,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9565,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9963,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9902,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9906,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9596,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9673,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9958,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.8753,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9848,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9811,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9301,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9804,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9044,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9338,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9983,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9907,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 11,
+        "confianca": 0.1286,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 5,
+        "confianca": 0.0963,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.925,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.885,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9046,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.8525,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9981,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9868,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9733,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.921,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9762,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9816,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9354,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.97,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9467,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9085,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9405,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9689,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9911,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9857,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9804,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.7795,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.961,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.7875,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9974,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9901,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9972,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9976,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9932,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9922,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9777,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9906,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.987,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9983,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9427,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9609,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9915,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9781,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.2386,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9014,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9155,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.3418,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.867,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9089,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9665,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.977,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9881,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9778,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.96,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9949,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.941,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9263,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9885,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9355,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9921,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9911,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.8244,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9557,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9929,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9154,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9062,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.961,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.5632,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9953,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.99,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9452,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.975,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9804,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9975,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.985,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.7875,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9613,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9901,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.8913,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9932,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9955,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9975,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9736,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9818,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9855,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9943,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9812,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9831,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9178,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9416,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9717,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9756,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9575,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9526,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.86,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9775,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9231,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9756,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9862,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.6818,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9066,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9789,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9822,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9964,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9916,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9836,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9801,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9843,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.8355,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9864,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9983,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.7297,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9471,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9309,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9894,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9447,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9868,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9806,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9778,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9822,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9421,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9694,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.95,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.8392,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9409,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9382,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9945,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9558,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9952,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9482,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9143,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9025,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.93,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9594,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9988,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9716,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9868,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.7013,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9286,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9498,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8848,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9686,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9221,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9507,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.4896,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.967,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9784,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9683,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.8613,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.0779,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.8245,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 5,
+        "confianca": 0.7946,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.953,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.8715,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9789,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9554,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9926,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9578,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9118,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9668,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.8898,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.7198,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9142,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9739,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9754,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.8859,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8842,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9591,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9855,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9747,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.8198,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9942,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9961,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9644,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9945,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9661,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.8811,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9094,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9543,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9636,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9804,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9198,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9683,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9977,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9113,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9188,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9716,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9802,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9307,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9972,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9749,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9412,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.99,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9085,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9779,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.6537,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.96,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.8806,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9377,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9193,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9055,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9625,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 14,
+        "confianca": 0.6024,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9161,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9294,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9947,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9463,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.8786,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9676,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9888,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9649,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9474,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9137,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8031,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9241,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9612,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9911,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9177,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 8,
+        "confianca": 0.4934,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9084,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9096,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9913,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9793,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9046,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9476,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9485,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.7681,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9488,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9394,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9778,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9071,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9329,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9414,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9747,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.8999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9983,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.1141,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9737,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9558,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8726,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 19,
+        "confianca": 0.165,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9323,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.7819,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 19,
+        "confianca": 0.2043,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9737,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9856,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9885,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9183,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9868,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9868,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.915,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9589,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9897,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9913,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9636,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9693,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9901,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9735,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9728,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9561,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9971,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9946,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9506,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9633,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9527,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9767,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9536,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8622,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9799,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9989,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 16,
+        "confianca": 0.0316,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.8622,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.957,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 7,
+        "confianca": 0.7025,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9981,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9236,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9544,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.995,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.812,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9402,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.6128,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 16,
+        "confianca": 0.0122,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 1,
+        "confianca": 0.3166,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.3989,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 8,
+        "confianca": 0.1242,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 17,
+        "confianca": 0.1137,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 1,
+        "confianca": 0.1336,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.8622,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9321,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 23,
+        "confianca": 0.5475,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.8172,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9104,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 23,
+        "confianca": 0.0464,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 1,
+        "confianca": 0.0551,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9697,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.906,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 1,
+        "confianca": 0.2355,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9937,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.8731,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 17,
+        "confianca": 0.0648,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9319,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9632,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9237,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9175,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9001,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9934,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.8765,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9575,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9329,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8881,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.8747,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9033,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9674,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.7336,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9419,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9054,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9903,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9873,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.8034,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9973,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9279,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.8833,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9879,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9655,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9769,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9886,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9614,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9916,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9963,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.4375,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9665,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.6973,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.7577,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.6569,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9795,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9835,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.989,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9441,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.2842,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9882,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9048,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9268,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9861,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9897,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9878,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.8454,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9578,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9325,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9357,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9684,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9096,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9004,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9534,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9907,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9658,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 14,
+        "confianca": 0.0632,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9491,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.5164,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9874,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9615,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9903,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9923,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9863,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9411,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.8982,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9548,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9924,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9693,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9125,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9748,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.8778,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9508,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9236,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9697,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9905,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9682,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9973,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9427,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9405,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 17,
+        "confianca": 0.0269,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9715,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9758,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8732,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9991,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.1116,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9539,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.6241,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9785,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9827,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.7132,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9983,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9443,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.7539,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9901,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9954,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9393,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.8672,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9925,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.8977,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9989,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9436,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9265,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9246,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9993,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9937,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9933,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9996,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.8429,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9676,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9546,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9765,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9975,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9629,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9965,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.9864,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 1.0,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9889,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.9978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9983,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9936,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9702,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9551,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.9636,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9599,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9999,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9656,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9946,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9869,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 0,
+        "confianca": 0.9763,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.4628,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 2,
+        "confianca": 0.9808,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9064,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.9792,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9631,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9954,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9889,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9759,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9837,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9867,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.99,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9954,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 17,
+        "confianca": 0.0853,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 14,
+        "confianca": 0.5293,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.9958,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9997,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9502,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.8737,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 20,
+        "confianca": 0.95,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.9417,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9728,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9912,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.9862,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9849,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 0,
+        "indice_predito": 7,
+        "confianca": 0.1558,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 1,
+        "indice_predito": 1,
+        "confianca": 0.9994,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 2,
+        "indice_predito": 25,
+        "confianca": 0.1012,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 3,
+        "indice_predito": 3,
+        "confianca": 0.9752,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 4,
+        "indice_predito": 4,
+        "confianca": 0.992,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 5,
+        "indice_predito": 5,
+        "confianca": 0.9889,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 6,
+        "indice_predito": 6,
+        "confianca": 0.9722,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 7,
+        "indice_predito": 7,
+        "confianca": 0.9599,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 8,
+        "indice_predito": 8,
+        "confianca": 0.9978,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 9,
+        "indice_predito": 9,
+        "confianca": 0.9998,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 10,
+        "indice_predito": 10,
+        "confianca": 0.9447,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 11,
+        "indice_predito": 11,
+        "confianca": 0.4949,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 12,
+        "indice_predito": 12,
+        "confianca": 0.9875,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 13,
+        "indice_predito": 13,
+        "confianca": 0.9294,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 14,
+        "indice_predito": 3,
+        "confianca": 0.6501,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 15,
+        "indice_predito": 15,
+        "confianca": 0.504,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 16,
+        "indice_predito": 16,
+        "confianca": 0.9335,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 17,
+        "indice_predito": 17,
+        "confianca": 0.9768,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 18,
+        "indice_predito": 18,
+        "confianca": 0.9982,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 19,
+        "indice_predito": 19,
+        "confianca": 0.9923,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 20,
+        "indice_predito": 11,
+        "confianca": 0.5787,
+        "sucesso": false
+    },
+    {
+        "indice_alvo": 21,
+        "indice_predito": 21,
+        "confianca": 0.939,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 22,
+        "indice_predito": 22,
+        "confianca": 0.9135,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 23,
+        "indice_predito": 23,
+        "confianca": 0.9113,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 24,
+        "indice_predito": 24,
+        "confianca": 0.948,
+        "sucesso": true
+    },
+    {
+        "indice_alvo": 25,
+        "indice_predito": 25,
+        "confianca": 0.9683,
+        "sucesso": true
+    }
+]

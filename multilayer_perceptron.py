@@ -5,6 +5,8 @@ import numpy as np
 from math_functions import MathFunctions
 from data_loader import DataLoader
 
+import json
+
 """
 Definir o problema: implementar Multilayer Perceptron (MLP)
 
@@ -41,7 +43,7 @@ class PerceptronLayer:
     def random_weight(self, numberOfConnections : int) -> List[float]:
         weight_list : List[float] = []
         for weight in range(numberOfConnections):
-            weight_list.append(random.uniform(-1, 1))
+            weight_list.append(random.uniform(-0.1, 0.1))
         return weight_list
 
 class PerceptronNeuron:
@@ -88,22 +90,33 @@ class PerceptronNeuron:
 class MultilayerPerceptron:
     def __init__(
         self, layer_topology : List[int], last_layer_size : int,
-        activation_function, derivative_activation_function
+        hidden_activation_function, hidden_derivative_activation_function,
+        exit_activation_function, exit_derivative_activation_function
     ):
         # Layer_topology documenta o número de neurônios e de camadas [3, 4] significa 3 na camada 1 (oculta) e 4 na camada de saída por exemplo
         self.layer_topology = layer_topology
         self.layers = []
         self.last_layer_size = last_layer_size #representa o número de entradas de uma camada, considerando o número de saídas da camada anterior
-
-        #Start the hidden layers & exit
+        
+        count = 0
         for number_of_neurons in layer_topology:
+            if (count == len(layer_topology) - 1):
+                #aqui ta na ultima camada
+                self.layers.append(PerceptronLayer(
+                    number_of_neurons,
+                    self.last_layer_size,
+                    exit_activation_function, exit_derivative_activation_function
+                ))
+                break
+
             # Esse código considera que se uma camada anterior tem N neuronios, a camada da frente terá N inputs
             self.layers.append(PerceptronLayer(
                 number_of_neurons,
                 self.last_layer_size,
-                activation_function, derivative_activation_function
+                hidden_activation_function, hidden_derivative_activation_function
             ))
             self.last_layer_size = number_of_neurons # faz com que a próxima camada saiba quantos neuronios tem na camada anterior
+            count += 1
     
     def backpropagate(self, target_list : List[float]):
         # calcula o delta para ultima camada
@@ -160,41 +173,152 @@ class MultilayerPerceptron:
         
         return error_sum / len(dataset)
 
-    def run_trains(self, dataset, epochs, learning_rate=0.01, stop_error = 0.001):
+    def run_trains(self, dataset_treino, dataset_validacao, epochs, learning_rate=0.01, stop_error = 0.001):
         for epoch in range(epochs):
-            for entry, dk in dataset:
+            for entry, dk in dataset_treino:
                 self.forward(entry)
                 self.backpropagate(dk)
                 self.train(learning_rate)
 
             #calcula MSE
-            if (epoch % 1 == 0):
-                mse = self.calculate_mse(dataset)
-                print(f"Época {epoch} e MSE: {mse:.6f}")
-                # faz early stop quadno erro chegar a um valor minimo
-                if (mse <= stop_error):
-                    break
+            if (epoch % 10 == 0):
+                mse_treino = self.calculate_mse(dataset_treino)
+                mse_validacao = self.calculate_mse(dataset_validacao)
+                print(f"Época {epoch}: Treino MSE: {mse_treino:.6f} | Validação MSE: {mse_validacao:.6f}")
+        
+        mse_f_t = self.calculate_mse(dataset_treino)
+        mse_f_v = self.calculate_mse(dataset_validacao)
+        print(f"Estado Final (Época {epochs}): Treino MSE: {mse_f_t:.6f} | Validação MSE: {mse_f_v:.6f}")
+
+    def prever(self, input_data: List[float]) -> dict:
+        saida_bruta = self.forward(input_data)
+        
+        indice_vencedor = int(np.argmax(saida_bruta))
+        confianca = float(saida_bruta[indice_vencedor])
+        
+        alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+        if indice_vencedor < 26:
+            letra_prevista = alfabeto[indice_vencedor]
+        else:
+            letra_prevista = str(indice_vencedor)
+        
+        return {
+            "letra": letra_prevista,
+            "confianca": round(confianca * 100, 2), # Em porcentagem
+            "indice": indice_vencedor
+        }
+            
+def salvar_relatorio_externo(mlp_instancia, dataset, filename: str):
+    relatorio = []
+    
+    for entry, dk in dataset:
+        # Usamos o método forward da instância passada
+        resultado = mlp_instancia.forward(entry)
+        
+        predicao = int(np.argmax(resultado))
+        alvo = int(np.argmax(dk))
+        confianca = float(resultado[predicao])
+        
+        relatorio.append({
+            "indice_alvo": alvo,
+            "indice_predito": predicao,
+            "confianca": round(confianca, 4),
+            "sucesso": alvo == predicao
+        })
+
+    with open(filename, 'w') as f:
+        json.dump(relatorio, f, indent=4)
+    print(f"Relatório salvo externamente em {filename}")
+
+def salvar_pesos_externo(mlp_instancia, filename: str):
+    dados = {
+        "layer_topology": mlp_instancia.layer_topology,
+        "layers": []
+    }
+
+    for layer in mlp_instancia.layers:
+        layer_data = []
+        for neuron in layer.neurons:
+            layer_data.append({
+                "pesos": neuron.weight_list,
+                "bias": neuron.bias
+            })
+        dados["layers"].append(layer_data)
+
+    with open(filename, 'w') as f:
+        json.dump(dados, f, indent=4)
+    print(f"Pesos salvos externamente em {filename}")
+
+def carregarJson(filename: str, 
+            hidden_activation, hidden_derivative, 
+            exit_activation, exit_derivative):
+        with open(filename, 'r') as f:
+            dados = json.load(f)
+
+        topology = dados["layer_topology"]
+        input_size = len(dados["layers"][0][0]["pesos"])
+
+        mlp = MultilayerPerceptron(
+            topology, input_size,
+            hidden_activation, hidden_derivative,
+            exit_activation, exit_derivative
+        )
+
+        # Injeta os pesos e bias guardados em cada neurónio
+        for i_layer, layer_data in enumerate(dados["layers"]):
+            for i_neuron, neuron_data in enumerate(layer_data):
+                mlp.layers[i_layer].neurons[i_neuron].weight_list = neuron_data["pesos"]
+                mlp.layers[i_layer].neurons[i_neuron].bias = neuron_data["bias"]
+
+        print(f"Modelo carregado com sucesso de {filename}")
+        return mlp
 
 dataset_CARACTERES = DataLoader.carregar_dados_alfabeto('X.npy', 'Y_classe.npy')
 
 random.seed(3)
-mlp = MultilayerPerceptron([6, 26], 120, MathFunctions.leakyRELU, MathFunctions.leakyRELUDerivative)
-# Eu usei 4 neuronios na hidden layer porque aparentemente 2 faz o RELU puro ter neurônios mortos
-# leaky RELU resolve
-mlp.run_trains(dataset_CARACTERES, 10000, learning_rate = 0.01, stop_error=0.000001)
 
-print("\n--- RESULTADOS APÓS 10.000 ÉPOCAS ---")
-for entry, dk in dataset_CARACTERES:
-    resultado = mlp.forward(entry)
-    #print(f"Entrada: {entry} | Alvo: {dk} | Saída Rede: {resultado[0]:.4f}")
-    predicao = np.argmax(resultado)
-    alvo = np.argmax(dk)
-    print(f"Alvo (índice): {alvo} | Predição: {predicao} | Confiança: {resultado[predicao]:.4f}")
+def separar_dataset(dataset, percentual_treino=0.8):
+    dados_misturados = dataset[:]
+    random.shuffle(dados_misturados)
+    
+    limite = int(len(dados_misturados) * percentual_treino)
+    
+    treino = dados_misturados[:limite]
+    validacao = dados_misturados[limite:]
+    
+    return treino, validacao
 
-y_classe = np.load('Y_classe.npy')
+treino_conjunto, validacao_conjunto = separar_dataset(dataset_CARACTERES, 0.8)
 
-# Encontra todos os valores únicos presentes no array
-valores_encontrados = np.unique(y_classe)
+mlp = MultilayerPerceptron(
+    [64, 26], 120, 
+    MathFunctions.leakyRELU, MathFunctions.leakyRELUDerivative,
+    MathFunctions.sigmoid, MathFunctions.sigmoid_derivada    
+)
 
-print(f"Valores únicos no arquivo Y_classe.npy: {valores_encontrados}")
-print(f"Formato do arquivo (shape): {y_classe.shape}")
+mlp.run_trains(treino_conjunto, validacao_conjunto, 130, learning_rate = 0.01, stop_error=0.000001)
+salvar_pesos_externo(mlp, "modelo_mlp.json")
+salvar_relatorio_externo(mlp, dataset_CARACTERES, "relatorio.json")
+
+# print("\n--- RESULTADOS APÓS 10.000 ÉPOCAS ---")
+# for entry, dk in dataset_CARACTERES:
+#     resultado = mlp.forward(entry)
+#     #print(f"Entrada: {entry} | Alvo: {dk} | Saída Rede: {resultado[0]:.4f}")
+#     predicao = np.argmax(resultado)
+#     alvo = np.argmax(dk)
+#     print(f"Alvo (índice): {alvo} | Predição: {predicao} | Confiança: {resultado[predicao]:.4f}")
+
+# h_act = MathFunctions.leakyRELU
+# h_der = MathFunctions.leakyRELUDerivative
+# e_act = MathFunctions.sigmoid
+# e_der = MathFunctions.sigmoid_derivada
+
+# mlp =   carregarJson(
+#     "modelo_mlp.json", 
+#     h_act, h_der, e_act, e_der
+# )
+
+# exemplo_entrada = dataset_CARACTERES[4][0]
+# resultado = mlp.prever(exemplo_entrada)
+
+# print(f"Letra prevista: {resultado['letra']} ({resultado['confianca']}%)")
