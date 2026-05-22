@@ -1,4 +1,5 @@
 import math, random
+from typing import List
 
 """ Classe para congregar funções matemáticas úteis """
 class MathFunctions:

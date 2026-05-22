@@ -1,4 +1,6 @@
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 # 1. Dados extraídos do seu log do terminal
 epocas = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130]
@@ -48,3 +50,51 @@ def gerar_grafico():
 
 if __name__ == "__main__":
     gerar_grafico()
+
+
+def apresentar_matriz_confusao(mlp_instancia, dataset_teste):
+    # Cria uma matriz 26x26 preenchida com zeros
+    matriz = np.zeros((26, 26), dtype=int)
+    alfabeto = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+    
+    for entry, dk in dataset_teste: #preenche a matriz
+        resultado = mlp_instancia.forward(entry)
+        predicao = int(np.argmax(resultado))
+        alvo = int(np.argmax(dk))
+        matriz[alvo][predicao] += 1
+        
+    print("\n--- MATRIZ DE CONFUSÃO (DADOS DE TESTE) ---") #essa parte imprime a matriz no console
+    # Imprime o cabeçalho com as letras
+    print("    " + "  ".join(alfabeto))
+    
+    for i, linha in enumerate(matriz):
+        print(f"{alfabeto[i]} | " + "  ".join(f"{val}" if val > 0 else "." for val in linha))
+
+    #essa parte cria uma imagem visual da matriz de confusão usando matplotlib
+    plt.figure(figsize=(12, 10))
+    
+    plt.imshow(matriz, cmap='Blues', interpolation='nearest')
+    plt.title('Matriz de Confusão - Classificação de Caracteres (MLP)', fontsize=14, pad=15)
+    plt.colorbar(label='Quantidade de Predições')
+    
+    tick_marks = np.arange(26)
+    plt.xticks(tick_marks, alfabeto, fontsize=10)
+    plt.yticks(tick_marks, alfabeto, fontsize=10)
+    
+    plt.xlabel('Letra Predita pela Rede', fontsize=12, labelpad=10)
+    plt.ylabel('Letra Real (Alvo)', fontsize=12, labelpad=10)
+    
+    for i in range(26):
+        for j in range(26):
+            if matriz[i][j] > 0:
+                plt.text(j, i, str(matriz[i][j]),
+                         horizontalalignment="center",
+                         verticalalignment="center",
+                         color="white" if matriz[i][j] > (matriz.max() / 2) else "black",
+                         fontsize=8)
+                
+    plt.tight_layout()
+
+    plt.savefig('matriz_confusao.png', dpi=300)
+    plt.close() 
+    print("\nImagem da matriz de confusão salva com sucesso como 'matriz_confusao.png'!")
