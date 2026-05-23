@@ -320,7 +320,37 @@ def separar_dataset(dataset, percentual_treino=0.8):
     
     return treino, validacao
 
+def separar_dataset_estratificado(dataset, p_treino=0.7, p_validacao=0.15):
+    classes = {} #Primeiro agrupamos os dados de acordo com a classe (letra) deles
+    for entry, dk in dataset:
+        classe_id = int(np.argmax(dk))
+        if classe_id not in classes:
+            classes[classe_id] = []
+        classes[classe_id].append((entry, dk))
+    
+    treino_final = []
+    validacao_final = []
+    teste_final = []
+    
+    for classe_id, amostras in classes.items(): #então separamos proporcionalmente a quantidade de cada letra que vai para cada conjunto
+        random.shuffle(amostras)
+        
+        total_amostras = len(amostras)
+        limite_treino = int(total_amostras * p_treino)
+        limite_val = int(total_amostras * (p_treino + p_validacao))
+        
+        treino_final.extend(amostras[:limite_treino])
+        validacao_final.extend(amostras[limite_treino:limite_val])
+        teste_final.extend(amostras[limite_val:])
+        
+    random.shuffle(treino_final)
+    random.shuffle(validacao_final)
+    random.shuffle(teste_final)
+    
+    return treino_final, validacao_final, teste_final
+
 treino_conjunto, validacao_conjunto = separar_dataset(dataset_CARACTERES, 0.8)
+#treino_conjunto, validacao_conjunto, teste_conjunto = separar_dataset_estratificado(dataset_CARACTERES, 0.7, 0.15)
 
 mlp = MultilayerPerceptron(
     [64, 26], 120, 
