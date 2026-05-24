@@ -65,3 +65,10 @@ class Sigmoid(ActivationFunction):
     def derivative(self, vk: float) -> float:
         s = self.activate(vk)
         return s * (1.0 - s)
+
+class Linear(ActivationFunction):
+    def activate(self, vk: float) -> float:
+        return vk
+    
+    def derivative(self, vk: float) -> float:
+        return 1.0

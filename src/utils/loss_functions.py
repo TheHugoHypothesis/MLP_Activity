@@ -71,20 +71,27 @@ class MAE(LossFunction):
                 error_list.append(0.0) 
         return error_list
 
-class CategoricalCrossEntropy(LossFunction):
+class SoftmaxCrossEntropy(LossFunction):
+    def _softmax(self, logits: List[float]) -> List[float]:
+        # Estabilidade numérica: subtrai o máximo para evitar overflow do exp()
+        max_val = max(logits)
+        exp_shifted = [math.exp(li - max_val) for li in logits]
+        sum_exp = sum(exp_shifted)
+        return [e / sum_exp for e in exp_shifted]
     def compute(self, y_pred: List[float], y_real: List[float]) -> float:
-        epsilon = 1e-15 # Pequena constante para estabilidade numérica
+        # y_pred aqui são os logits brutos da camada Linear
+        probs = self._softmax(y_pred)
+        
+        # Cross-Entropy com proteção para log(0)
+        epsilon = 1e-15
         loss = 0.0
-        for yp, yr in zip(y_pred, y_real):
-            # Clipando y_pred para o intervalo [epsilon, 1 - epsilon]
-            yp_clipped = max(epsilon, min(1.0 - epsilon, yp))
-            loss -= yr * math.log(yp_clipped)
+        for p, yr in zip(probs, y_real):
+            p_clipped = max(epsilon, min(1.0 - epsilon, p))
+            loss -= yr * math.log(p_clipped)
         return loss
     def derivative(self, y_pred: List[float], y_real: List[float]) -> List[float]:
-        epsilon = 1e-15
-        error_list = []
-        for yp, yr in zip(y_pred, y_real):
-            yp_clipped = max(epsilon, min(1.0 - epsilon, yp))
-            # Derivada em relação a yp: - yr / yp
-            error_list.append(-yr / yp_clipped)
-        return error_list
+        # y_pred são os logits brutos da camada Linear
+        probs = self._softmax(y_pred)
+        
+        # A derivada fundida de Softmax + Cross-Entropy em relação aos LOGITS é: (probs - y_real)
+        return [p - yr for p, yr in zip(probs, y_real)]
