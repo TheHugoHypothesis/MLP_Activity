@@ -65,7 +65,7 @@ def main():
     )
 
     #LOOP TREINO
-    epochs = 250
+    epochs = 400
     history = trainer.train(
         train_dataset=train_set,
         val_dataset=val_set,

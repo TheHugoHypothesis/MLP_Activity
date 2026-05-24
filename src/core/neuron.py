@@ -34,16 +34,6 @@ class PerceptronNeuron:
     #Método que gera uma saída dado a lista de entrada do neurônio
     def feedforward(self, entry_list: List[float]) -> float:
         self.last_entry = entry_list
-        self.last_local_induced_field = scalar_product(entry_list, self.weight_list)
+        self.last_local_induced_field = scalar_product(entry_list, self.weight_list) + self.bias
         self.output = self.activation.activate(self.last_local_induced_field)
         return self.output
-
-    #Método que atualiza os pesos com base em um `delta_k` calculado
-    def update(self, learning_rate: float = 0.01):
-        #Aqui já teremos feito um `self.feedforward`, logo temos guardado
-        #um `last_local_induced_field` e uma saida `self.output`
-        for i in range(len(self.weight_list)):
-            delta_w = learning_rate * self.delta_k * self.last_entry[i]
-            self.weight_list[i] += delta_w
-        
-        self.bias += learning_rate * self.delta_k
