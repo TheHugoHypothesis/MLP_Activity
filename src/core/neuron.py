@@ -13,7 +13,7 @@ Classe que representa um neurônio dentro da rede.
 - `self.delta_k`: corresponde ao campo local induzido do neurônio da frente;
 
 OBS: `self.delta_k` é passado durante o treino para o neurônio pela
-classe PerceptronLayer.
+classe Trainer.
 """
 class PerceptronNeuron:
     def __init__(

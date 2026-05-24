@@ -1,19 +1,22 @@
 from typing import List
 from src.utils.loss_functions import LossFunction
 from src.core.network import MultilayerPerceptron
+from src.core.trainer_optimizer import Optimizer
 
 class Trainer:
     def __init__(
         self,
         model: MultilayerPerceptron,
         loss_function: LossFunction,
+        optimizer: Optimizer,
         learning_rate: float = 0.01
     ):
         self.model = model
         self.loss_function = loss_function
+        self.optimizer = optimizer
         self.learning_rate = learning_rate
     
-    def train_one_epoch(
+    def train_one_sample(
         self,
         entry: List[float],
         y_real: List[float]
@@ -58,10 +61,7 @@ class Trainer:
     
     def update_weights(self):
         for layer in self.model.layers:
-            for neuron in layer.neurons:
-                for i in range(len(neuron.weight_list)):
-                    neuron.weight_list[i] -= self.learning_rate * neuron.delta_k * neuron.last_entry[i]
-                neuron.bias -= self.learning_rate * neuron.delta_k
+            self.optimizer.step(layer_neurons=layer.neurons, learning_rate=self.learning_rate)
     
     def evaluate_loss(
         self,
@@ -95,7 +95,7 @@ class Trainer:
             total_train_loss: float = 0.0
 
             for x, y in train_dataset:
-                total_train_loss += self.train_one_epoch(x, y)
+                total_train_loss += self.train_one_sample(x, y)
 
             average_train_loss = total_train_loss / len(train_dataset)
             average_val_loss = self.evaluate_loss(val_dataset)

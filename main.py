@@ -1,3 +1,4 @@
+from src.core.trainer_optimizer import *
 from src.core.network import MultilayerPerceptron
 from src.core.trainer import Trainer
 
@@ -44,12 +45,12 @@ def main():
                 n_neurons=64,
                 activation=RELU(),
                 initializer=HeInitializer()
-            ),
+            ), # Camada escondida
             LayerConfig(
                 n_neurons=26,
                 activation=Sigmoid(),
                 initializer=XavierGlorotInitializer()
-            )
+            ) # Camada de saída
         ],
         input_size=120
     )
@@ -61,6 +62,7 @@ def main():
     trainer = Trainer(
         model=mlp,
         loss_function=MSE(),
+        optimizer=SGD_momentum(momentum=0.9),
         learning_rate=0.01
     )
 
