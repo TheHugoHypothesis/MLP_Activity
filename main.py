@@ -63,7 +63,9 @@ def main():
         model=mlp,
         loss_function=MSE(),
         optimizer=SGD_momentum(momentum=0.9),
-        learning_rate=0.01
+        learning_rate=0.01,
+        patience=15,
+        min_delta=0.0001
     )
 
     #LOOP TREINO

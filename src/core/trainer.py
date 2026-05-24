@@ -9,12 +9,16 @@ class Trainer:
         model: MultilayerPerceptron,
         loss_function: LossFunction,
         optimizer: Optimizer,
-        learning_rate: float = 0.01
+        learning_rate: float = 0.01,
+        patience: int = None,
+        min_delta: float = 0.0
     ):
         self.model = model
         self.loss_function = loss_function
         self.optimizer = optimizer
         self.learning_rate = learning_rate
+        self.patience = patience
+        self.min_delta = min_delta
     
     def train_one_sample(
         self,
@@ -90,8 +94,12 @@ class Trainer:
             "val_loss": []
         }
 
-        for epoch in range(epochs):
+        #Variáveis de Early Stopping
+        best_val_loss = float('inf')
+        patience_counter = 0
+        best_weights_snapshot = None
 
+        for epoch in range(epochs):
             total_train_loss: float = 0.0
 
             for x, y in train_dataset:
@@ -109,4 +117,33 @@ class Trainer:
                 f"Val Loss: {average_val_loss:.6f}"
             )
 
+            #Lógica de Early Stopping
+            if self.patience is not None:
+                if average_val_loss < (best_val_loss - self.min_delta):
+                    best_val_loss = average_val_loss
+                    patience_counter = 0
+                    best_weights_snapshot = self._get_model_weights_snapshot()
+                else:
+                    patience_counter += 1
+                    if patience_counter >= self.patience:
+                        print(f"\nEarly stop na época {epoch}.")
+                        print(f"O erro de validação não melhorou por {self.patience} épocas seguidas.")
+                        #Restaura o melhor modelo
+                        self._restore_model_weights(best_weights_snapshot)
+                        print("[Early Stopping] Melhores pesos restaurados.")
+                        break
+
         return history
+    
+    def _get_model_weights_snapshot(self):
+        #Cria uma cópia profunda dos valores atuais dos pesos e biases de cada neurônio
+        return [
+            [([w for w in neuron.weight_list], neuron.bias) for neuron in layer.neurons]
+            for layer in self.model.layers
+        ]
+    def _restore_model_weights(self, snapshot):
+        #Restaura os pesos e biases a partir do snapshot salvo
+        for layer, layer_snapshot in zip(self.model.layers, snapshot):
+            for neuron, (w_list, bias) in zip(layer.neurons, layer_snapshot):
+                neuron.weight_list = [w for w in w_list]
+                neuron.bias = bias
