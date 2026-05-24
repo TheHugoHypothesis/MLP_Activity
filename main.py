@@ -61,7 +61,7 @@ def main():
     #TREINADOR
     trainer = Trainer(
         model=mlp,
-        loss_function=MSE(),
+        loss_function=CategoricalCrossEntropy(),
         optimizer=SGD_momentum(momentum=0.9),
         learning_rate=0.01,
         patience=15,

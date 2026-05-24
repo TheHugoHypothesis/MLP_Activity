@@ -51,3 +51,40 @@ class MSE(LossFunction):
             error_list.append((2.0 / list_size) * (prediction - real))
 
         return error_list
+
+class MAE(LossFunction):
+    def compute(self, y_pred: List[float], y_real: List[float]) -> float:
+        total_error = sum(abs(yp - yr) for yp, yr in zip(y_pred, y_real))
+        return total_error / len(y_pred)
+    
+    def derivative(self, y_pred: List[float], y_real: List[float]) -> List[float]:
+        n = len(y_pred)
+        error_list = []
+        for yp, yr in zip(y_pred, y_real):
+            # Derivada do valor absoluto
+            if yp > yr:
+                error_list.append(1.0 / n)
+            elif yp < yr:
+                error_list.append(-1.0 / n)
+            else:
+                # Derivada indefinida no ponto 0, aproximada para 0
+                error_list.append(0.0) 
+        return error_list
+
+class CategoricalCrossEntropy(LossFunction):
+    def compute(self, y_pred: List[float], y_real: List[float]) -> float:
+        epsilon = 1e-15 # Pequena constante para estabilidade numérica
+        loss = 0.0
+        for yp, yr in zip(y_pred, y_real):
+            # Clipando y_pred para o intervalo [epsilon, 1 - epsilon]
+            yp_clipped = max(epsilon, min(1.0 - epsilon, yp))
+            loss -= yr * math.log(yp_clipped)
+        return loss
+    def derivative(self, y_pred: List[float], y_real: List[float]) -> List[float]:
+        epsilon = 1e-15
+        error_list = []
+        for yp, yr in zip(y_pred, y_real):
+            yp_clipped = max(epsilon, min(1.0 - epsilon, yp))
+            # Derivada em relação a yp: - yr / yp
+            error_list.append(-yr / yp_clipped)
+        return error_list
