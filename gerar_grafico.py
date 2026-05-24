@@ -9,10 +9,10 @@ def carregar_report(report_path: str):
 
 
 def gerar_grafico(report_path: str):
-
     report = carregar_report(report_path)
 
-    train_loss = report["train_loss_history"]
+    train_loss = report["history"]["train_loss"]
+    val_loss = report["history"]["val_loss"]
 
     epocas = list(range(len(train_loss)))
 
@@ -23,6 +23,15 @@ def gerar_grafico(report_path: str):
         train_loss,
         label="Loss Treino",
         marker="o",
+        linewidth=2
+    )
+
+    plt.plot(
+        epocas,
+        val_loss,
+        label="Validation Loss",
+        marker="s",
+        linestyle="--",
         linewidth=2
     )
 

@@ -65,8 +65,12 @@ def main():
     )
 
     #LOOP TREINO
-    epochs = 50
-    train_loss_history = trainer.train(train_set, epochs=epochs)
+    epochs = 250
+    history = trainer.train(
+        train_dataset=train_set,
+        val_dataset=val_set,
+        epochs=epochs
+    )
 
     evaluator = Evaluator(mlp)
 
@@ -79,7 +83,7 @@ def main():
     #SAVE FINAL MODELO + REPORT
     io.save_model(mlp, experiment_id + "_final")
     io.save_report({
-        "train_loss_history": train_loss_history,
+        "history": history,
         "train_metrics": train_metrics,
         "val_metrics": val_metrics
     }, experiment_id + "_report")

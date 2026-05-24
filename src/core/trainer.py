@@ -62,20 +62,51 @@ class Trainer:
                 for i in range(len(neuron.weight_list)):
                     neuron.weight_list[i] -= self.learning_rate * neuron.delta_k * neuron.last_entry[i]
                 neuron.bias -= self.learning_rate * neuron.delta_k
+    
+    def evaluate_loss(
+        self,
+        dataset: List
+    ) -> float:
+        total_loss = 0.0
+
+        for x, y in dataset:
+            prediction = self.model.forward(x)
+
+            total_loss += self.loss_function.compute(
+                prediction,
+                y
+            )
+
+        return total_loss / len(dataset)
             
     def train(
         self,
-        dataset: List,
+        train_dataset: List,
+        val_dataset: List,
         epochs: int
-    ) -> List[float]:
-        loss_history = []
+    ):
+        history = {
+            "train_loss": [],
+            "val_loss": []
+        }
+
         for epoch in range(epochs):
-            total_loss: float = 0.0
-            for x, y in dataset:
-                total_loss += self.train_one_epoch(x, y)
-            
-            average_loss = total_loss / len(dataset)
-            loss_history.append(average_loss)
-            print(f"Época {epoch} | Erro: {average_loss:.6f}")
-        
-        return loss_history
+
+            total_train_loss: float = 0.0
+
+            for x, y in train_dataset:
+                total_train_loss += self.train_one_epoch(x, y)
+
+            average_train_loss = total_train_loss / len(train_dataset)
+            average_val_loss = self.evaluate_loss(val_dataset)
+
+            history["train_loss"].append(average_train_loss)
+            history["val_loss"].append(average_val_loss)
+
+            print(
+                f"Época {epoch} | "
+                f"Train Loss: {average_train_loss:.6f} | "
+                f"Val Loss: {average_val_loss:.6f}"
+            )
+
+        return history
