@@ -72,26 +72,56 @@ class MAE(LossFunction):
         return error_list
 
 class SoftmaxCrossEntropy(LossFunction):
+    SOFT_MAX_EPSILON = 1e-15
+
     def _softmax(self, logits: List[float]) -> List[float]:
-        # Estabilidade numérica: subtrai o máximo para evitar overflow do exp()
-        max_val = max(logits)
-        exp_shifted = [math.exp(li - max_val) for li in logits]
-        sum_exp = sum(exp_shifted)
-        return [e / sum_exp for e in exp_shifted]
+        #estabilização numérica do softmax
+        #(evita overflow no exp), isso é feito pelas operações
+        #de fazer shift em relação ao máximo da lista por cada elemento (l - max_logit)
+        #e tirar exp(...), seguido da soma dos elementos dessa lista.
+        max_logit = max(logits)
+
+        exp_values = []
+        for l in logits:
+            exp_values.append(math.exp(l - max_logit))
+        sum_exp = sum(exp_values)
+
+        #calcula agora as probabilidades por normalizar os exponenciais anteriores
+        #pela soma deles (transforma em distribuiçaão de probabilidade)
+        probabilities = []
+        for v in exp_values:
+            probabilities.append(v / sum_exp)
+
+        return probabilities
+
     def compute(self, y_pred: List[float], y_real: List[float]) -> float:
-        # y_pred aqui são os logits brutos da camada Linear
+        #`y_pred` são os logits que é saída bruta da rede (antes do softmax)
+        #nao representam probabilidade, i.e, são o campo local induzido da última camada
+        #da rede
         probs = self._softmax(y_pred)
-        
-        # Cross-Entropy com proteção para log(0)
-        epsilon = 1e-15
+
         loss = 0.0
-        for p, yr in zip(probs, y_real):
-            p_clipped = max(epsilon, min(1.0 - epsilon, p))
-            loss -= yr * math.log(p_clipped)
+
+        for predicted, target in zip(probs, y_real):
+
+            # evita log(0)
+            clipped = predicted
+            if clipped < epsilon:
+                clipped = epsilon
+            elif clipped > 1.0 - epsilon:
+                clipped = 1.0 - epsilon
+
+            loss -= target * math.log(clipped)
+
         return loss
+
     def derivative(self, y_pred: List[float], y_real: List[float]) -> List[float]:
-        # y_pred são os logits brutos da camada Linear
+        # gradiente da softmax + cross entropy (em relação aos logits)
+
         probs = self._softmax(y_pred)
-        
-        # A derivada fundida de Softmax + Cross-Entropy em relação aos LOGITS é: (probs - y_real)
-        return [p - yr for p, yr in zip(probs, y_real)]
+
+        gradients = []
+        for predicted, target in zip(probs, y_real):
+            gradients.append(predicted - target)
+
+        return gradients
