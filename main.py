@@ -26,7 +26,7 @@ def build_model():
             ), # Camada escondida
             LayerConfig(
                 n_neurons=26,
-                activation=Sigmoid(),
+                activation=Linear(),
                 initializer=XavierGlorotInitializer()
             ) # Camada de saída
         ],
@@ -37,10 +37,10 @@ def build_model():
 def build_trainer(model):
     return Trainer(
         model=model,
-        loss_function=MSE(),
+        loss_function=SoftmaxCrossEntropy(),
         optimizer=SGD_momentum(momentum=0.9),
-        learning_rate=0.01,
-        patience=15,
+        learning_rate=0.001,
+        patience=10,
         min_delta=0.0001
     )
 
@@ -52,7 +52,7 @@ def main():
     #IO MANAGER
     io = IOManager()
     experiment_id = "exp_001"  
-    use_cross_validation = False
+    use_cross_validation = True
 
     #DATASET
     dataset = DataLoader.load_character_from_alphabet(
@@ -66,7 +66,7 @@ def main():
     if use_cross_validation:
         result = run_stratified_k_fold(
             dataset=dataset,
-            k=5,
+            k=3,
             build_model=build_model,
             build_trainer=build_trainer,
             epochs=400
@@ -98,7 +98,7 @@ def main():
             epochs=epochs
         )
 
-        evaluator = Evaluator(mlp, loss_function=MSE())
+        evaluator = Evaluator(mlp, loss_function=SoftmaxCrossEntropy())
 
         print("\n=== CONJUNTO DE TREINO ===")
         train_metrics = evaluator.evaluate(train_set, num_classes=26)

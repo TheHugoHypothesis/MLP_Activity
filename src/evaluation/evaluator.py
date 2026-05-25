@@ -32,20 +32,20 @@ class Evaluator:
 
         print(f"Acurácia: {acc * 100:.2f}%")
 
-        cm = None
+        results = {
+            "accuracy": acc,
+            "confusion_matrix": None
+        }
+
+        if self.loss_function is not None:
+            results[self.loss_function.__class__.__name__.lower()] = avg_loss
 
         # matriz de confusão opcional
         if num_classes is not None:
             cm = ConfusionMatrix.compute(dataset, self.model, num_classes)
             print("\nConfusion Matrix:")
             print(cm)
-
-            results = {
-                "accuracy": acc,
-                "confusion_matrix": cm.tolist() if cm is not None else None
-            }
-
-            if self.loss_function is not None:
-                results[self.loss_function.__class__.__name__.lower()] = avg_loss
+            if cm is not None:
+                results["confusion_matrix"] = cm.tolist()
 
         return results
