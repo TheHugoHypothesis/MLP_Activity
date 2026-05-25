@@ -38,7 +38,7 @@ def build_trainer(model):
     return Trainer(
         model=model,
         loss_function=SoftmaxCrossEntropy(),
-        optimizer=SGD_momentum(momentum=0.9),
+        optimizer=SGD_momentum(momentum=0.9, l2_decay=0.0001),
         learning_rate=0.001,
         patience=10,
         min_delta=0.0001

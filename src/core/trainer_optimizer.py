@@ -46,10 +46,15 @@ Bias:
 x_i -> entrada
 
 No caso, basicamente, fazemos uma média móvel exponencial dos gradientes
+Foi adicionado também o termo de regularização L2: `l2_decay`
+- Ela é desligada por padrão;
+- Aqui como aplicamos no otimizador, não usamos o quadrado e sim a derivada disso,
+portanto a fórmula de atualização é a simples multiplicação.
 """
 class SGD_momentum(Optimizer):
-    def __init__(self, momentum: float = 0.9):
+    def __init__(self, momentum: float = 0.9, l2_decay: float = 0.0):
         self.momentum = momentum
+        self.l2_decay = l2_decay
 
         #Vetores que guardam as velocidades acumladas no momentum
         self.weight_velocity = {}
@@ -70,7 +75,7 @@ class SGD_momentum(Optimizer):
 
             for i in range(len(neuron.weight_list)):
                 input_value = neuron.last_entry[i]
-                gradient = neuron.delta_k * input_value
+                gradient = neuron.delta_k * input_value + self.l2_decay * neuron.weight_list[i]
                 previous_velocity = self.weight_velocity[neuron][i]
 
                 #Atualização da velocidade (faz média móvel exponencial dos gradientes)
