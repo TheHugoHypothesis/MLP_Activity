@@ -106,10 +106,10 @@ class SoftmaxCrossEntropy(LossFunction):
 
             # evita log(0)
             clipped = predicted
-            if clipped < epsilon:
-                clipped = epsilon
-            elif clipped > 1.0 - epsilon:
-                clipped = 1.0 - epsilon
+            if clipped < SOFT_MAX_EPSILON:
+                clipped = SOFT_MAX_EPSILON
+            elif clipped > 1.0 - SOFT_MAX_EPSILON:
+                clipped = 1.0 - SOFT_MAX_EPSILON
 
             loss -= target * math.log(clipped)
 
