@@ -54,3 +54,57 @@ class DatasetUtils:
         random.shuffle(test_set)
 
         return train_set, val_set, test_set
+    
+    @staticmethod
+    def stratified_k_fold_split(
+        dataset: Dataset,
+        k: int
+    ):
+        """
+        Método de apoio para o K-Fold estratificado.
+        Retorna uma lista de tuplas (train_set, val_set) para cada fold.
+        """
+                #Primeiro agrupamos os dados de acordo com a classe (letra) deles
+        classes = {}
+
+        for x, y in dataset:
+            class_id = int(np.argmax(y))
+
+            if class_id not in classes:
+                classes[class_id] = []
+
+            classes[class_id].append((x, y))
+
+        # Particiona cada classe em k pedaços
+        class_folds = {}
+        for cid, samples in classes.items():
+            random.shuffle(samples)
+
+            n = len(samples)
+            base = n // k
+            remainder = n % k
+
+            folds_for_class = []
+            idx = 0
+            # Se houver sobra, distribui 1 unidade extra para os primeiros folds
+            for i in range(k):
+                size = base + (1 if i < remainder else 0)
+                folds_for_class.append(samples[idx: idx + size])
+                idx += size
+            class_folds[cid] = folds_for_class
+
+        # Constrói os k folds combinando partes de cada classe
+        folds = []
+        for i in range(k):
+            val = []
+            train = []
+            for cid in class_folds:
+                for j, part in enumerate(class_folds[cid]):
+                    if j == i:
+                        val.extend(part)
+                    else:
+                        train.extend(part)
+            random.shuffle(train)
+            random.shuffle(val)
+            folds.append((train, val))
+        return folds
