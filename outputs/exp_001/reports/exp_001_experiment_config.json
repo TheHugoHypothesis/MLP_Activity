@@ -1,0 +1,46 @@
+{
+    "mode": "train_val_test",
+    "model": {
+        "input_size": 120,
+        "layers": [
+            {
+                "n_neurons": 64,
+                "activation": "RELU",
+                "activation_params": {},
+                "initializer": "HeInitializer",
+                "initializer_params": {}
+            },
+            {
+                "n_neurons": 26,
+                "activation": "Linear",
+                "activation_params": {},
+                "initializer": "XavierGlorotInitializer",
+                "initializer_params": {}
+            }
+        ]
+    },
+    "training": {
+        "epochs": 400,
+        "learning_rate": 0.001,
+        "patience": 10,
+        "min_delta": 0.0001,
+        "loss_function": "SoftmaxCrossEntropy",
+        "optimizer": {
+            "name": "SGD_momentum",
+            "momentum": 0.9,
+            "l2_decay": 0.0001
+        }
+    },
+    "data_split": {
+        "train": 0.7,
+        "val": 0.15,
+        "test": 0.15
+    },
+    "cross_validation": {
+        "enabled": false,
+        "k": null
+    },
+    "evaluation": {
+        "num_classes": 26
+    }
+}

@@ -1,4 +1,5 @@
 import json
+import os
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -106,14 +107,7 @@ def gerar_matriz_confusao(report_path: str):
                     color="white" if value > matrix.max()/2 else "black"
                 )
 
-    plt.tight_layout()
-
-    plt.savefig(
-        "outputs/figures/confusion_matrix.png",
-        dpi=300
-    )
-
-    print("Matriz salva em outputs/figures/confusion_matrix.png")
+    plot_confusion_matrix(matrix, "outputs/figures", labels=list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
 
     #plt.show()
 
@@ -125,3 +119,42 @@ if __name__ == "__main__":
     gerar_grafico(REPORT_PATH)
 
     gerar_matriz_confusao(REPORT_PATH)
+
+
+
+
+def plot_confusion_matrix(matrix: np.ndarray, figures_dir: str, labels=None, out_filename: str = "confusion_matrix.png"):
+    n = matrix.shape[0]
+    if labels is None:
+        labels = [str(i) for i in range(n)]
+
+    plt.figure(figsize=(12, 10))
+    plt.imshow(matrix, cmap="Blues", interpolation="nearest")
+    plt.title("Matriz de Confusão")
+    plt.colorbar()
+
+    tick_marks = np.arange(n)
+    plt.xticks(tick_marks, labels)
+    plt.yticks(tick_marks, labels)
+
+    plt.xlabel("Predição")
+    plt.ylabel("Valor Real")
+
+    for i in range(n):
+        for j in range(n):
+            value = matrix[i][j]
+            if value > 0:
+                plt.text(
+                    j,
+                    i,
+                    str(value),
+                    ha="center",
+                    va="center",
+                    color="white" if value > matrix.max()/2 else "black"
+                )
+
+    plt.tight_layout()
+    os.makedirs(figures_dir, exist_ok=True)
+    out_path = os.path.join(figures_dir, out_filename)
+    plt.savefig(out_path, dpi=300)
+    print(f"Matriz salva em {out_path}")

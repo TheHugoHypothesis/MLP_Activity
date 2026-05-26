@@ -10,11 +10,15 @@ O retorno é um dicionário com os resultados por fold e um resumo com média e
 desvio padrão das métricas principais.
 """
 
+from gerar_grafico import plot_confusion_matrix
+
 from statistics import mean, pstdev
 from typing import Any, Dict, List, Optional
 
 from src.evaluation.evaluator import Evaluator
 from src.utils.dataset_utils import DatasetUtils, Dataset
+import os
+import numpy as np
 
 
 def _mean_and_std(values: List[float]) -> Dict[str, float]:
@@ -30,7 +34,9 @@ def run_stratified_k_fold(
     build_model,
     build_trainer,
     epochs: int,
-    num_classes: int = None
+    num_classes: int = None,
+    io_manager=None,
+    experiment_id: str = None
 ) -> Dict[str, Any]:
     folds = DatasetUtils.stratified_k_fold_split(dataset, k)
     fold_results: List[Dict[str, Any]] = []
@@ -46,11 +52,18 @@ def run_stratified_k_fold(
 
         model = build_model()
         trainer = build_trainer(model)
+
+        if io_manager is not None and experiment_id is not None:
+            io_manager.save_model(model, f"{experiment_id}_fold_{fold_index}_initial_weights")
+
         history = trainer.train(
             train_dataset=train_set,
             val_dataset=val_set,
             epochs=epochs
         )
+
+        if io_manager is not None and experiment_id is not None:
+            io_manager.save_training_history(history, f"{experiment_id}_fold_{fold_index}_training_history")
 
         evaluator = Evaluator(model, loss_function=trainer.loss_function)
 
@@ -59,6 +72,23 @@ def run_stratified_k_fold(
 
         print("\n--- Conjunto de validação ---")
         val_metrics = evaluator.evaluate(val_set, num_classes=num_classes)
+
+        if io_manager is not None and experiment_id is not None:
+            io_manager.save_model(model, f"{experiment_id}_fold_{fold_index}_final_weights")
+            out_name = f"{experiment_id}_fold_{fold_index}_validation_outputs"
+            io_manager.save_predictions(model, val_set, out_name)
+            
+            try:
+                cm = val_metrics.get("confusion_matrix")
+                if cm is not None:
+                    plot_confusion_matrix(
+                        np.array(cm),
+                        io_manager.figures_dir,
+                        labels=[str(i) for i in range(num_classes)],
+                        out_filename=f"{experiment_id}_fold_{fold_index}_validation_confusion_matrix.png"
+                    )
+            except Exception as e:
+                print(f"Aviso: não foi possível gerar matriz de confusão do fold {fold_index}: {e}")
 
         fold_results.append({
             "fold_index": fold_index,

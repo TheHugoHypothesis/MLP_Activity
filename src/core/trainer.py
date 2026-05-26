@@ -82,6 +82,16 @@ class Trainer:
             )
 
         return total_loss / len(dataset)
+    
+    def evaluate_accuracy(self, dataset: List) -> float:
+        correct = 0
+        for x, y in dataset:
+            out = self.model.forward(x)
+            if out is None:
+                continue
+            if __import__('numpy').argmax(out) == __import__('numpy').argmax(y):
+                correct += 1
+        return correct / len(dataset) if len(dataset) > 0 else 0.0
             
     def train(
         self,
@@ -91,7 +101,9 @@ class Trainer:
     ):
         history = {
             "train_loss": [],
-            "val_loss": []
+            "val_loss": [],
+            "train_acc": [],
+            "val_acc": []
         }
 
         #Variáveis de Early Stopping
@@ -108,8 +120,13 @@ class Trainer:
             average_train_loss = total_train_loss / len(train_dataset)
             average_val_loss = self.evaluate_loss(val_dataset)
 
+            average_train_acc = self.evaluate_accuracy(train_dataset)
+            average_val_acc = self.evaluate_accuracy(val_dataset)
+
             history["train_loss"].append(average_train_loss)
             history["val_loss"].append(average_val_loss)
+            history["train_acc"].append(average_train_acc)
+            history["val_acc"].append(average_val_acc)
 
             print(
                 f"Época {epoch} | "
