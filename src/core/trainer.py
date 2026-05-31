@@ -59,7 +59,7 @@ class Trainer:
                 neuron.last_local_induced_field
             ) * loss_gradient
 
-            #popula gradiente para primeira camada
+            #popula gradiente para última camada
             neuron.parameter.bias_gradient = neuron.delta_k
             for i in range(len(neuron.weights)):
                 neuron.parameter.weights_gradient[i] = neuron.delta_k * neuron.last_entry[i]
@@ -87,31 +87,24 @@ class Trainer:
         for layer in self.model.layers:
             self.optimizer.step(layer_neurons=layer.neurons, learning_rate=self.learning_rate)
     
-    def evaluate_loss(
-        self,
-        dataset: List
-    ) -> float:
+    def evaluate(self, dataset: List) -> tuple[float, float]:
         total_loss = 0.0
-
-        for x, y in dataset:
-            prediction = self.model.forward(x)
-
-            total_loss += self.loss_function.compute(
-                prediction,
-                y
-            )
-
-        return total_loss / len(dataset)
-    
-    def evaluate_accuracy(self, dataset: List) -> float:
         correct = 0
         for x, y in dataset:
-            out = self.model.forward(x)
-            if out is None:
+            prediction = self.model.forward(x)
+            if prediction is None:
                 continue
-            if __import__('numpy').argmax(out) == __import__('numpy').argmax(y):
+            
+            #Acumula perda
+            total_loss += self.loss_function.compute(prediction, y)
+            
+            #Acumula acertos
+            if prediction.index(max(prediction)) == y.index(max(y)):
                 correct += 1
-        return correct / len(dataset) if len(dataset) > 0 else 0.0
+            
+        avg_loss = total_loss / len(dataset) if len(dataset) > 0 else 0.0
+        accuracy = correct / len(dataset) if len(dataset) > 0 else 0.0
+        return avg_loss, accuracy
             
     def train(
         self,
@@ -136,12 +129,10 @@ class Trainer:
 
             for x, y in train_dataset:
                 total_train_loss += self.train_one_sample(x, y)
-
+            
             average_train_loss = total_train_loss / len(train_dataset)
-            average_val_loss = self.evaluate_loss(val_dataset)
-
-            average_train_acc = self.evaluate_accuracy(train_dataset)
-            average_val_acc = self.evaluate_accuracy(val_dataset)
+            average_val_loss, average_val_acc = self.evaluate(val_dataset)
+            _, average_train_acc = self.evaluate(train_dataset)
 
             history["train_loss"].append(average_train_loss)
             history["val_loss"].append(average_val_loss)
@@ -151,7 +142,8 @@ class Trainer:
             print(
                 f"Época {epoch} | "
                 f"Train Loss: {average_train_loss:.6f} | "
-                f"Val Loss: {average_val_loss:.6f}"
+                f"Val Loss: {average_val_loss:.6f} | "
+                f"Val Acc: {average_val_acc:.4f}"
             )
 
             #Lógica de Early Stopping
@@ -175,12 +167,12 @@ class Trainer:
     def _get_model_weights_snapshot(self):
         #Cria uma cópia profunda dos valores atuais dos pesos e biases de cada neurônio
         return [
-            [([w for w in neuron.weights], neuron.bias) for neuron in layer.neurons]
+            [(list(neuron.weights), neuron.bias) for neuron in layer.neurons]
             for layer in self.model.layers
         ]
     def _restore_model_weights(self, snapshot):
         #Restaura os pesos e biases a partir do snapshot salvo
         for layer, layer_snapshot in zip(self.model.layers, snapshot):
             for neuron, (w_list, bias) in zip(layer.neurons, layer_snapshot):
-                neuron.weights = [w for w in w_list]
+                neuron.weights = list(w_list)
                 neuron.bias = bias
