@@ -2,8 +2,8 @@ from typing import List
 from dataclasses import dataclass
 
 from src.utils.linear_algebra import scalar_product
-from src.utils.activation_function import ActivationFunction
-from src.utils.weight_initializers import WeightInitializer
+from src.strategies.activation_function import ActivationFunction
+from src.strategies.weight_initializers import WeightInitializer
 from src.core.neuron import PerceptronNeuron
 
 """

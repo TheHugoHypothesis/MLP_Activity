@@ -1,7 +1,7 @@
 from typing import List
-from src.utils.loss_functions import LossFunction
+from src.strategies.loss_functions import LossFunction
+from src.strategies.trainer_optimizer import Optimizer
 from src.core.network import MultilayerPerceptron
-from src.core.trainer_optimizer import Optimizer
 
 class Trainer:
     def __init__(

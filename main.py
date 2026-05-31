@@ -1,24 +1,25 @@
-from src.core.trainer_optimizer import *
 from src.core.network import MultilayerPerceptron
 from src.core.trainer import Trainer
 
 from src.utils.data_loader import DataLoader
 from src.utils.dataset_utils import DatasetUtils
 from src.utils.io_manager import IOManager
+from src.utils.cross_validation import run_stratified_k_fold
 
 from src.core.layer import LayerConfig
-from src.utils.loss_functions import *
-from src.utils.activation_function import *
-from src.utils.weight_initializers import *
-from src.core.cross_validation import run_stratified_k_fold
+
+from src.strategies.trainer_optimizer import *
+from src.strategies.loss_functions import *
+from src.strategies.activation_function import *
+from src.strategies.weight_initializers import *
+
+from src.evaluation.evaluator import Evaluator
 
 from gerar_grafico import plot_confusion_matrix
 
-from src.evaluation.evaluator import Evaluator
 import numpy as np
 import random
 import os
-
 
 def get_model_layer_configs():
     return [

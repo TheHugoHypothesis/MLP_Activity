@@ -1,5 +1,5 @@
 from typing import List
-from src.utils.activation_function import ActivationFunction
+from src.strategies.activation_function import ActivationFunction
 from src.utils.linear_algebra import scalar_product
 
 """

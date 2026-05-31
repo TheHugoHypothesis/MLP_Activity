@@ -1,6 +1,6 @@
 from typing import List
 from src.core.layer import PerceptronLayer, LayerConfig
-from src.utils.loss_functions import LossFunction
+from src.strategies.loss_functions import LossFunction
 
 """
 Classe que representa uma configuração de rede MultilayerPerceptron.
