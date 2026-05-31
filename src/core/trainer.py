@@ -101,9 +101,15 @@ class Trainer:
             #Acumula acertos
             if prediction.index(max(prediction)) == y.index(max(y)):
                 correct += 1
-            
-        avg_loss = total_loss / len(dataset) if len(dataset) > 0 else 0.0
-        accuracy = correct / len(dataset) if len(dataset) > 0 else 0.0
+        
+
+        if len(dataset) > 0:
+            avg_loss = total_loss / len(dataset)
+            accuracy = correct / len(dataset)
+        else:
+            avg_loss = 0.0
+            accuracy = 0.0
+
         return avg_loss, accuracy
             
     def train(
@@ -170,6 +176,7 @@ class Trainer:
             [(list(neuron.weights), neuron.bias) for neuron in layer.neurons]
             for layer in self.model.layers
         ]
+
     def _restore_model_weights(self, snapshot):
         #Restaura os pesos e biases a partir do snapshot salvo
         for layer, layer_snapshot in zip(self.model.layers, snapshot):

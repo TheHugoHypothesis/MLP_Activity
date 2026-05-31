@@ -8,10 +8,7 @@ Renan Rodrigues Moreira - 15744874
 Clara Pires Campardo - 15446433
 """
 
-from src.evaluation.metrics import Metrics
 from src.evaluation.confusion_matrix import ConfusionMatrix
-import numpy as np
-
 
 class Evaluator:
     def __init__(self, model, loss_function=None):
@@ -29,7 +26,7 @@ class Evaluator:
                 total_loss += self.loss_function.compute(out, y)
 
             # accuracy
-            if np.argmax(out) == np.argmax(y):
+            if out.index(max(out)) == y.index(max(y)):
                 correct += 1
 
         acc = correct / len(dataset)
