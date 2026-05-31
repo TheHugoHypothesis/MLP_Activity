@@ -1,10 +1,19 @@
+"""
+Atividade de IA. Integrantes:
+
+Hugo Cardoso Ferreira de Araújo - 15459500
+Higor Gabriel de Freitas - 15575879
+Enrico Lechar de Barros Aranha - 15449652
+Renan Rodrigues Moreira - 15744874
+Clara Pires Campardo - 15446433
+"""
+
 import json
 import os
 from datetime import datetime
 from typing import Any, Dict, List
 
 import numpy as np
-
 
 class IOManager:
     def __init__(self, base_dir="outputs"):
@@ -63,7 +72,7 @@ class IOManager:
             layer_data = []
             for neuron in layer.neurons:
                 layer_data.append({
-                    "weights": neuron.weight_list,
+                    "weights": neuron.weights,
                     "bias": neuron.bias
                 })
             data["layers"].append(layer_data)
@@ -123,7 +132,7 @@ class IOManager:
         for i, layer in enumerate(data["layers"]):
             for j, neuron_data in enumerate(layer):
                 neuron = mlp.layers[i].neurons[j]
-                neuron.weight_list = neuron_data["weights"]
+                neuron.weights = neuron_data["weights"]
                 neuron.bias = neuron_data["bias"]
 
         print(f"[IO] Modelo carregado de {path}")

@@ -1,3 +1,13 @@
+"""
+Atividade de IA. Integrantes:
+
+Hugo Cardoso Ferreira de Araújo - 15459500
+Higor Gabriel de Freitas - 15575879
+Enrico Lechar de Barros Aranha - 15449652
+Renan Rodrigues Moreira - 15744874
+Clara Pires Campardo - 15446433
+"""
+
 from typing import List
 from src.strategies.loss_functions import LossFunction
 from src.strategies.trainer_optimizer import Optimizer
@@ -49,6 +59,11 @@ class Trainer:
                 neuron.last_local_induced_field
             ) * loss_gradient
 
+            #popula gradiente para primeira camada
+            neuron.parameter.bias_gradient = neuron.delta_k
+            for i in range(len(neuron.weights)):
+                neuron.parameter.weights_gradient[i] = neuron.delta_k * neuron.last_entry[i]
+
         #Cálculo do delta para camadas seguintes
         for l in reversed(range(len(self.model.layers) - 1)):
             actual_layer = self.model.layers[l]
@@ -57,12 +72,17 @@ class Trainer:
             for i, neuron in enumerate(actual_layer.neurons):
                 sum_delta_k : float = 0.0
                 for neuron_k in next_layer.neurons:
-                    sum_delta_k += neuron_k.delta_k * neuron_k.weight_list[i]
+                    sum_delta_k += neuron_k.delta_k * neuron_k.parameter.weights[i]
                 
                 neuron.delta_k = sum_delta_k * neuron.activation.derivative(
                     neuron.last_local_induced_field
                 )
-    
+
+                #popula os gradientes para camadas seguintes
+                neuron.parameter.bias_gradient = neuron.delta_k
+                for j in range(len(neuron.weights)):
+                    neuron.parameter.weights_gradient[j] = neuron.delta_k * neuron.last_entry[j]
+
     def update_weights(self):
         for layer in self.model.layers:
             self.optimizer.step(layer_neurons=layer.neurons, learning_rate=self.learning_rate)
@@ -155,12 +175,12 @@ class Trainer:
     def _get_model_weights_snapshot(self):
         #Cria uma cópia profunda dos valores atuais dos pesos e biases de cada neurônio
         return [
-            [([w for w in neuron.weight_list], neuron.bias) for neuron in layer.neurons]
+            [([w for w in neuron.weights], neuron.bias) for neuron in layer.neurons]
             for layer in self.model.layers
         ]
     def _restore_model_weights(self, snapshot):
         #Restaura os pesos e biases a partir do snapshot salvo
         for layer, layer_snapshot in zip(self.model.layers, snapshot):
             for neuron, (w_list, bias) in zip(layer.neurons, layer_snapshot):
-                neuron.weight_list = [w for w in w_list]
+                neuron.weights = [w for w in w_list]
                 neuron.bias = bias

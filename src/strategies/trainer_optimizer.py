@@ -1,4 +1,16 @@
+"""
+Atividade de IA. Integrantes:
+
+Hugo Cardoso Ferreira de Araújo - 15459500
+Higor Gabriel de Freitas - 15575879
+Enrico Lechar de Barros Aranha - 15449652
+Renan Rodrigues Moreira - 15744874
+Clara Pires Campardo - 15446433
+"""
+
 from abc import ABC, abstractmethod
+from typing import List
+from src.core.parameter import Parameter
 
 """
 Classe abstrata que implementa algoritmos de otimização
@@ -28,9 +40,9 @@ x_i -> entrada do neurônio
 class SGD(Optimizer):
     def step(self, layer_neurons, learning_rate: float):
         for neuron in layer_neurons:
-            for i in range(len(neuron.weight_list)):
-                neuron.weight_list[i] -= learning_rate * neuron.delta_k * neuron.last_entry[i]
-            neuron.bias -= learning_rate * neuron.delta_k
+            for i in range(len(neuron.weights)):
+                neuron.weights[i] -= learning_rate * neuron.parameter.weights_gradient[i]
+            neuron.bias -= learning_rate * neuron.parameter.bias_gradient
 
 """ Implementação de SGD com Momentum
 Gradiente: g_i = δ_k * x_i
@@ -64,35 +76,24 @@ class SGD_momentum(Optimizer):
         for neuron in layer_neurons:
 
             #Inicializa as velocidades na primeira atualização
-            if neuron not in self.weight_velocity:
-                initial_velocity = []
+            if neuron.parameter not in self.weight_velocity:
+                self.weight_velocity[neuron.parameter] = [0.0] * len(neuron.weights)
+                self.bias_velocity[neuron.parameter] = 0.0
+            
+            weight_vel = self.weight_velocity[neuron.parameter]
 
-                for i in neuron.weight_list:
-                    initial_velocity.append(0.0)
-
-                self.weight_velocity[neuron] = initial_velocity
-                self.bias_velocity[neuron] = 0.0
-
-            for i in range(len(neuron.weight_list)):
-                input_value = neuron.last_entry[i]
-                gradient = neuron.delta_k * input_value + self.l2_decay * neuron.weight_list[i]
-                previous_velocity = self.weight_velocity[neuron][i]
+            for i in range(len(neuron.weights)):
+                gradient = neuron.parameter.weights_gradient[i]
+                if self.l2_decay > 0.0:
+                    gradient += self.l2_decay * neuron.weights[i]
 
                 #Atualização da velocidade (faz média móvel exponencial dos gradientes)
-                new_velocity = self.momentum * previous_velocity + learning_rate * gradient
-
-                self.weight_velocity[neuron][i] = new_velocity
-
-                current_weight = neuron.weight_list[i]
-                updated_weight = current_weight - new_velocity
-
-                #Atualização do peso usando a velocidade acumulada
-                neuron.weight_list[i] = updated_weight
+                weight_vel[i] = self.momentum * weight_vel[i] + learning_rate * gradient
+                neuron.weights[i] -= weight_vel[i]
 
             #Cálculo de velocidade e momentum do bias
             #basicamente é uma repetição do código anterior mas para o bias sozinho
-            bias_gradient = neuron.delta_k
-            previous_bias_velocity = self.bias_velocity[neuron]
-            new_bias_velocity = self.momentum * previous_bias_velocity + learning_rate * bias_gradient
-            self.bias_velocity[neuron] = new_bias_velocity
-            neuron.bias -= new_bias_velocity
+            bias_vel = self.bias_velocity[neuron.parameter]
+            new_bias_vel = self.momentum * bias_vel + learning_rate * neuron.parameter.bias_gradient
+            self.bias_velocity[neuron.parameter] = new_bias_vel
+            neuron.bias -= new_bias_vel
