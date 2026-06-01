@@ -13,8 +13,6 @@ import os
 from datetime import datetime
 from typing import Any, Dict, List
 
-import numpy as np
-
 class IOManager:
     def __init__(self, base_dir="outputs"):
         self.base_dir = base_dir
@@ -88,8 +86,8 @@ class IOManager:
         predictions = []
         for sample_index, (x, y) in enumerate(dataset):
             outputs = mlp.forward(x)
-            predicted_index = int(np.argmax(outputs))
-            target_index = int(np.argmax(y))
+            predicted_index = outputs.index(max(outputs))
+            target_index = y.index(max(y))
 
             predictions.append({
                 "sample_index": sample_index,

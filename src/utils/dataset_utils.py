@@ -9,7 +9,6 @@ Clara Pires Campardo - 15446433
 """
 
 import random
-import numpy as np
 from typing import List, Tuple
 
 Dataset = List[Tuple[List[float], List[float]]]
@@ -34,7 +33,7 @@ class DatasetUtils:
         classes = {}
 
         for x, y in dataset:
-            class_id = int(np.argmax(y))
+            class_id = y.index(max(y))
 
             if class_id not in classes:
                 classes[class_id] = []
@@ -74,11 +73,11 @@ class DatasetUtils:
         Método de apoio para o K-Fold estratificado.
         Retorna uma lista de tuplas (train_set, val_set) para cada fold.
         """
-                #Primeiro agrupamos os dados de acordo com a classe (letra) deles
+        #Primeiro agrupamos os dados de acordo com a classe (letra) deles
         classes = {}
 
         for x, y in dataset:
-            class_id = int(np.argmax(y))
+            class_id = y.index(max(y))
 
             if class_id not in classes:
                 classes[class_id] = []

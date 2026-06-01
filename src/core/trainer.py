@@ -9,6 +9,7 @@ Clara Pires Campardo - 15446433
 """
 
 from typing import List
+
 from src.strategies.loss_functions import LossFunction
 from src.strategies.trainer_optimizer import Optimizer
 from src.core.network import MultilayerPerceptron

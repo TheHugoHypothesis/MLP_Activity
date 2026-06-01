@@ -8,205 +8,137 @@ Renan Rodrigues Moreira - 15744874
 Clara Pires Campardo - 15446433
 """
 
-from src.core.network import MultilayerPerceptron
-from src.core.trainer import Trainer
+import random
+
+from src.fabric import build_model, build_trainer
+from src.evaluation.evaluator import Evaluator
 
 from src.utils.data_loader import DataLoader
 from src.utils.dataset_utils import DatasetUtils
 from src.utils.io_manager import IOManager
 from src.utils.cross_validation import run_stratified_k_fold
+from src.utils.console import exibir_dashboard_configuracoes
 
-from src.core.layer import LayerConfig
+""" Configuração a ser usada """
+CONFIG = {
+    "experiment_id": "exp_001",
 
-from src.strategies.trainer_optimizer import *
-from src.strategies.loss_functions import *
-from src.strategies.activation_function import *
-from src.strategies.weight_initializers import *
+    #Configurações de separação do Dataset
+    "use_cross_validation": False,#false=usa holdout, true=usa cross_validation
+    "cross_validation_folds": 3,
+    "hold_out_p_train": 0.7, 
+    "hold_out_p_validation": 0.15, #o complemento 1 - (hold_out_p_train + hold_out_p_validation) é implicitamente hold_out_p_test
 
-from src.evaluation.evaluator import Evaluator
+    #Configurações de backpropagation e early stop
+    "num_epochs": 400,
+    "learning_rate": 0.001,
+    "patience": 10,
+    "min_delta": 0.0001,
 
-from gerar_grafico import plot_confusion_matrix
+    #Configurações de entradas/saídas
+    "input_size": 120,
+    "num_classes": 26,
 
-import numpy as np
-import random
-import os
+    #configurações de treinamento
+    "loss_function": "softmax_cross_entropy",
+    "optimizer": {
+        "type": "sgd_momentum",
+        "momentum": 0.9,
+        "l2_decay": 0.0001
+    },
 
-def get_model_layer_configs():
-    return [
-        LayerConfig(
-            n_neurons=64,
-            activation=RELU(),
-            initializer=HeInitializer()
-        ),
-        LayerConfig(
-            n_neurons=26,
-            activation=Linear(),
-            initializer=XavierGlorotInitializer()
-        )
-    ]
-
-
-def get_experiment_config(use_cross_validation: bool, epochs: int = 400):
-    layer_configs = get_model_layer_configs()
-
-    return {
-        "mode": "cross_validation" if use_cross_validation else "train_val_test",
-        "model": {
-            "input_size": 120,
-            "layers": [
-                {
-                    "n_neurons": config.n_neurons,
-                    "activation": config.activation.__class__.__name__,
-                    "activation_params": dict(config.activation.__dict__),
-                    "initializer": config.initializer.__class__.__name__,
-                    "initializer_params": dict(config.initializer.__dict__),
-                }
-                for config in layer_configs
-            ]
+    #configurações de camadas
+    "layers": [
+        {
+            "n_neurons": 64,
+            "activation": "relu",
+            "initializer": "he"
         },
-        "training": {
-            "epochs": epochs,
-            "learning_rate": 0.001,
-            "patience": 10,
-            "min_delta": 0.0001,
-            "loss_function": "SoftmaxCrossEntropy",
-            "optimizer": {
-                "name": "SGD_momentum",
-                "momentum": 0.9,
-                "l2_decay": 0.0001,
-            }
-        },
-        "data_split": {
-            "train": 0.7,
-            "val": 0.15,
-            "test": 0.15,
-        },
-        "cross_validation": {
-            "enabled": use_cross_validation,
-            "k": 3 if use_cross_validation else None,
-        },
-        "evaluation": {
-            "num_classes": 26,
+        {
+            "n_neurons": 26,
+            "activation": "linear",
+            "initializer": "xavier"
         }
-    }
+    ],
 
-
-def build_model():
-    return MultilayerPerceptron(
-        layer_configs=get_model_layer_configs(),
-        input_size=120
-    )
-
-
-def build_trainer(model):
-    return Trainer(
-        model=model,
-        loss_function=SoftmaxCrossEntropy(),
-        optimizer=SGD_momentum(momentum=0.9, l2_decay=0.0001),
-        learning_rate=0.001,
-        patience=10,
-        min_delta=0.0001
-    )
-
+    #configurações de dados e randomização
+    "random_seed": 3,
+    "x_path": "data/raw/X.npy",
+    "y_path": "data/raw/Y_classe.npy"
+}
 
 def main():
+    exibir_dashboard_configuracoes(CONFIG)
+    random.seed(CONFIG["random_seed"])
 
-    random.seed(3)
-
-    #IO MANAGER
     io = IOManager()
-    experiment_id = "exp_001"  
-    use_cross_validation = False
-    num_epochs = 400
-
-    #DATASET
     dataset = DataLoader.load_character_from_alphabet(
-        "data/raw/X.npy",
-        "data/raw/Y_classe.npy"
+        CONFIG["x_path"],
+        CONFIG["y_path"]
     )
-
-    x, y = dataset[0]
-    print(min(x), max(x))
-
     
-    run_name = io.start_run(experiment_id)
-    io.save_experiment_config(
-        get_experiment_config(use_cross_validation, epochs=num_epochs),
-        experiment_id + ("_cross_validation_experiment_config" if use_cross_validation else "_experiment_config")
-    )
+    run_name = io.start_run(CONFIG["experiment_id"])
+    io.save_experiment_config(CONFIG, f"{CONFIG['experiment_id']}_experiment_config")
 
-    if use_cross_validation:
+    if CONFIG["use_cross_validation"]:
         result = run_stratified_k_fold(
             dataset=dataset,
-            k=3,
-            build_model=build_model,
-            build_trainer=build_trainer,
-            epochs=num_epochs,
-            num_classes=26,
+            k=CONFIG["cross_validation_folds"],
+            build_model=lambda: build_model(CONFIG),
+            build_trainer=lambda m: build_trainer(m, CONFIG),
+            epochs=CONFIG["num_epochs"],
+            num_classes=CONFIG["num_classes"],
             io_manager=io,
-            experiment_id=experiment_id
+            experiment_id=CONFIG["experiment_id"]
         )
+
+        io.save_training_history(result, f"{CONFIG["experiment_id"]}_cross_validation_report")
         
     else:
+        #holdout estratificado
         train_set, val_set, test_set = DatasetUtils.stratified_split(
             dataset=dataset,
-            p_train=0.7,
-            p_val=0.15
+            p_train=CONFIG["hold_out_p_train"],
+            p_val=CONFIG["hold_out_p_validation"]
         )
 
-        mlp = build_model()
+        mlp = build_model(CONFIG)
+        io.save_model(mlp, f"{CONFIG['experiment_id']}_initial_weights")
 
-        #SALVA MODELO INICIAL
-        io.save_model(mlp, experiment_id + "_initial_weights")
-
-        trainer = build_trainer(mlp)
+        trainer = build_trainer(mlp, CONFIG)
 
         #LOOP TREINO
         history = trainer.train(
             train_dataset=train_set,
             val_dataset=val_set,
-            epochs=num_epochs
+            epochs=CONFIG["num_epochs"]
         )
 
-        io.save_training_history(history, experiment_id + "_training_history")
+        io.save_training_history(history, CONFIG['experiment_id'] + "_training_history")
 
-        evaluator = Evaluator(mlp, loss_function=SoftmaxCrossEntropy())
+        evaluator = Evaluator(mlp, loss_function=trainer.loss_function)
 
         print("\n=== CONJUNTO DE TREINO ===")
-        train_metrics = evaluator.evaluate(train_set, num_classes=26)
+        train_metrics = evaluator.evaluate(train_set, num_classes=CONFIG["num_classes"])
 
         print("\n=== CONJUNTO DE VALIDAÇÃO ===")
-        val_metrics = evaluator.evaluate(val_set, num_classes=26)
-
-        try:
-            if val_metrics.get("confusion_matrix") is not None:
-                plot_confusion_matrix(
-                    np.array(val_metrics["confusion_matrix"]),
-                    io.figures_dir,
-                    labels=list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
-                    out_filename=experiment_id + "_validation_confusion_matrix.png"
-                )
-        except Exception as e:
-            print(f"Aviso: falha ao salvar matriz de validação: {e}")
+        val_metrics = evaluator.evaluate(val_set, num_classes=CONFIG["num_classes"])
 
         print("\n=== CONJUNTO DE TESTE ===")
-        test_metrics = evaluator.evaluate(test_set, num_classes=26)
+        test_metrics = evaluator.evaluate(test_set, num_classes=CONFIG["num_classes"])
 
-        try:
-            if test_metrics.get("confusion_matrix") is not None:
-                plot_confusion_matrix(
-                    np.array(test_metrics["confusion_matrix"]),
-                    io.figures_dir,
-                    labels=list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"),
-                    out_filename=experiment_id + "_test_confusion_matrix.png"
-                )
-        except Exception as e:
-            print(f"Aviso: falha ao salvar matriz de teste: {e}")
+        report = {
+            "experiment_id": CONFIG["experiment_id"],
+            "history": history,
+            "train_metrics": train_metrics,
+            "val_metrics": val_metrics,
+            "test_metrics": test_metrics
+        }
 
         #SAVE FINAL MODELO + REPORT
-        io.save_model(mlp, experiment_id + "_final_weights")
-        io.save_predictions(mlp, test_set, experiment_id + "_test_outputs")   
-
+        io.save_model(mlp, CONFIG['experiment_id'] + "_final_weights")
+        io.save_predictions(mlp, test_set, CONFIG['experiment_id'] + "_test_outputs")   
+        io.save_report(report, f"{CONFIG['experiment_id']}_report")
 
 if __name__ == "__main__":
     main()

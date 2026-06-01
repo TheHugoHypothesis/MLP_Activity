@@ -20,15 +20,11 @@ O retorno é um dicionário com os resultados por fold e um resumo com média e
 desvio padrão das métricas principais.
 """
 
-from gerar_grafico import plot_confusion_matrix
-
 from statistics import mean, pstdev
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List
 
 from src.evaluation.evaluator import Evaluator
 from src.utils.dataset_utils import DatasetUtils, Dataset
-import os
-import numpy as np
 
 
 def _mean_and_std(values: List[float]) -> Dict[str, float]:
@@ -87,18 +83,6 @@ def run_stratified_k_fold(
             io_manager.save_model(model, f"{experiment_id}_fold_{fold_index}_final_weights")
             out_name = f"{experiment_id}_fold_{fold_index}_validation_outputs"
             io_manager.save_predictions(model, val_set, out_name)
-            
-            try:
-                cm = val_metrics.get("confusion_matrix")
-                if cm is not None:
-                    plot_confusion_matrix(
-                        np.array(cm),
-                        io_manager.figures_dir,
-                        labels=[str(i) for i in range(num_classes)],
-                        out_filename=f"{experiment_id}_fold_{fold_index}_validation_confusion_matrix.png"
-                    )
-            except Exception as e:
-                print(f"Aviso: não foi possível gerar matriz de confusão do fold {fold_index}: {e}")
 
         fold_results.append({
             "fold_index": fold_index,

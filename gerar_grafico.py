@@ -8,163 +8,120 @@ Renan Rodrigues Moreira - 15744874
 Clara Pires Campardo - 15446433
 """
 
+import sys
 import json
 import os
 import matplotlib.pyplot as plt
 import numpy as np
 
-
 def carregar_report(report_path: str):
     with open(report_path, "r") as file:
         return json.load(file)
 
-
-def gerar_grafico(report_path: str):
-    report = carregar_report(report_path)
-
-    train_loss = report["history"]["train_loss"]
-    val_loss = report["history"]["val_loss"]
-
+def plotar_curva_aprendizado(history: dict, figures_dir: str, filename_prefix: str):
+    train_loss = history["train_loss"]
+    val_loss = history["val_loss"]
     epocas = list(range(len(train_loss)))
 
     plt.figure(figsize=(10, 6))
-
-    plt.plot(
-        epocas,
-        train_loss,
-        label="Loss Treino",
-        marker="o",
-        linewidth=2
-    )
-
-    plt.plot(
-        epocas,
-        val_loss,
-        label="Validation Loss",
-        marker="s",
-        linestyle="--",
-        linewidth=2
-    )
-
+    plt.plot(epocas, train_loss, label="Loss Treino", marker="o", linewidth=2)
+    plt.plot(epocas, val_loss, label="Validation Loss", marker="s", linestyle="--", linewidth=2)
+    
     plt.title("Evolução do Erro no Treinamento")
     plt.xlabel("Épocas")
     plt.ylabel("Erro")
     plt.grid(True, linestyle=":")
     plt.legend()
-
-    plt.annotate(
-        f'Final: {train_loss[-1]:.6f}',
-        xy=(epocas[-1], train_loss[-1]),
-        xytext=(
-            epocas[-1] - max(5, len(epocas)//10),
-            train_loss[-1] + 0.01
-        ),
-        arrowprops=dict(
-            facecolor='black',
-            shrink=0.05,
-            width=1,
-            headwidth=5
-        ),
-        fontsize=10
-    )
-
+    
     plt.tight_layout()
-
-    plt.savefig("outputs/figures/train_loss.png", dpi=300)
-
-    print("Gráfico salvo em outputs/figures/train_loss.png")
-
-    #plt.show()
-
-
-def gerar_matriz_confusao(report_path: str):
-
-    report = carregar_report(report_path)
-
-    matrix = np.array(
-        report["val_metrics"]["confusion_matrix"]
-    )
-
-    alfabeto = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-
-    plt.figure(figsize=(12, 10))
-
-    plt.imshow(matrix, cmap="Blues", interpolation="nearest")
-
-    plt.title("Matriz de Confusão")
-    plt.colorbar()
-
-    tick_marks = np.arange(26)
-
-    plt.xticks(tick_marks, alfabeto)
-    plt.yticks(tick_marks, alfabeto)
-
-    plt.xlabel("Predição")
-    plt.ylabel("Valor Real")
-
-    for i in range(26):
-        for j in range(26):
-
-            value = matrix[i][j]
-
-            if value > 0:
-                plt.text(
-                    j,
-                    i,
-                    str(value),
-                    ha="center",
-                    va="center",
-                    color="white" if value > matrix.max()/2 else "black"
-                )
-
-    plot_confusion_matrix(matrix, "outputs/figures", labels=list("ABCDEFGHIJKLMNOPQRSTUVWXYZ"))
-
-    #plt.show()
+    os.makedirs(figures_dir, exist_ok=True)
+    out_path = os.path.join(figures_dir, f"{filename_prefix}_train_loss.png")
+    plt.savefig(out_path, dpi=300)
+    plt.close()
+    print(f"Gráfico de erro salvo em: {out_path}")
 
 
-if __name__ == "__main__":
-
-    REPORT_PATH = "outputs/reports/exp_001_report.json"
-
-    gerar_grafico(REPORT_PATH)
-
-    gerar_matriz_confusao(REPORT_PATH)
-
-
-
-
-def plot_confusion_matrix(matrix: np.ndarray, figures_dir: str, labels=None, out_filename: str = "confusion_matrix.png"):
+def plotar_matriz_confusao(matrix_list: list, figures_dir: str, filename_prefix: str, label_prefix: str):
+    if matrix_list is None:
+        return
+        
+    matrix = np.array(matrix_list)
     n = matrix.shape[0]
-    if labels is None:
-        labels = [str(i) for i in range(n)]
-
+    labels = [chr(65 + i) for i in range(n)] if n == 26 else [str(i) for i in range(n)]
     plt.figure(figsize=(12, 10))
     plt.imshow(matrix, cmap="Blues", interpolation="nearest")
-    plt.title("Matriz de Confusão")
+    plt.title(f"Matriz de Confusão ({label_prefix.capitalize()})")
     plt.colorbar()
-
     tick_marks = np.arange(n)
     plt.xticks(tick_marks, labels)
     plt.yticks(tick_marks, labels)
-
     plt.xlabel("Predição")
     plt.ylabel("Valor Real")
-
     for i in range(n):
         for j in range(n):
             value = matrix[i][j]
             if value > 0:
                 plt.text(
-                    j,
-                    i,
-                    str(value),
-                    ha="center",
-                    va="center",
+                    j, i, str(value),
+                    ha="center", va="center",
                     color="white" if value > matrix.max()/2 else "black"
                 )
-
     plt.tight_layout()
     os.makedirs(figures_dir, exist_ok=True)
-    out_path = os.path.join(figures_dir, out_filename)
+    out_path = os.path.join(figures_dir, f"{filename_prefix}_{label_prefix}_confusion_matrix.png")
     plt.savefig(out_path, dpi=300)
-    print(f"Matriz salva em {out_path}")
+    plt.close()
+    print(f"Matriz de confusão de {label_prefix} salva em: {out_path}")
+
+def main():
+    if len(sys.argv) > 1:
+        report_path = sys.argv[1]
+    else:
+        report_path = "outputs/exp_001/reports/exp_001_report.json"
+    if not os.path.exists(report_path):
+        print(f"Erro: O arquivo de relatório {report_path} não existe.")
+        return
+    print(f"Lendo relatório de experimentos: {report_path}")
+    report = carregar_report(report_path)
+    
+    experiment_dir = os.path.dirname(os.path.dirname(report_path))
+    figures_dir = os.path.join(experiment_dir, "figures")
+        
+    #Extrai o ID do experimento do nome do arquivo ou do JSON
+    base_name = os.path.basename(report_path)
+    exp_id = base_name.split("_")[0]
+
+    #Fluxo de validação cruzada
+    if "folds" in report:
+        print("\n[Modo: Validação Cruzada Detectado]")
+        for fold in report["folds"]:
+            fold_idx = fold["fold_index"]
+            prefix = f"{exp_id}_fold_{fold_idx}"
+            
+            #Plota curva de perda do fold
+            if "history" in fold:
+                plotar_curva_aprendizado(fold["history"], figures_dir, prefix)
+                
+            #Plota matriz de confusão da validação do fold
+            val_m = fold.get("val_metrics", {})
+            if "confusion_matrix" in val_m:
+                plotar_matriz_confusao(val_m["confusion_matrix"], figures_dir, prefix, "validation")
+                
+    #Fluxo holdout normal
+    else:
+        print("\n[Modo: Holdout Padrão Detectado]")
+        # Curva de aprendizado global
+        plotar_curva_aprendizado(report["history"], figures_dir, exp_id)
+        
+        #Matriz de validação
+        val_m = report.get("val_metrics", {})
+        if "confusion_matrix" in val_m:
+            plotar_matriz_confusao(val_m["confusion_matrix"], figures_dir, exp_id, "validation")
+            
+        #Matriz de teste
+        test_m = report.get("test_metrics", {})
+        if "confusion_matrix" in test_m:
+            plotar_matriz_confusao(test_m["confusion_matrix"], figures_dir, exp_id, "test")
+
+if __name__ == "__main__":
+    main()
