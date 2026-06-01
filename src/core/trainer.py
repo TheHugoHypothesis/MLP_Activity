@@ -31,18 +31,6 @@ class Trainer:
         self.patience = patience
         self.min_delta = min_delta
     
-    def train_one_sample(
-        self,
-        entry: List[float],
-        y_real: List[float]
-    ) -> float:
-        y_prediction = self.model.forward(entry)
-        loss = self.loss_function.compute(y_prediction, y_real)
-        self.backpropagate(y_real)
-        self.update_weights()
-        
-        return loss
-    
     #Função de backpropagation que só calcula os deltas, mas não realiza atualização
     def backpropagate(
         self,
@@ -57,13 +45,13 @@ class Trainer:
         last_layer = self.model.layers[-1]
         for neuron, loss_gradient in zip(last_layer.neurons, loss_gradient_list):
             neuron.delta_k = neuron.activation.derivative(
-                neuron.last_local_induced_field
+                neuron.last_local_induced_field,
+                neuron.output
             ) * loss_gradient
 
             #popula gradiente para última camada
             neuron.parameter.bias_gradient = neuron.delta_k
-            for i in range(len(neuron.weights)):
-                neuron.parameter.weights_gradient[i] = neuron.delta_k * neuron.last_entry[i]
+            neuron.parameter.weights_gradient = [neuron.delta_k * val for val in neuron.last_entry]
 
         #Cálculo do delta para camadas seguintes
         for l in reversed(range(len(self.model.layers) - 1)):
@@ -76,13 +64,13 @@ class Trainer:
                     sum_delta_k += neuron_k.delta_k * neuron_k.parameter.weights[i]
                 
                 neuron.delta_k = sum_delta_k * neuron.activation.derivative(
-                    neuron.last_local_induced_field
+                    neuron.last_local_induced_field,
+                    neuron.output
                 )
 
                 #popula os gradientes para camadas seguintes
                 neuron.parameter.bias_gradient = neuron.delta_k
-                for j in range(len(neuron.weights)):
-                    neuron.parameter.weights_gradient[j] = neuron.delta_k * neuron.last_entry[j]
+                neuron.parameter.weights_gradient = [neuron.delta_k * val for val in neuron.last_entry]
 
     def update_weights(self):
         for layer in self.model.layers:
@@ -133,13 +121,25 @@ class Trainer:
 
         for epoch in range(epochs):
             total_train_loss: float = 0.0
+            correct_train = 0
 
             for x, y in train_dataset:
-                total_train_loss += self.train_one_sample(x, y)
+                y_prediction = self.model.forward(x)
+                loss = self.loss_function.compute(y_prediction, y)
+
+                self.backpropagate(y)
+                self.update_weights()
+
+                total_train_loss += loss
+
+                if y_prediction.index(max(y_prediction)) == y.index(max(y)):
+                    correct_train += 1
+
             
             average_train_loss = total_train_loss / len(train_dataset)
+            average_train_acc = correct_train / len(train_dataset)
+
             average_val_loss, average_val_acc = self.evaluate(val_dataset)
-            _, average_train_acc = self.evaluate(train_dataset)
 
             history["train_loss"].append(average_train_loss)
             history["val_loss"].append(average_val_loss)

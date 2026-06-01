@@ -32,7 +32,7 @@ CONFIG = {
 
     #Configurações de backpropagation e early stop
     "num_epochs": 400,
-    "learning_rate": 0.001,
+    "learning_rate": 0.01,
     "patience": 10,
     "min_delta": 0.0001,
 
@@ -41,7 +41,7 @@ CONFIG = {
     "num_classes": 26,
 
     #configurações de treinamento
-    "loss_function": "softmax_cross_entropy",
+    "loss_function": "mse",
     "optimizer": {
         "type": "sgd_momentum",
         "momentum": 0.9,
@@ -57,7 +57,7 @@ CONFIG = {
         },
         {
             "n_neurons": 26,
-            "activation": "linear",
+            "activation": "sigmoid",
             "initializer": "xavier"
         }
     ],
@@ -99,7 +99,9 @@ def main():
             )
         tempos["train"] = t_train.interval
         
-        io.save_training_history(result, f"{CONFIG["experiment_id"]}_cross_validation_report")
+        io.save_training_history(result, f"{CONFIG['experiment_id']}_cross_validation_report")
+        epocas_reais = sum(len(fold["history"]["train_loss"]) for fold in result["folds"])
+        exibir_dashboard_tempos(tempos, n_epochs=epocas_reais)
         
     else:
         #holdout estratificado
@@ -148,8 +150,9 @@ def main():
         io.save_model(mlp, CONFIG['experiment_id'] + "_final_weights")
         io.save_predictions(mlp, test_set, CONFIG['experiment_id'] + "_test_outputs")   
         io.save_report(report, f"{CONFIG['experiment_id']}_report")
-    
-    exibir_dashboard_tempos(tempos)
+
+        epocas_reais = len(history["train_loss"])
+        exibir_dashboard_tempos(tempos, n_epochs=epocas_reais)
 
 if __name__ == "__main__":
     main()

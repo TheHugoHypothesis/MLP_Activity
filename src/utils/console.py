@@ -20,8 +20,7 @@ class Timer:
         self.interval = self.end - self.start
 
 
-def exibir_dashboard_tempos(times: dict):
-    print("\n")
+def exibir_dashboard_tempos(times: dict, n_epochs: int = None):
     inner_w = 56
     def border(left, mid, right): return f"{left}{mid * (inner_w + 2)}{right}"
     def row(text): return f"│ {text:<{inner_w}} │"
@@ -35,7 +34,13 @@ def exibir_dashboard_tempos(times: dict):
     total_time = sum(times.values())
     
     lines.append(row(f"Carga do Dataset (DataLoader):    {times.get('load_data', 0.0):.4f}s"))
-    lines.append(row(f"Treinamento do Modelo (Trainer):   {times.get('train', 0.0):.4f}s"))
+    
+    train_time = times.get('train', 0.0)
+    lines.append(row(f"Treinamento do Modelo (Trainer):   {train_time:.4f}s"))
+    
+    if n_epochs is not None and n_epochs > 0:
+        time_per_epoch = train_time / n_epochs
+        lines.append(row(f"Tempo médio por Época:         {time_per_epoch:.4f}s/época ({n_epochs} épocas)"))
         
     lines.append(border("├", "─", "┤"))
     lines.append(row(f"Tempo Total Cronometrado:          {total_time:.4f}s"))

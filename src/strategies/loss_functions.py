@@ -84,7 +84,15 @@ class MAE(LossFunction):
 class SoftmaxCrossEntropy(LossFunction):
     SOFT_MAX_EPSILON = 1e-15
 
+    def __init__(self):
+        self._last_y_pred = None
+        self._last_probs = None
+
     def _softmax(self, logits: List[float]) -> List[float]:
+        #se for o mesmo vetor de entradas da ultima camada, retorna a probabilidade já calculada
+        if self._last_y_pred is logits:
+            return self._last_probs
+
         #estabilização numérica do softmax
         #(evita overflow no exp), isso é feito pelas operações
         #de fazer shift em relação ao máximo da lista por cada elemento (l - max_logit)
@@ -101,6 +109,9 @@ class SoftmaxCrossEntropy(LossFunction):
         probabilities = []
         for v in exp_values:
             probabilities.append(v / sum_exp)
+
+        self._last_y_pred = logits
+        self._last_probs = probabilities
 
         return probabilities
 

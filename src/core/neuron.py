@@ -10,7 +10,7 @@ Clara Pires Campardo - 15446433
 
 from typing import List
 from src.strategies.activation_function import ActivationFunction
-from src.utils.linear_algebra import scalar_product
+from src.utils.linear_algebra import scalar_product_optimized as scalar_product
 from src.core.parameter import Parameter
 
 """

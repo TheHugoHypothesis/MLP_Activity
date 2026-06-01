@@ -31,14 +31,14 @@ class ActivationFunction(ABC):
 
     """ Derivada da função de ativação """
     @abstractmethod
-    def derivative(self, vk: float) -> float:
+    def derivative(self, vk: float, output: float = None) -> float:
         pass
 
 class RELU(ActivationFunction):
     def activate(self, vk: float) -> float:
         return max(0.0, vk)
     
-    def derivative(self, vk: float) -> float:
+    def derivative(self, vk: float, output: float = None) -> float:
         #Usado para tirar indefinição no ponto 0
         if (vk == 0): 
             return 0.0
@@ -56,7 +56,7 @@ class LeakyRELU(ActivationFunction):
             return vk
         return self.LEAKY_RELU_ALPHA * vk
     
-    def derivative(self, vk: float) -> float:
+    def derivative(self, vk: float, output: float = None) -> float:
         if (vk > 0.0):
             return 1.0
         return self.LEAKY_RELU_ALPHA
@@ -72,13 +72,17 @@ class Sigmoid(ActivationFunction):
         exp_vk = math.exp(vk)
         return exp_vk / (1.0 + exp_vk)
 
-    def derivative(self, vk: float) -> float:
-        s = self.activate(vk)
+    def derivative(self, vk: float, output: float = None) -> float:
+        #cache para nao recalcular ativação
+        if output is not None:
+            s = output
+        else:
+            s = self.activate(vk)
         return s * (1.0 - s)
 
 class Linear(ActivationFunction):
     def activate(self, vk: float) -> float:
         return vk
     
-    def derivative(self, vk: float) -> float:
+    def derivative(self, vk: float, output: float = None) -> float:
         return 1.0

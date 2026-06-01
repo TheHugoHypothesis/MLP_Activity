@@ -9,6 +9,7 @@ Clara Pires Campardo - 15446433
 """
 
 from typing import List
+import operator
 
 """ Módulo que contém funções relacionadas à Álgebra Linear """
 
@@ -31,3 +32,15 @@ def scalar_product(
         total += list_1[i] * list_2[i]
 
     return total
+
+""" 
+Realiza o produto escalar entre duas listas Python, como antes
+contudo, nesse código usa a biblioteca nativa Operator do Python,
+que permite funções mais eficientes (compiladas em C) dos objetos
+Referência: https://docs.python.org/3/library/operator.html
+"""
+def scalar_product_optimized(list_1: List[float], list_2: List[float]) -> float:
+    if len(list_1) != len(list_2):
+        raise ValueError("Tentativa de cálculo de produto escalar entre listas de tamanhos distintos.")
+        
+    return sum(map(operator.mul, list_1, list_2))   
