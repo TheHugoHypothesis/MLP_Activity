@@ -19,7 +19,7 @@ class IOManager:
         self.models_dir = os.path.join(base_dir, "models")
         self.reports_dir = os.path.join(base_dir, "reports")
         self.figures_dir = os.path.join(base_dir, "figures")
-        # ensure base outputs folder exists but do NOT create the subfolders here
+
         os.makedirs(self.base_dir, exist_ok=True)
         self.current_run = None
 

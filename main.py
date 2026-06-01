@@ -17,7 +17,8 @@ from src.utils.data_loader import DataLoader
 from src.utils.dataset_utils import DatasetUtils
 from src.utils.io_manager import IOManager
 from src.utils.cross_validation import run_stratified_k_fold
-from src.utils.console import exibir_dashboard_configuracoes
+
+from src.utils.console import exibir_dashboard_configuracoes, Timer, exibir_dashboard_tempos
 
 """ Configuração a ser usada """
 CONFIG = {
@@ -70,28 +71,34 @@ CONFIG = {
 def main():
     exibir_dashboard_configuracoes(CONFIG)
     random.seed(CONFIG["random_seed"])
+    tempos = {}
 
     io = IOManager()
-    dataset = DataLoader.load_character_from_alphabet(
-        CONFIG["x_path"],
-        CONFIG["y_path"]
-    )
+
+    with Timer() as t_data:
+        dataset = DataLoader.load_character_from_alphabet(
+            CONFIG["x_path"],
+            CONFIG["y_path"]
+        )
+    tempos["load_data"] = t_data.interval
     
     run_name = io.start_run(CONFIG["experiment_id"])
     io.save_experiment_config(CONFIG, f"{CONFIG['experiment_id']}_experiment_config")
 
     if CONFIG["use_cross_validation"]:
-        result = run_stratified_k_fold(
-            dataset=dataset,
-            k=CONFIG["cross_validation_folds"],
-            build_model=lambda: build_model(CONFIG),
-            build_trainer=lambda m: build_trainer(m, CONFIG),
-            epochs=CONFIG["num_epochs"],
-            num_classes=CONFIG["num_classes"],
-            io_manager=io,
-            experiment_id=CONFIG["experiment_id"]
-        )
-
+        with Timer() as t_train:
+            result = run_stratified_k_fold(
+                dataset=dataset,
+                k=CONFIG["cross_validation_folds"],
+                build_model=lambda: build_model(CONFIG),
+                build_trainer=lambda m: build_trainer(m, CONFIG),
+                epochs=CONFIG["num_epochs"],
+                num_classes=CONFIG["num_classes"],
+                io_manager=io,
+                experiment_id=CONFIG["experiment_id"]
+            )
+        tempos["train"] = t_train.interval
+        
         io.save_training_history(result, f"{CONFIG["experiment_id"]}_cross_validation_report")
         
     else:
@@ -107,13 +114,15 @@ def main():
 
         trainer = build_trainer(mlp, CONFIG)
 
-        #LOOP TREINO
-        history = trainer.train(
-            train_dataset=train_set,
-            val_dataset=val_set,
-            epochs=CONFIG["num_epochs"]
-        )
+        with Timer() as t_train:
+            #LOOP TREINO
+            history = trainer.train(
+                train_dataset=train_set,
+                val_dataset=val_set,
+                epochs=CONFIG["num_epochs"]
+            )
 
+        tempos["train"] = t_train.interval
         io.save_training_history(history, CONFIG['experiment_id'] + "_training_history")
 
         evaluator = Evaluator(mlp, loss_function=trainer.loss_function)
@@ -139,6 +148,8 @@ def main():
         io.save_model(mlp, CONFIG['experiment_id'] + "_final_weights")
         io.save_predictions(mlp, test_set, CONFIG['experiment_id'] + "_test_outputs")   
         io.save_report(report, f"{CONFIG['experiment_id']}_report")
+    
+    exibir_dashboard_tempos(tempos)
 
 if __name__ == "__main__":
     main()

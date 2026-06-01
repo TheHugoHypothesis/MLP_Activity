@@ -8,6 +8,41 @@ Renan Rodrigues Moreira - 15744874
 Clara Pires Campardo - 15446433
 """
 
+import time
+
+""" Tempo para a execução de códigos """
+class Timer:
+    def __enter__(self):
+        self.start = time.perf_counter()
+        return self
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        self.end = time.perf_counter()
+        self.interval = self.end - self.start
+
+
+def exibir_dashboard_tempos(times: dict):
+    print("\n")
+    inner_w = 56
+    def border(left, mid, right): return f"{left}{mid * (inner_w + 2)}{right}"
+    def row(text): return f"│ {text:<{inner_w}} │"
+    def center_row(text): return f"│{text.center(inner_w + 2)}│"
+    lines = [
+        border("┌", "─", "┐"),
+        center_row("TEMPOS DE EXECUÇÃO DO PIPELINE"),
+        border("├", "─", "┤")
+    ]
+    
+    total_time = sum(times.values())
+    
+    lines.append(row(f"Carga do Dataset (DataLoader):    {times.get('load_data', 0.0):.4f}s"))
+    lines.append(row(f"Treinamento do Modelo (Trainer):   {times.get('train', 0.0):.4f}s"))
+        
+    lines.append(border("├", "─", "┤"))
+    lines.append(row(f"Tempo Total Cronometrado:          {total_time:.4f}s"))
+    lines.append(border("└", "─", "┘\n"))
+    
+    print("\n".join(lines))
+
 def exibir_dashboard_configuracoes(config: dict):
     inner_w = 56
     def border(left, mid, right): return f"{left}{mid * (inner_w + 2)}{right}"
