@@ -42,9 +42,13 @@ def run_stratified_k_fold(
     epochs: int,
     num_classes: int = None,
     io_manager=None,
-    experiment_id: str = None
+    experiment_id: str = None,
+    use_stratification: bool = True
 ) -> Dict[str, Any]:
-    folds = DatasetUtils.stratified_k_fold_split(dataset, k)
+    if use_stratification:
+        folds = DatasetUtils.stratified_k_fold_split(dataset, k)
+    else:
+        folds = DatasetUtils.random_k_fold_split(dataset, k)
     fold_results: List[Dict[str, Any]] = []
 
     train_accuracies: List[float] = []

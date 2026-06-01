@@ -67,6 +67,16 @@ def exibir_dashboard_configuracoes(config: dict):
         detalhe_modo = f"{modo} ({config['hold_out_p_train']*100:.1f}% Treino, {config['hold_out_p_validation']*100:.1f}% Val)"
     
     lines.append(row(f"Modo:          {detalhe_modo}"))
+    
+    estratificado = "Sim" if config.get("use_stratification", True) else "Não (Amostragem Aleatória)"
+    lines.append(row(f"Estratificado: {estratificado}"))
+    
+    if config.get("merge_classes"):
+        merge_info = ", ".join("+".join(group) for group in config["merge_classes"])
+    else:
+        merge_info = "Nenhuma (26 classes originais)"
+    lines.append(row(f"Mesclagem:     {merge_info}"))
+
     lines.append(row(f"Épocas:        {config['num_epochs']}"))
     lines.append(row(f"Learning Rate: {config['learning_rate']}"))
     lines.append(row(f"Early Stop:    Paciência: {config['patience']} | Delta Mínimo: {config['min_delta']}"))

@@ -32,7 +32,7 @@ CONFIG = {
 
     #Configurações de backpropagation e early stop
     "num_epochs": 400,
-    "learning_rate": 0.01,
+    "learning_rate": 0.01, #0.001 funciona bem para softmax_cross_entropy, 0.01 funciona bem para MSE
     "patience": 10,
     "min_delta": 0.0001,
 
@@ -41,9 +41,9 @@ CONFIG = {
     "num_classes": 26,
 
     #configurações de treinamento
-    "loss_function": "mse",
+    "loss_function": "mse", #possíveis valores: ["mse", "mae", "softmax_cross_entropy"]
     "optimizer": {
-        "type": "sgd_momentum",
+        "type": "sgd_momentum", #possíveis valores: ["sgd", "sgd_momentum"]
         "momentum": 0.9,
         "l2_decay": 0.0001
     },
@@ -51,13 +51,13 @@ CONFIG = {
     #configurações de camadas
     "layers": [
         {
-            "n_neurons": 64,
-            "activation": "relu",
-            "initializer": "he"
+            "n_neurons": 40,#40 neuronios parece funcionar bem para softmax_cross_entropy e MSE
+            "activation": "relu", #possíveis valores: ["relu", "leaky_relu", "linear", "sigmoid"].
+            "initializer": "he" #possíveis valores: ["uniform", "normal", "he", "xavier"]
         },
         {
             "n_neurons": 26,
-            "activation": "sigmoid",
+            "activation": "sigmoid", #possíveis valores: ["relu", "leaky_relu", "linear", "sigmoid"]. Use linear na saída ao usar softmax_cross_entropy, sigmoid para MSE.
             "initializer": "xavier"
         }
     ],
@@ -65,11 +65,17 @@ CONFIG = {
     #configurações de dados e randomização
     "random_seed": 3,
     "x_path": "data/raw/X.npy",
-    "y_path": "data/raw/Y_classe.npy"
+    "y_path": "data/raw/Y_classe.npy",
+
+    #configurações de ruído
+    #permite mesclar classes informando letras (como D e O, I e J), para desativar e usar as 26, basta definir como None
+    #exemplo de mesclagem: "merge_classes": [["D", "O"], ["I", "J"]], 
+    "merge_classes": None,
+    #habilita estratificação na estratégia escolhida de dataset (seja holdout ou k-fold)
+    "use_stratification": True
 }
 
 def main():
-    exibir_dashboard_configuracoes(CONFIG)
     random.seed(CONFIG["random_seed"])
     tempos = {}
 
@@ -81,7 +87,16 @@ def main():
             CONFIG["y_path"]
         )
     tempos["load_data"] = t_data.interval
+
+    #Modificações do dataset de ruído
+    num_classes = CONFIG["num_classes"]
+    if CONFIG.get("merge_classes"):
+        dataset, num_classes = DatasetUtils.merge_classes(dataset, CONFIG["merge_classes"])
+        CONFIG["num_classes"] = num_classes
+        CONFIG["layers"][-1]["n_neurons"] = num_classes
+        print(f"\n[Dataset] Mesclagem de classes. Nova dimensão de saída: {num_classes} classes.")
     
+    exibir_dashboard_configuracoes(CONFIG)
     run_name = io.start_run(CONFIG["experiment_id"])
     io.save_experiment_config(CONFIG, f"{CONFIG['experiment_id']}_experiment_config")
 
@@ -95,7 +110,8 @@ def main():
                 epochs=CONFIG["num_epochs"],
                 num_classes=CONFIG["num_classes"],
                 io_manager=io,
-                experiment_id=CONFIG["experiment_id"]
+                experiment_id=CONFIG["experiment_id"],
+                use_stratification=CONFIG.get("use_stratification", True)
             )
         tempos["train"] = t_train.interval
         
@@ -105,11 +121,19 @@ def main():
         
     else:
         #holdout estratificado
-        train_set, val_set, test_set = DatasetUtils.stratified_split(
-            dataset=dataset,
-            p_train=CONFIG["hold_out_p_train"],
-            p_val=CONFIG["hold_out_p_validation"]
-        )
+        if CONFIG.get("use_stratification", True):
+            train_set, val_set, test_set = DatasetUtils.stratified_split(
+                dataset=dataset,
+                p_train=CONFIG["hold_out_p_train"],
+                p_val=CONFIG["hold_out_p_validation"]
+            )
+        #holdout randomizado
+        else:
+            train_set, val_set, test_set = DatasetUtils.random_split(
+                dataset=dataset,
+                p_train=CONFIG["hold_out_p_train"],
+                p_val=CONFIG["hold_out_p_validation"]
+            )
 
         mlp = build_model(CONFIG)
         io.save_model(mlp, f"{CONFIG['experiment_id']}_initial_weights")
