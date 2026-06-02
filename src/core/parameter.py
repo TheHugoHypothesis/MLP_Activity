@@ -20,10 +20,17 @@ class Parameter:
     def __init__(
         self,
         weights: List[float],
-        bias: float = 0.0
+        bias: float = 0.0,
+        use_numpy: bool = False
     ):
-        self._weights = weights
-        self.weights_gradient = [0.0 for _ in weights]
+        self.use_numpy = use_numpy
+        if use_numpy:
+            import numpy as np
+            self._weights = np.array(weights, dtype=np.float64)
+            self.weights_gradient = np.zeros_like(self._weights)
+        else:
+            self._weights = weights
+            self.weights_gradient = [0.0 for _ in weights]
 
         self._bias = bias
         self.bias_gradient = 0.0
@@ -36,7 +43,11 @@ class Parameter:
     def weights(self, new_weights: List[float]):
         if len(new_weights) != len(self._weights):
             raise ValueError(f"A qtde. de pesos informada é inválida.")
-        self._weights = new_weights
+        if getattr(self, "use_numpy", False):
+            import numpy as np
+            self._weights = np.array(new_weights, dtype=np.float64)
+        else:
+            self._weights = new_weights
 
     @property
     def bias(self) -> float:

@@ -51,17 +51,29 @@ class Trainer:
 
             #popula gradiente para última camada
             neuron.parameter.bias_gradient = neuron.delta_k
-            neuron.parameter.weights_gradient = [neuron.delta_k * val for val in neuron.last_entry]
+            if self.model.use_numpy:
+                import numpy as np
+                neuron.parameter.weights_gradient = neuron.delta_k * np.array(neuron.last_entry)
+            else:
+                neuron.parameter.weights_gradient = [neuron.delta_k * val for val in neuron.last_entry]
 
         #Cálculo do delta para camadas seguintes
         for l in reversed(range(len(self.model.layers) - 1)):
             actual_layer = self.model.layers[l]
             next_layer = self.model.layers[l + 1]
 
+            if self.model.use_numpy:
+                import numpy as np
+                deltas = np.array([neuron_k.delta_k for neuron_k in next_layer.neurons])
+
             for i, neuron in enumerate(actual_layer.neurons):
-                sum_delta_k : float = 0.0
-                for neuron_k in next_layer.neurons:
-                    sum_delta_k += neuron_k.delta_k * neuron_k.parameter.weights[i]
+                if self.model.use_numpy:
+                    weights_i = np.array([neuron_k.parameter.weights[i] for neuron_k in next_layer.neurons])
+                    sum_delta_k = np.dot(deltas, weights_i)
+                else:
+                    sum_delta_k : float = 0.0
+                    for neuron_k in next_layer.neurons:
+                        sum_delta_k += neuron_k.delta_k * neuron_k.parameter.weights[i]
                 
                 neuron.delta_k = sum_delta_k * neuron.activation.derivative(
                     neuron.last_local_induced_field,
@@ -70,7 +82,11 @@ class Trainer:
 
                 #popula os gradientes para camadas seguintes
                 neuron.parameter.bias_gradient = neuron.delta_k
-                neuron.parameter.weights_gradient = [neuron.delta_k * val for val in neuron.last_entry]
+                if self.model.use_numpy:
+                    import numpy as np
+                    neuron.parameter.weights_gradient = neuron.delta_k * np.array(neuron.last_entry)
+                else:
+                    neuron.parameter.weights_gradient = [neuron.delta_k * val for val in neuron.last_entry]
 
     def update_weights(self):
         for layer in self.model.layers:

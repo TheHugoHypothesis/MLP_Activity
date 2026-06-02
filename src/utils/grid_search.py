@@ -10,6 +10,7 @@ Clara Pires Campardo - 15446433
 
 from copy import deepcopy
 import time
+import random
 from typing import Dict, Any, List
 
 from src.fabric import build_model, build_trainer
@@ -29,6 +30,18 @@ def evaluate_combo(
     o treinamento (via validação cruzada ou holdout), retornando as métricas obtidas.
     """
     cfg = deepcopy(base_config)
+    random.seed(cfg.get("random_seed", 3))
+    try:
+        import numpy as np
+        np.random.seed(cfg.get("random_seed", 3))
+    except ImportError:
+        pass
+
+    print("\n" + "="*75)
+    print("[Avaliação] Testando nova combinação de hiperparâmetros:")
+    for key, val in combo.items():
+        print(f"  • {key}: {val}")
+    print("="*75)
 
     # Aplica a combinação atual nas configurações base
     if "hidden_neurons" in combo:
@@ -55,6 +68,8 @@ def evaluate_combo(
         cfg["hold_out_p_validation"] = combo["p_val"]
     if "cross_validation_folds" in combo:
         cfg["cross_validation_folds"] = combo["cross_validation_folds"]
+    if "loss_function" in combo:
+        cfg["loss_function"] = combo["loss_function"]
 
     start = time.time()
 
@@ -115,6 +130,10 @@ def evaluate_combo(
 
     elapsed = time.time() - start
 
+    print("\n" + "-"*75)
+    print(f"[Resultado] Acurácia Validação: {val_acc:.4f} | Perda: {val_loss} | Tempo: {elapsed:.2f}s")
+    print("-"*75 + "\n")
+
     return {
         "combo": combo,
         "val_accuracy": val_acc,
@@ -135,7 +154,6 @@ def run_hill_climbing_search(
     Nesta estratégia iterativa, a busca navega de um vizinho ao outro mudando 1 parâmetro 
     por vez, até chegar a um ponto onde nenhuma alteração melhore a acurácia de validação.
     """
-    # 1. Inicia a partir do meio das opções disponíveis no grid_space
     current_combo = {k: v[len(v)//2] for k, v in grid_space.items() if v}
     
     print(f"\n[Hill Climbing] Iniciando estado base: {current_combo}")
@@ -150,7 +168,7 @@ def run_hill_climbing_search(
     while True:
         print(f"\n--- [Hill Climbing] Passo {step} | Atual Melhor Acurácia: {best_acc:.4f} ---")
         
-        # 2. Gera os vizinhos (move 1 passo para a esquerda ou para a direita na lista de opções)
+        #Gera os vizinhos (move 1 passo para a esquerda ou para a direita na lista de opções)
         neighbors = []
         for key, allowed_values in grid_space.items():
             if len(allowed_values) <= 1:
@@ -166,7 +184,7 @@ def run_hill_climbing_search(
                 n_right[key] = allowed_values[idx + 1]
                 neighbors.append(n_right)
                 
-        # Descarta vizinhos já testados anteriormente
+        #Descarta vizinhos já testados anteriormente
         unvisited = [n for n in neighbors if str(n) not in visited]
         if not unvisited:
             print("[Hill Climbing] Nenhum vizinho novo para explorar. Ótimo local atingido!")
@@ -175,7 +193,7 @@ def run_hill_climbing_search(
         print(f"[Hill Climbing] Avaliando {len(unvisited)} vizinhos ao redor da configuração atual...")
         best_neighbor_result = None
         
-        # 3. Testa todos os vizinhos
+        #Testa todos os vizinhos
         for n_combo in unvisited:
             n_res = evaluate_combo(dataset, base_config, n_combo)
             visited[str(n_combo)] = n_res
@@ -183,7 +201,7 @@ def run_hill_climbing_search(
             if best_neighbor_result is None or n_res.get("val_accuracy", 0.0) > best_neighbor_result.get("val_accuracy", 0.0):
                 best_neighbor_result = n_res
                 
-        # 4. Checa se o melhor vizinho supera a nossa configuração atual
+        #Checa se o melhor vizinho supera a nossa configuração atual
         if best_neighbor_result and best_neighbor_result.get("val_accuracy", 0.0) > best_acc:
             print(f"[Hill Climbing] Sucesso! Acurácia subiu de {best_acc:.4f} para {best_neighbor_result.get('val_accuracy', 0.0):.4f}")
             current_combo = best_neighbor_result["combo"]
@@ -192,7 +210,18 @@ def run_hill_climbing_search(
         else:
             print("[Hill Climbing] Nenhuma melhoria entre os vizinhos testados. Fim da busca!")
             break
-            
+        
+        if io_manager is not None:
+            partial_report = {
+                "experiment_id": experiment_id,
+                "base_config": base_config,
+                "grid_space": grid_space,
+                "results": list(visited.values()),
+                "best_model": current_result,
+                "partial_step": step
+            }
+            io_manager.save_report(partial_report, f"{experiment_id}_hill_climbing_partial")
+
         step += 1
         
     # Salva relatório do Hill Climbing

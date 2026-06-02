@@ -11,6 +11,8 @@ Clara Pires Campardo - 15446433
 from src.core.network import MultilayerPerceptron
 from src.core.trainer import Trainer
 from src.core.layer import LayerConfig
+from src.core.matrix_network import MatrixMultilayerPerceptron
+from src.core.matrix_trainer import MatrixTrainer
 
 from src.strategies.trainer_optimizer import *
 from src.strategies.loss_functions import *
@@ -44,7 +46,7 @@ OPTIMIZERS = {
 }
 
 """ Construtores de treinador e modelo """
-def build_model(config: dict) -> MultilayerPerceptron:
+def build_model(config: dict):
     layer_configs = []
     for layer in config["layers"]:
         activation_cls = ACTIVATIONS[layer["activation"]]
@@ -57,23 +59,40 @@ def build_model(config: dict) -> MultilayerPerceptron:
                 initializer=initializer_cls()
             )
         )
+        
+    if config.get("use_matrix_vectorization", False):
+        return MatrixMultilayerPerceptron(
+            layer_configs=layer_configs,
+            input_size=config["input_size"]
+        )
+        
     return MultilayerPerceptron(
         layer_configs=layer_configs,
-        input_size=config["input_size"]
+        input_size=config["input_size"],
+        use_numpy=config.get("use_numpy", False)
     )
 
-def build_trainer(model, config: dict) -> Trainer:
+def build_trainer(model, config: dict):
     loss_cls = LOSS_FUNCTIONS[config["loss_function"]]
     loss_fn = loss_cls()
     opt_config = config["optimizer"]
-    opt_cls = OPTIMIZERS[opt_config["type"]]
     if opt_config["type"] == "sgd_momentum":
-        optimizer = opt_cls(
+        optimizer = SGD_momentum(
             momentum=opt_config.get("momentum", 0.9),
             l2_decay=opt_config.get("l2_decay", 0.0)
         )
     else:
-        optimizer = opt_cls()
+        optimizer = SGD()
+        
+    if config.get("use_matrix_vectorization", False):
+        return MatrixTrainer(
+            model=model,
+            loss_function=loss_fn,
+            optimizer=optimizer,
+            learning_rate=config["learning_rate"],
+            patience=config.get("patience"),
+            min_delta=config.get("min_delta", 0.0)
+        )
         
     return Trainer(
         model=model,

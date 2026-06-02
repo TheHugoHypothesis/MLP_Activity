@@ -26,9 +26,11 @@ class MultilayerPerceptron:
     def __init__(
         self,
         layer_configs: List[LayerConfig],
-        input_size: int
+        input_size: int,
+        use_numpy: bool = False
     ):
         self.layers = []
+        self.use_numpy = use_numpy
 
         #Listas de cache usadas no backpropagation
         self.last_inputs: List[List[float]] = []
@@ -45,7 +47,8 @@ class MultilayerPerceptron:
                 number_of_neurons=config.n_neurons,
                 number_of_inputs=current_input_size,
                 activation=config.activation,
-                weight_initializer=config.initializer
+                weight_initializer=config.initializer,
+                use_numpy=use_numpy
             )
             self.layers.append(layer)
             current_input_size = config.n_neurons

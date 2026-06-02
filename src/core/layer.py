@@ -29,7 +29,8 @@ class PerceptronLayer:
         number_of_neurons: int,
         number_of_inputs: int,
         activation: ActivationFunction,
-        weight_initializer: WeightInitializer
+        weight_initializer: WeightInitializer,
+        use_numpy: bool = False
     ):
         self.neurons = []
 
@@ -46,7 +47,8 @@ class PerceptronLayer:
             self.neurons.append(
                 PerceptronNeuron(
                     weights,
-                    activation
+                    activation,
+                    use_numpy=use_numpy
                 )
             )
 

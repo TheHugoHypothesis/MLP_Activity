@@ -43,8 +43,11 @@ class SGD(Optimizer):
             weights = neuron.weights
             param = neuron.parameter
 
-            for i in range(len(weights)):
-                weights[i] -= learning_rate * param.weights_gradient[i]
+            if getattr(neuron, "use_numpy", False):
+                weights -= learning_rate * param.weights_gradient
+            else:
+                for i in range(len(weights)):
+                    weights[i] -= learning_rate * param.weights_gradient[i]
             neuron.bias -= learning_rate * param.bias_gradient
 
 """ Implementação de SGD com Momentum
@@ -80,22 +83,34 @@ class SGD_momentum(Optimizer):
             weights = neuron.weights
             param = neuron.parameter
             gradients = param.weights_gradient
+            use_numpy = getattr(neuron, "use_numpy", False)
 
             #Inicializa as velocidades na primeira atualização
             if param not in self.weight_velocity:
-                self.weight_velocity[param] = [0.0] * len(weights)
+                if use_numpy:
+                    import numpy as np
+                    self.weight_velocity[param] = np.zeros_like(weights)
+                else:
+                    self.weight_velocity[param] = [0.0] * len(weights)
                 self.bias_velocity[param] = 0.0
             
             weight_vel = self.weight_velocity[param]
 
-            for i in range(len(weights)):
-                gradient = param.weights_gradient[i]
+            if use_numpy:
+                gradient = param.weights_gradient
                 if self.l2_decay > 0.0:
-                    gradient += self.l2_decay * weights[i]
+                    gradient = gradient + self.l2_decay * weights
+                weight_vel[:] = self.momentum * weight_vel + learning_rate * gradient
+                weights -= weight_vel
+            else:
+                for i in range(len(weights)):
+                    gradient = param.weights_gradient[i]
+                    if self.l2_decay > 0.0:
+                        gradient += self.l2_decay * weights[i]
 
-                #Atualização da velocidade (faz média móvel exponencial dos gradientes)
-                weight_vel[i] = self.momentum * weight_vel[i] + learning_rate * gradient
-                weights[i] -= weight_vel[i]
+                    #Atualização da velocidade (faz média móvel exponencial dos gradientes)
+                    weight_vel[i] = self.momentum * weight_vel[i] + learning_rate * gradient
+                    weights[i] -= weight_vel[i]
 
             #Cálculo de velocidade e momentum do bias
             #basicamente é uma repetição do código anterior mas para o bias sozinho

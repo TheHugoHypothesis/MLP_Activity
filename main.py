@@ -22,7 +22,9 @@ from src.utils.console import exibir_dashboard_configuracoes, Timer, exibir_dash
 
 """ Configuração a ser usada """
 CONFIG = {
-    "experiment_id": "exp_001",
+    "experiment_id": "exp_006",
+    "use_numpy": True,
+    "use_matrix_vectorization": True,
 
     #Configurações de separação do Dataset
     "use_cross_validation": False,#false=usa holdout, true=usa cross_validation
@@ -31,7 +33,7 @@ CONFIG = {
     "hold_out_p_validation": 0.15, #o complemento 1 - (hold_out_p_train + hold_out_p_validation) é implicitamente hold_out_p_test
 
     #Configurações de backpropagation e early stop
-    "num_epochs": 400,
+    "num_epochs": 800,
     "learning_rate": 0.01, #0.001 funciona bem para softmax_cross_entropy, 0.01 funciona bem para MSE
     "patience": 10,
     "min_delta": 0.0001,
@@ -44,21 +46,21 @@ CONFIG = {
     "loss_function": "mse", #possíveis valores: ["mse", "mae", "softmax_cross_entropy"]
     "optimizer": {
         "type": "sgd_momentum", #possíveis valores: ["sgd", "sgd_momentum"]
-        "momentum": 0.9,
-        "l2_decay": 0.0001
+        "momentum": 0.8,
+        "l2_decay": 1e-05
     },
 
     #configurações de camadas
     "layers": [
         {
-            "n_neurons": 40,#40 neuronios parece funcionar bem para softmax_cross_entropy e MSE
-            "activation": "relu", #possíveis valores: ["relu", "leaky_relu", "linear", "sigmoid"].
-            "initializer": "he" #possíveis valores: ["uniform", "normal", "he", "xavier"]
+            "n_neurons": 64,#40 neuronios parece funcionar bem para softmax_cross_entropy e MSE
+            "activation": "sigmoid", #possíveis valores: ["relu", "leaky_relu", "linear", "sigmoid"].
+            "initializer": "uniform" #possíveis valores: ["uniform", "normal", "he", "xavier"]
         },
         {
             "n_neurons": 26,
             "activation": "sigmoid", #possíveis valores: ["relu", "leaky_relu", "linear", "sigmoid"]. Use linear na saída ao usar softmax_cross_entropy, sigmoid para MSE.
-            "initializer": "xavier"
+            "initializer": "xavier"  #possíveis valores: ["uniform", "normal", "he", "xavier"]
         }
     ],
 
@@ -77,6 +79,11 @@ CONFIG = {
 
 def main():
     random.seed(CONFIG["random_seed"])
+    try:
+        import numpy as np
+        np.random.seed(CONFIG["random_seed"])
+    except ImportError:
+        pass
     tempos = {}
 
     io = IOManager()
@@ -115,6 +122,9 @@ def main():
             )
         tempos["train"] = t_train.interval
         
+        result["experiment_id"] = CONFIG["experiment_id"]
+        result["num_epochs"] = CONFIG["num_epochs"]
+        result["patience"] = CONFIG.get("patience")
         io.save_training_history(result, f"{CONFIG['experiment_id']}_cross_validation_report")
         epocas_reais = sum(len(fold["history"]["train_loss"]) for fold in result["folds"])
         exibir_dashboard_tempos(tempos, n_epochs=epocas_reais)
@@ -164,6 +174,8 @@ def main():
 
         report = {
             "experiment_id": CONFIG["experiment_id"],
+            "num_epochs": CONFIG["num_epochs"],
+            "patience": CONFIG.get("patience"),
             "history": history,
             "train_metrics": train_metrics,
             "val_metrics": val_metrics,

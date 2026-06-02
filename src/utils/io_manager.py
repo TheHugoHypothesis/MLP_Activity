@@ -70,7 +70,7 @@ class IOManager:
             layer_data = []
             for neuron in layer.neurons:
                 layer_data.append({
-                    "weights": neuron.weights,
+                    "weights": neuron.weights.tolist() if hasattr(neuron.weights, "tolist") else list(neuron.weights),
                     "bias": neuron.bias
                 })
             data["layers"].append(layer_data)

@@ -30,10 +30,12 @@ class PerceptronNeuron:
         self, 
         weight_list: List[float], 
         activation: ActivationFunction,
-        bias: float = 0
+        bias: float = 0,
+        use_numpy: bool = False
     ):
-        self.parameter = Parameter(weight_list, bias)
+        self.parameter = Parameter(weight_list, bias, use_numpy=use_numpy)
         self.activation = activation
+        self.use_numpy = use_numpy
 
         self.last_entry: List[float] = []
         self.last_local_induced_field: float = 0.0
@@ -43,7 +45,11 @@ class PerceptronNeuron:
     #Método que gera uma saída dado a lista de entrada do neurônio
     def feedforward(self, entry_list: List[float]) -> float:
         self.last_entry = entry_list
-        self.last_local_induced_field = scalar_product(entry_list, self.weights) + self.bias
+        if self.use_numpy:
+            import numpy as np
+            self.last_local_induced_field = np.dot(entry_list, self.weights) + self.bias
+        else:
+            self.last_local_induced_field = scalar_product(entry_list, self.weights) + self.bias
         self.output = self.activation.activate(self.last_local_induced_field)
         return self.output
     
