@@ -77,7 +77,7 @@ def main():
     if len(sys.argv) > 1:
         report_path = sys.argv[1]
     else:
-        report_path = "outputs/exp_001/reports/exp_001_report.json"
+        report_path = "outputs/exp_008/reports/exp_008_report.json"
     if not os.path.exists(report_path):
         print(f"Erro: O arquivo de relatório {report_path} não existe.")
         return

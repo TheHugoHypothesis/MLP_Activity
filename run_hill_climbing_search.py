@@ -14,7 +14,7 @@ Utiliza a estratégia de Hill Climbing (Subida de Encosta) para encontrar
 a melhor combinação de parâmetros para a rede neural a partir de um espaço de busca.
 """
 
-from src.utils.grid_search import run_hill_climbing_search
+from src.utils.hill_climbing_search import run_hill_climbing_search
 from src.utils.data_loader import DataLoader
 from src.utils.io_manager import IOManager
 from main import CONFIG

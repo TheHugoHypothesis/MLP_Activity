@@ -147,7 +147,9 @@ def run_hill_climbing_search(
     base_config: Dict[str, Any],
     grid_space: Dict[str, List[Any]],
     io_manager,
-    experiment_id: str
+    experiment_id: str,
+    max_steps: int = 15,
+    min_loss_delta: float = 1e-4
 ):
     """
     Executa otimização Hill Climbing no espaço de hiperparâmetros fornecido em `grid_space`.
@@ -161,11 +163,16 @@ def run_hill_climbing_search(
     # Avalia a combinação inicial em memória
     current_result = evaluate_combo(dataset, base_config, current_combo)
     best_acc = current_result.get("val_accuracy", 0.0)
+    best_loss = current_result.get("val_loss") if current_result.get("val_loss") is not None else float('inf')
     
     visited = {str(current_combo): current_result}
     step = 1
     
     while True:
+        if step > max_steps:
+            print(f"\n[Hill Climbing] Limite máximo de {max_steps} passos atingido.")
+            break
+            
         print(f"\n--- [Hill Climbing] Passo {step} | Atual Melhor Acurácia: {best_acc:.4f} ---")
         
         #Gera os vizinhos (move 1 passo para a esquerda ou para a direita na lista de opções)
@@ -198,15 +205,31 @@ def run_hill_climbing_search(
             n_res = evaluate_combo(dataset, base_config, n_combo)
             visited[str(n_combo)] = n_res
             
-            if best_neighbor_result is None or n_res.get("val_accuracy", 0.0) > best_neighbor_result.get("val_accuracy", 0.0):
+            if best_neighbor_result is None:
                 best_neighbor_result = n_res
+            else:
+                n_acc = n_res.get("val_accuracy", 0.0)
+                b_acc = best_neighbor_result.get("val_accuracy", 0.0)
+                n_loss = n_res.get("val_loss") if n_res.get("val_loss") is not None else float('inf')
+                b_loss = best_neighbor_result.get("val_loss") if best_neighbor_result.get("val_loss") is not None else float('inf')
+                
+                if n_acc > b_acc or (n_acc == b_acc and n_loss < b_loss):
+                    best_neighbor_result = n_res
                 
         #Checa se o melhor vizinho supera a nossa configuração atual
-        if best_neighbor_result and best_neighbor_result.get("val_accuracy", 0.0) > best_acc:
-            print(f"[Hill Climbing] Sucesso! Acurácia subiu de {best_acc:.4f} para {best_neighbor_result.get('val_accuracy', 0.0):.4f}")
-            current_combo = best_neighbor_result["combo"]
-            best_acc = best_neighbor_result.get("val_accuracy", 0.0)
-            current_result = best_neighbor_result
+        if best_neighbor_result:
+            best_neighbor_acc = best_neighbor_result.get("val_accuracy", 0.0)
+            best_neighbor_loss = best_neighbor_result.get("val_loss") if best_neighbor_result.get("val_loss") is not None else float('inf')
+            
+            if best_neighbor_acc > best_acc or (best_neighbor_acc == best_acc and best_neighbor_loss < (best_loss - min_loss_delta)):
+                print(f"[Hill Climbing] Sucesso! Acurácia mudou de {best_acc:.4f} para {best_neighbor_acc:.4f} (Loss: {best_loss:.6f} -> {best_neighbor_loss:.6f})")
+                current_combo = best_neighbor_result["combo"]
+                best_acc = best_neighbor_acc
+                best_loss = best_neighbor_loss
+                current_result = best_neighbor_result
+            else:
+                print("[Hill Climbing] Nenhuma melhoria entre os vizinhos testados. Fim da busca!")
+                break
         else:
             print("[Hill Climbing] Nenhuma melhoria entre os vizinhos testados. Fim da busca!")
             break

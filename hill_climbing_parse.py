@@ -10,13 +10,14 @@ Clara Pires Campardo - 15446433
 
 import json
 import os
-report_path = "/home/elliot/Área de trabalho/God Ex Machina/40-49 Projects/41 BSI/41.05 5º Semestre/IA/MLP_Activity/outputs/reports/exp_006_hill_climbing_final.json"
+report_path = r"C:\Users\clara\Documents\GitHub\MLP_Activity\outputs\reports\exp_008_hill_hill_climbing_final.json"
 if not os.path.exists(report_path):
-    report_path = "/home/elliot/Área de trabalho/God Ex Machina/40-49 Projects/41 BSI/41.05 5º Semestre/IA/MLP_Activity/outputs/reports/exp_006_hill_hill_climbing_final.json"
-output_path = "grid_search.md"
+    report_path = r"C:\Users\clara\Documents\GitHub\MLP_Activity\outputs\reports\exp_008_hill_hill_climbing_final.json"
+output_path = "hill_climbing_search.md"
 with open(report_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 results = data.get("results", [])
+
 # Ordenar por acurácia de validação decrescente, e depois por val_loss crescente
 sorted_results = sorted(results, key=lambda x: (-x.get("val_accuracy", 0.0), x.get("val_loss", float('inf'))))
 markdown_content = """# 📊 Resumo da Otimização por Hill Climbing
@@ -33,13 +34,16 @@ Tabela resumida contendo todas as **{total_combos} combinações** de hiperparâ
   * Função de Perda: `{best_combo[loss_function]}`
   * Inicializador: `{best_combo[initializer]}`
   * Learning Rate: `{best_combo[learning_rate]}`
+  
   * Otimizador: `{best_combo[optimizer_type]}`
   * Momentum: `{best_combo[momentum]}`
   * L2 Decay: `{best_combo[l2_decay]}`
+  * Paciência (Early Stop): `{best_combo[patience]}`
+  * Épocas Máximas: `{best_combo[num_epochs]}`
 ---
 ## 📋 Tabela Geral de Resultados
-| # | Neurônios | Ativação | Perda | LR | Inicializador | Otimizador | Momentum | L2 Decay | Partição Treino | Épocas | Acurácia Treino | Acurácia Val | Val Loss | Tempo |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| # | Neurônios | Ativação | Perda | LR | Inicializador | Otimizador | Momentum | L2 Decay | Partição Treino | Ép. Real / Max | Paciência | Acurácia Treino | Acurácia Val | Val Loss | Tempo |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 """.format(
     total_combos=len(results),
     best_acc=data["best_model"]["val_accuracy"],
@@ -72,7 +76,11 @@ for idx, r in enumerate(sorted_results, 1):
 
     p_train_pct = c.get("p_train", 0.7) * 100.0
 
-    markdown_content += "| {idx} | {neurons} | {act} | {loss_fn} | {lr} | {init} | {opt} | {momentum} | {l2} | {p_train:.1f}% | {epochs} | **{train_acc:.2f}%** | **{val_acc:.2f}%** | {val_loss:.6f} | {time:.1f}s |\n".format(
+    patience = c.get("patience", "N/A")
+    max_epochs = c.get("num_epochs", "N/A")
+    epochs_str = f"{epochs_trained} / {max_epochs}"
+
+    markdown_content += "| {idx} | {neurons} | {act} | {loss_fn} | {lr} | {init} | {opt} | {momentum} | {l2} | {p_train:.1f}% | {epochs_str} | {patience} | **{train_acc:.2f}%** | **{val_acc:.2f}%** | {val_loss:.6f} | {time:.1f}s |\n".format(
         idx=idx,
         neurons=c.get("hidden_neurons"),
         act=c.get("activation"),
@@ -83,7 +91,8 @@ for idx, r in enumerate(sorted_results, 1):
         momentum=c.get("momentum"),
         l2=c.get("l2_decay"),
         p_train=p_train_pct,
-        epochs=epochs_trained,
+        epochs_str=epochs_str,
+        patience=patience,
         train_acc=train_acc * 100.0,
         val_acc=val_acc * 100.0,
         val_loss=val_loss,

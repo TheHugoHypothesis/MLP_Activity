@@ -22,9 +22,10 @@ from src.utils.console import exibir_dashboard_configuracoes, Timer, exibir_dash
 
 """ Configuração a ser usada """
 CONFIG = {
-    "experiment_id": "exp_006",
-    "use_numpy": True,
-    "use_matrix_vectorization": True,
+    "experiment_id": "exp_008",
+    "use_numpy": False, #True 
+    "use_matrix_vectorization": False,
+    #Deixar os dois campos acima com True faz rodar a versão implmentada com matrizes e vetores, que é mais rápida. Definir como False ativa uma versão mais simples, sem matrizes, que é mais lenta mas úyil para a explicação
 
     #Configurações de separação do Dataset
     "use_cross_validation": False,#false=usa holdout, true=usa cross_validation
@@ -33,9 +34,9 @@ CONFIG = {
     "hold_out_p_validation": 0.15, #o complemento 1 - (hold_out_p_train + hold_out_p_validation) é implicitamente hold_out_p_test
 
     #Configurações de backpropagation e early stop
-    "num_epochs": 800,
-    "learning_rate": 0.01, #0.001 funciona bem para softmax_cross_entropy, 0.01 funciona bem para MSE
-    "patience": 10,
+    "num_epochs": 600,
+    "learning_rate": 0.1, #0.001 funciona bem para softmax_cross_entropy, 0.01 funciona bem para MSE
+    "patience": 20,
     "min_delta": 0.0001,
 
     #Configurações de entradas/saídas
@@ -46,16 +47,16 @@ CONFIG = {
     "loss_function": "mse", #possíveis valores: ["mse", "mae", "softmax_cross_entropy"]
     "optimizer": {
         "type": "sgd_momentum", #possíveis valores: ["sgd", "sgd_momentum"]
-        "momentum": 0.8,
-        "l2_decay": 1e-05
+        "momentum": 0.9,
+        "l2_decay": 0.0
     },
 
     #configurações de camadas
     "layers": [
         {
-            "n_neurons": 64,#40 neuronios parece funcionar bem para softmax_cross_entropy e MSE
+            "n_neurons": 72,#40 neuronios parece funcionar bem para softmax_cross_entropy e MSE
             "activation": "sigmoid", #possíveis valores: ["relu", "leaky_relu", "linear", "sigmoid"].
-            "initializer": "uniform" #possíveis valores: ["uniform", "normal", "he", "xavier"]
+            "initializer": "xavier" #possíveis valores: ["uniform", "normal", "he", "xavier"]
         },
         {
             "n_neurons": 26,

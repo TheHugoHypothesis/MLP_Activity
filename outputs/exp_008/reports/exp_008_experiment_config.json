@@ -1,0 +1,45 @@
+{
+    "integrantes": [
+        "Hugo Cardoso Ferreira de Araújo - 15459500",
+        "Higor Gabriel de Freitas - 15575879",
+        "Enrico Lechar de Barros Aranha - 15449652",
+        "Renan Rodrigues Moreira - 15744874",
+        "Clara Pires Campardo - 15446433"
+    ],
+    "experiment_id": "exp_008",
+    "use_numpy": false,
+    "use_matrix_vectorization": false,
+    "use_cross_validation": false,
+    "cross_validation_folds": 3,
+    "hold_out_p_train": 0.7,
+    "hold_out_p_validation": 0.15,
+    "num_epochs": 600,
+    "learning_rate": 0.1,
+    "patience": 20,
+    "min_delta": 0.0001,
+    "input_size": 120,
+    "num_classes": 26,
+    "loss_function": "mse",
+    "optimizer": {
+        "type": "sgd_momentum",
+        "momentum": 0.9,
+        "l2_decay": 0.0
+    },
+    "layers": [
+        {
+            "n_neurons": 72,
+            "activation": "sigmoid",
+            "initializer": "xavier"
+        },
+        {
+            "n_neurons": 26,
+            "activation": "sigmoid",
+            "initializer": "xavier"
+        }
+    ],
+    "random_seed": 3,
+    "x_path": "data/raw/X.npy",
+    "y_path": "data/raw/Y_classe.npy",
+    "merge_classes": null,
+    "use_stratification": true
+}
