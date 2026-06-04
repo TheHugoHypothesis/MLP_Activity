@@ -162,7 +162,7 @@ def main():
         tempos["train"] = t_train.interval
         io.save_training_history(history, CONFIG['experiment_id'] + "_training_history")
 
-        evaluator = Evaluator(mlp, loss_function=trainer.loss_function)
+        evaluator = Evaluator(mlp, classification_strategy=trainer.classification_strategy, loss_function=trainer.loss_function)
 
         print("\n=== CONJUNTO DE TREINO ===")
         train_metrics = evaluator.evaluate(train_set, num_classes=CONFIG["num_classes"])

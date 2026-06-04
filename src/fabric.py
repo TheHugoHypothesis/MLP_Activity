@@ -76,6 +76,7 @@ def build_trainer(model, config: dict):
     loss_cls = LOSS_FUNCTIONS[config["loss_function"]]
     loss_fn = loss_cls()
     opt_config = config["optimizer"]
+    
     if opt_config["type"] == "sgd_momentum":
         optimizer = SGD_momentum(
             momentum=opt_config.get("momentum", 0.9),

@@ -13,6 +13,11 @@ import os
 from datetime import datetime
 from typing import Any, Dict, List
 
+"""
+Classe que lida com salvamento dos modelos, configurações,
+diretórios de experimentos etc.
+Basicamente serve para salvar os json de configurações
+"""
 class IOManager:
     def __init__(self, base_dir="outputs"):
         self.base_dir = base_dir

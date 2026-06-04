@@ -9,7 +9,7 @@ Clara Pires Campardo - 15446433
 """
 
 """
-Este módulo fornece a função `run_stratified_k_fold(...)` que executa um
+Este módulo fornece a função run_stratified_k_fold(..) que executa um
 experimento de k-fold estratificado. Para cada fold a função:
 - cria um modelo novo via `build_model()`;
 - instancia um `Trainer` via `build_trainer(model)`;
@@ -32,7 +32,6 @@ def _mean_and_std(values: List[float]) -> Dict[str, float]:
         "mean": mean(values) if values else 0.0,
         "std": pstdev(values) if len(values) > 1 else 0.0,
     }
-
 
 def run_stratified_k_fold(
     dataset: Dataset,
@@ -75,7 +74,7 @@ def run_stratified_k_fold(
         if io_manager is not None and experiment_id is not None:
             io_manager.save_training_history(history, f"{experiment_id}_fold_{fold_index}_training_history")
 
-        evaluator = Evaluator(model, loss_function=trainer.loss_function)
+        evaluator = Evaluator(model, classification_strategy=trainer.classification_strategy, loss_function=trainer.loss_function)
 
         print("\n--- Conjunto de treino ---")
         train_metrics = evaluator.evaluate(train_set, num_classes=num_classes)

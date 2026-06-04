@@ -115,7 +115,7 @@ def evaluate_combo(
             epochs=cfg.get("num_epochs", 100)
         )
 
-        evaluator = Evaluator(model, loss_function=trainer.loss_function)
+        evaluator = Evaluator(model, classification_strategy=trainer.classification_strategy, loss_function=trainer.loss_function)
         val_metrics = evaluator.evaluate(val_set, num_classes=cfg.get("num_classes"))
 
         val_acc = val_metrics.get("accuracy", 0.0)

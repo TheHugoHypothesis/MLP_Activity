@@ -11,8 +11,9 @@ Clara Pires Campardo - 15446433
 from src.evaluation.confusion_matrix import ConfusionMatrix
 
 class Evaluator:
-    def __init__(self, model, loss_function=None):
+    def __init__(self, model, classification_strategy, loss_function=None):
         self.model = model
+        self.classification_strategy = classification_strategy
         self.loss_function = loss_function
 
     def evaluate(self, dataset, num_classes: int = None):
@@ -26,7 +27,7 @@ class Evaluator:
                 total_loss += self.loss_function.compute(out, y)
 
             # accuracy
-            if out.index(max(out)) == y.index(max(y)):
+            if self.classification_strategy.predict_class(out) == self.classification_strategy.predict_class(y):
                 correct += 1
 
         acc = correct / len(dataset)
@@ -49,7 +50,7 @@ class Evaluator:
 
         # matriz de confusão opcional
         if num_classes is not None:
-            cm = ConfusionMatrix.compute(dataset, self.model, num_classes)
+            cm = ConfusionMatrix.compute(dataset, self.model, num_classes, classification_strategy=self.classification_strategy)
             print("\nConfusion Matrix:")
             print(cm)
             if cm is not None:

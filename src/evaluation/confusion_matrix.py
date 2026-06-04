@@ -21,13 +21,13 @@ class ConfusionMatrix:
         self.matriz = matriz
 
     @staticmethod
-    def compute(dataset: Dataset, model, num_classes: int):
+    def compute(dataset: Dataset, model, num_classes: int, classification_strategy):
         matriz = [[0] * num_classes for _ in range(num_classes)]
 
         for x, y in dataset:
             pred_out = model.forward(x)
-            pred = pred_out.index(max(pred_out))
-            true = y.index(max(y))
+            pred = classification_strategy.predict_class(pred_out)
+            true = classification_strategy.predict_class(y)
 
             matriz[true][pred] += 1
 

@@ -10,9 +10,9 @@ Clara Pires Campardo - 15446433
 
 import json
 import os
-report_path = r"C:\Users\clara\Documents\GitHub\MLP_Activity\outputs\reports\exp_008_hill_hill_climbing_final.json"
+report_path = r"outputs\reports\exp_008_hill_hill_climbing_final.json"
 if not os.path.exists(report_path):
-    report_path = r"C:\Users\clara\Documents\GitHub\MLP_Activity\outputs\reports\exp_008_hill_hill_climbing_final.json"
+    report_path = r"outputs\reports\exp_008_hill_hill_climbing_final.json"
 output_path = "hill_climbing_search.md"
 with open(report_path, "r", encoding="utf-8") as f:
     data = json.load(f)
@@ -20,9 +20,9 @@ results = data.get("results", [])
 
 # Ordenar por acurácia de validação decrescente, e depois por val_loss crescente
 sorted_results = sorted(results, key=lambda x: (-x.get("val_accuracy", 0.0), x.get("val_loss", float('inf'))))
-markdown_content = """# 📊 Resumo da Otimização por Hill Climbing
+markdown_content = """# Resumo da Otimização por Hill Climbing
 Tabela resumida contendo todas as **{total_combos} combinações** de hiperparâmetros testadas e avaliadas pelo algoritmo de Hill Climbing, ordenadas da **melhor para a pior** com base na acurácia do conjunto de validação.
-## 🏆 Melhor Configuração Encontrada
+## Melhor Configuração Encontrada
 * **Acurácia de Validação:** {best_acc:.4f} ({best_acc_pct:.2f}%)
 * **Acurácia de Treino Final:** {best_train_acc_pct:.2f}%
 * **Partição do Dataset (Treino):** {best_p_train_pct:.1f}%
@@ -41,7 +41,7 @@ Tabela resumida contendo todas as **{total_combos} combinações** de hiperparâ
   * Paciência (Early Stop): `{best_combo[patience]}`
   * Épocas Máximas: `{best_combo[num_epochs]}`
 ---
-## 📋 Tabela Geral de Resultados
+## Tabela Geral de Resultados
 | # | Neurônios | Ativação | Perda | LR | Inicializador | Otimizador | Momentum | L2 Decay | Partição Treino | Ép. Real / Max | Paciência | Acurácia Treino | Acurácia Val | Val Loss | Tempo |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 """.format(

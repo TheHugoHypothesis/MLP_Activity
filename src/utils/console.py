@@ -10,7 +10,7 @@ Clara Pires Campardo - 15446433
 
 import time
 
-""" Tempo para a execução de códigos """
+""" Tempo para a execução de códigos, consegue medir a diferença de tempo entre um código rodando e outro """
 class Timer:
     def __enter__(self):
         self.start = time.perf_counter()
@@ -20,6 +20,7 @@ class Timer:
         self.interval = self.end - self.start
 
 
+""" método p/ mostrar um print do tempo de execução no terminal """
 def exibir_dashboard_tempos(times: dict, n_epochs: int = None):
     inner_w = 56
     def border(left, mid, right): return f"{left}{mid * (inner_w + 2)}{right}"
@@ -48,6 +49,7 @@ def exibir_dashboard_tempos(times: dict, n_epochs: int = None):
     
     print("\n".join(lines))
 
+#método para mostrar um dashboard das configurações escolhidas na main
 def exibir_dashboard_configuracoes(config: dict):
     inner_w = 56
     def border(left, mid, right): return f"{left}{mid * (inner_w + 2)}{right}"

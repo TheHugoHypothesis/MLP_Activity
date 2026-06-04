@@ -11,6 +11,11 @@ Clara Pires Campardo - 15446433
 import numpy as np
 from typing import List, Tuple
 
+
+""" Classe que faz carregamento de dataset
+Aqui só foi feito para se adequar ao carregamento do dataset de Alfabeto
+Mas em teoria qualquer outro carregamento de dataset pode ser feito aqui.
+"""
 class DataLoader:
     @staticmethod
     def load_character_from_alphabet(

@@ -1,6 +1,6 @@
-# 📊 Resumo da Otimização por Hill Climbing
+# Resumo da Otimização por Hill Climbing
 Tabela resumida contendo todas as **176 combinações** de hiperparâmetros testadas e avaliadas pelo algoritmo de Hill Climbing, ordenadas da **melhor para a pior** com base na acurácia do conjunto de validação.
-## 🏆 Melhor Configuração Encontrada
+## Melhor Configuração Encontrada
 * **Acurácia de Validação:** 0.9423 (94.23%)
 * **Acurácia de Treino Final:** 99.34%
 * **Partição do Dataset (Treino):** 70.0%
@@ -19,7 +19,7 @@ Tabela resumida contendo todas as **176 combinações** de hiperparâmetros test
   * Paciência (Early Stop): `20`
   * Épocas Máximas: `600`
 ---
-## 📋 Tabela Geral de Resultados
+## Tabela Geral de Resultados
 | # | Neurônios | Ativação | Perda | LR | Inicializador | Otimizador | Momentum | L2 Decay | Partição Treino | Ép. Real / Max | Paciência | Acurácia Treino | Acurácia Val | Val Loss | Tempo |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 1 | 72 | sigmoid | mse | 0.1 | xavier | sgd_momentum | 0.9 | 0.0 | 70.0% | 102 / 600 | 20 | **99.34%** | **94.23%** | 0.005279 | 6.7s |
