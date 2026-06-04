@@ -12,30 +12,51 @@ from typing import List
 
 from src.strategies.loss_functions import LossFunction
 from src.strategies.trainer_optimizer import Optimizer
+from src.strategies.early_stopping import EarlyStopping
+from src.strategies.classification_strategy import ClassificationStrategy
 from src.core.network import MultilayerPerceptron
 
+"""
+Classe de Trainer, que pega uma rede Multilayer Perceptron e é capaz de:
+- fazer backpropagation;
+- atualizar os pesos usando um Otimizador específico;
+- rodar uma época de treino e medir acurácia;
+- usar uma estratégia de Early Stopping
+
+model: corresponde à classe do MLP instanciada
+loss_function: qual medida de erro usar
+optimizer: qual otimizador usar
+classification_strategy: qual estratégia de escolha de saida usar
+learning_rate: taxa de aprendizado
+early_stopping: define a estratégia de early stopping adotada
+
+OBS:
+- Inicialmente, fizemos atualizações de pesos por meio de listas mais explícitas do python,
+fazendo for-range diretamente. Contudo, o Python tem um grande downside nesse sentido,
+uma vez que loops explícitos são menos eficientes porque lidam com objetos genéricos Python,
+ao invés de funcoes em C otimizadas. Isso limitou bastante a velocidade da nossa rede.
+Por isso, em certas partes, substituímos loops-explícitos por list-comprehension e pelo
+uso da função zip(...) que são C-nativas, e cerca de 30% mais rápidas em nossos testes.
+"""
 class Trainer:
     def __init__(
         self,
         model: MultilayerPerceptron,
         loss_function: LossFunction,
         optimizer: Optimizer,
-        learning_rate: float = 0.01,
-        patience: int = None,
-        min_delta: float = 0.0
+        classification_strategy: ClassificationStrategy,
+        learning_rate: float = 0.01,        
+        early_stopping: EarlyStopping = None #por padrão, nao usa Early Stopping
     ):
         self.model = model
         self.loss_function = loss_function
         self.optimizer = optimizer
         self.learning_rate = learning_rate
-        self.patience = patience
-        self.min_delta = min_delta
+        self.early_stopping = early_stopping
+        self.classification_strategy = classification_strategy
     
     #Função de backpropagation que só calcula os deltas, mas não realiza atualização
-    def backpropagate(
-        self,
-        y_real: List[float]
-    ):
+    def backpropagate(self, y_real: List[float]):
         loss_gradient_list = self.loss_function.derivative(
             self.model.last_outputs[-1],
             y_real
@@ -50,12 +71,7 @@ class Trainer:
             ) * loss_gradient
 
             #popula gradiente para última camada
-            neuron.parameter.bias_gradient = neuron.delta_k
-            if self.model.use_numpy:
-                import numpy as np
-                neuron.parameter.weights_gradient = neuron.delta_k * np.array(neuron.last_entry)
-            else:
-                neuron.parameter.weights_gradient = [neuron.delta_k * val for val in neuron.last_entry]
+            self.update_neuron_gradients(neuron=neuron)
 
         #Cálculo do delta para camadas seguintes
         for l in reversed(range(len(self.model.layers) - 1)):
@@ -81,12 +97,16 @@ class Trainer:
                 )
 
                 #popula os gradientes para camadas seguintes
-                neuron.parameter.bias_gradient = neuron.delta_k
-                if self.model.use_numpy:
-                    import numpy as np
-                    neuron.parameter.weights_gradient = neuron.delta_k * np.array(neuron.last_entry)
-                else:
-                    neuron.parameter.weights_gradient = [neuron.delta_k * val for val in neuron.last_entry]
+                self.update_neuron_gradients(neuron=neuron)
+    
+    def update_neuron_gradients(self, neuron):
+        neuron.parameter.bias_gradient = neuron.delta_k
+
+        if self.model.use_numpy:
+            import numpy as np
+            neuron.parameter.weights_gradient = neuron.delta_k * np.array(neuron.last_entry)
+        else:
+            neuron.parameter.weights_gradient = [neuron.delta_k * x for x in neuron.last_entry]
 
     def update_weights(self):
         for layer in self.model.layers:
@@ -97,14 +117,15 @@ class Trainer:
         correct = 0
         for x, y in dataset:
             prediction = self.model.forward(x)
-            if prediction is None:
-                continue
             
             #Acumula perda
             total_loss += self.loss_function.compute(prediction, y)
             
             #Acumula acertos
-            if prediction.index(max(prediction)) == y.index(max(y)):
+            predicted_class = self.classification_strategy.predict_class(prediction)
+            expected_class = self.classification_strategy.predict_class(y)
+
+            if predicted_class == expected_class:
                 correct += 1
         
 
@@ -130,11 +151,6 @@ class Trainer:
             "val_acc": []
         }
 
-        #Variáveis de Early Stopping
-        best_val_loss = float('inf')
-        patience_counter = 0
-        best_weights_snapshot = None
-
         for epoch in range(epochs):
             total_train_loss: float = 0.0
             correct_train = 0
@@ -147,8 +163,10 @@ class Trainer:
                 self.update_weights()
 
                 total_train_loss += loss
-
-                if y_prediction.index(max(y_prediction)) == y.index(max(y)):
+                
+                #usa a estratégia de classificação p/ ver se classificou corretamente
+                #obs: garantir que a saída de y seja sempre um vetor mesmo que unitário
+                if self.classification_strategy.predict_class(y_prediction) == self.classification_strategy.predict_class(y):
                     correct_train += 1
 
             
@@ -170,33 +188,11 @@ class Trainer:
             )
 
             #Lógica de Early Stopping
-            if self.patience is not None:
-                if average_val_loss < (best_val_loss - self.min_delta):
-                    best_val_loss = average_val_loss
-                    patience_counter = 0
-                    best_weights_snapshot = self._get_model_weights_snapshot()
-                else:
-                    patience_counter += 1
-                    if patience_counter >= self.patience:
-                        print(f"\nEarly stop na época {epoch}.")
-                        print(f"O erro de validação não melhorou por {self.patience} épocas seguidas.")
-                        #Restaura o melhor modelo
-                        self._restore_model_weights(best_weights_snapshot)
-                        print("[Early Stopping] Melhores pesos restaurados.")
-                        break
+            if self.early_stopping is not None:
+                should_stop = self.early_stopping.should_stop(average_val_loss, self.model)
+
+                if should_stop:
+                    print(f"Early stop na época {epoch}.")
+                    break
 
         return history
-    
-    def _get_model_weights_snapshot(self):
-        #Cria uma cópia profunda dos valores atuais dos pesos e biases de cada neurônio
-        return [
-            [(list(neuron.weights), neuron.bias) for neuron in layer.neurons]
-            for layer in self.model.layers
-        ]
-
-    def _restore_model_weights(self, snapshot):
-        #Restaura os pesos e biases a partir do snapshot salvo
-        for layer, layer_snapshot in zip(self.model.layers, snapshot):
-            for neuron, (w_list, bias) in zip(layer.neurons, layer_snapshot):
-                neuron.weights = list(w_list)
-                neuron.bias = bias

@@ -21,7 +21,8 @@ Parâmetros nessa classe:
 - `number_of_neurons`: número de neurônios declarado na camada;
 - `number_of_inputs`: número de entradas que cada neurônio daquela camada recebe;
 - `activation`: classe abstrata da função de ativação usada na camada;
-- `weight_initializer`: classe abstrata do inicializador de pesos da camada.
+- `weight_initializer`: classe abstrata do inicializador de pesos da camada;
+- `use_numpy`: flag que indica se vai fazer as operações usando arrays Numpy p/ mais velocidade.
 """
 class PerceptronLayer:
     def __init__(

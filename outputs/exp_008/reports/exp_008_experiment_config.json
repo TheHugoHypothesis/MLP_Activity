@@ -1,14 +1,6 @@
 {
-    "integrantes": [
-        "Hugo Cardoso Ferreira de Araújo - 15459500",
-        "Higor Gabriel de Freitas - 15575879",
-        "Enrico Lechar de Barros Aranha - 15449652",
-        "Renan Rodrigues Moreira - 15744874",
-        "Clara Pires Campardo - 15446433"
-    ],
     "experiment_id": "exp_008",
-    "use_numpy": false,
-    "use_matrix_vectorization": false,
+    "use_numpy": true,
     "use_cross_validation": false,
     "cross_validation_folds": 3,
     "hold_out_p_train": 0.7,
@@ -20,6 +12,8 @@
     "input_size": 120,
     "num_classes": 26,
     "loss_function": "mse",
+    "classification_strategy": "argmax",
+    "classification_threshold": 0.5,
     "optimizer": {
         "type": "sgd_momentum",
         "momentum": 0.9,

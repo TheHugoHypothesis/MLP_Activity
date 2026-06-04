@@ -17,7 +17,8 @@ Classe que representa uma configuração de rede MultilayerPerceptron.
 Parâmetros nessa classe:
 - `layer_configs` uma lista de LayerConfig, classe de dados que define as configurações
 de uma camada (número de neurônios, função de ativação, inicializador de pesos);
-- `input_size` indica o número de entradas (padrões) recebidos na camada inicial.
+- `input_size` indica o número de entradas (padrões) recebidos na camada inicial;
+- `use_numpy` flag que indica se deve usar as arrays numpy
 
 Essa classe implementa somente a estrutura da rede com camadas (PerceptronLayers)
 e um método de forward (gerar saída com base nos pesos e neurônios atuais).
@@ -57,7 +58,7 @@ class MultilayerPerceptron:
     Executa a propagação direta (forward propagation) da rede.
     Parâmetros:
     - `input_data` o vetor de entrada (padrões) da rede (x).
-    Retorna o vetor de saída produzido pela úlktima camada da rede.
+    Retorna o vetor de saída produzido pela última camada da rede
     """
     def forward(
         self,
@@ -69,16 +70,16 @@ class MultilayerPerceptron:
         self.last_inputs = []
         self.last_outputs = []
 
-        current_data: List[float] = input_data
+        network_out: List[float] = input_data
         
         for layer in self.layers:
-            self.last_inputs.append(current_data)
+            self.last_inputs.append(network_out)
 
             next_data: List[float] = []
             for neuron in layer.neurons:
-                next_data.append(neuron.feedforward(current_data))
+                next_data.append(neuron.feedforward(network_out))
             
             self.last_outputs.append(next_data)
-            current_data = next_data
+            network_out = next_data
         
-        return current_data
+        return network_out

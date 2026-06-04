@@ -15,14 +15,15 @@ from src.core.parameter import Parameter
 
 """
 Classe que representa um neurônio dentro da rede.
-- `self.weight_list` e bias: corresponde à lista de pesos associada àquela instância, abstraídos pela classe Parameter;
-- `self.activation`: corresponde à classe de função de ativação usada;
-- `self.last_entry`: corresponde aos últimos inputs (entradas) recebidas;
-- `self.last_local_induced_field`: corresponde ao último campo local induzido calculado;
-- `self.output`: corresponde à última saída (yk) calculada;
-- `self.delta_k`: corresponde ao campo local induzido do neurônio da frente;
+- self.weight_list e bias: corresponde à lista de pesos associada àquela instância, abstraídos pela classe Parameter;
+- self.activation: corresponde à classe de função de ativação usada;
+- self.last_entry: corresponde aos últimos inputs (entradas) recebidas;
+- self.last_local_induced_field`: corresponde ao último campo local induzido calculado;
+- self.output corresponde à última saída (yk) calculada;
+- self.delta_k corresponde ao campo local induzido do neurônio da frente;
+- self.use_numpy flag que indica se devem ser usadas arrays numpy
 
-OBS: `self.delta_k` é passado durante o treino para o neurônio pela
+OBS: self.delta_k é passado durante o treino para o neurônio pela
 classe Trainer.
 """
 class PerceptronNeuron:
@@ -46,6 +47,9 @@ class PerceptronNeuron:
     def feedforward(self, entry_list: List[float]) -> float:
         self.last_entry = entry_list
         if self.use_numpy:
+            #aqui fazemos lazy import, i.e, só importamos a biblioteca se formos usar a versão com numpy
+            #isso evita carregamento desnecessário se formos usar a versão sem numpy
+            #e permite essa parte do código rodar sem que tenha a biblioteca instalada no sistema
             import numpy as np
             self.last_local_induced_field = np.dot(entry_list, self.weights) + self.bias
         else:
@@ -53,6 +57,12 @@ class PerceptronNeuron:
         self.output = self.activation.activate(self.last_local_induced_field)
         return self.output
     
+    """Definições de getter e setter para os pesos e bias
+    essas definições explícitas com @property e setter são úteis p/ type hinting
+    ( o que impede tipos errados serem atribuidos) e facilitar acesso, as variáveis, permitindo
+    fazer neuron.weights, ao invés de neuron.parameter.weights (por exemplo),
+    o que juntando com os getter e setter de Parameter() melhora a arquitetura
+    """
     @property
     def weights(self) -> List[float]:
         return self.parameter.weights

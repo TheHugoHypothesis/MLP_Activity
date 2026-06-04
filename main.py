@@ -23,9 +23,7 @@ from src.utils.console import exibir_dashboard_configuracoes, Timer, exibir_dash
 """ Configuração a ser usada """
 CONFIG = {
     "experiment_id": "exp_008",
-    "use_numpy": False, #True 
-    "use_matrix_vectorization": False,
-    #Deixar os dois campos acima com True faz rodar a versão implmentada com matrizes e vetores, que é mais rápida. Definir como False ativa uma versão mais simples, sem matrizes, que é mais lenta mas úyil para a explicação
+    "use_numpy": True, #True para usar numpy (mais rápido e saida equivalente) ou False (mais lento, mas menos lib externa)
 
     #Configurações de separação do Dataset
     "use_cross_validation": False,#false=usa holdout, true=usa cross_validation
@@ -45,6 +43,8 @@ CONFIG = {
 
     #configurações de treinamento
     "loss_function": "mse", #possíveis valores: ["mse", "mae", "softmax_cross_entropy"]
+    "classification_strategy": "argmax", #possíveis valores: ["argmax", "argmax_random", "threshold"]
+    "classification_threshold": 0.5, #valor para usar com classification_strategy = "threshold", caso contrário ignorado
     "optimizer": {
         "type": "sgd_momentum", #possíveis valores: ["sgd", "sgd_momentum"]
         "momentum": 0.9,

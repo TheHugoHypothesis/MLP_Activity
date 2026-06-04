@@ -11,13 +11,13 @@ Clara Pires Campardo - 15446433
 from src.core.network import MultilayerPerceptron
 from src.core.trainer import Trainer
 from src.core.layer import LayerConfig
-from src.core.matrix_network import MatrixMultilayerPerceptron
-from src.core.matrix_trainer import MatrixTrainer
 
 from src.strategies.trainer_optimizer import *
 from src.strategies.loss_functions import *
 from src.strategies.activation_function import *
 from src.strategies.weight_initializers import *
+from src.strategies.classification_strategy import *
+from src.strategies.early_stopping import *
 
 """ Dicionário de estratégias que podem ser utilizadas """
 ACTIVATIONS = {
@@ -45,6 +45,12 @@ OPTIMIZERS = {
     "sgd_momentum": SGD_momentum
 }
 
+CLASSIFICATION_STRATEGIES = {
+    "argmax": ArgMaxClassification,
+    "argmax_random": ArgMaxRandomAtTie,
+    "threshold": ThresholdClassification
+}
+
 """ Construtores de treinador e modelo """
 def build_model(config: dict):
     layer_configs = []
@@ -58,12 +64,6 @@ def build_model(config: dict):
                 activation=activation_cls(),
                 initializer=initializer_cls()
             )
-        )
-        
-    if config.get("use_matrix_vectorization", False):
-        return MatrixMultilayerPerceptron(
-            layer_configs=layer_configs,
-            input_size=config["input_size"]
         )
         
     return MultilayerPerceptron(
@@ -84,13 +84,17 @@ def build_trainer(model, config: dict):
     else:
         optimizer = SGD()
         
-    if config.get("use_matrix_vectorization", False):
-        return MatrixTrainer(
-            model=model,
-            loss_function=loss_fn,
-            optimizer=optimizer,
-            learning_rate=config["learning_rate"],
-            patience=config.get("patience"),
+    strat_name = config.get("classification_strategy", "argmax")
+    if strat_name == "threshold":
+        classification_strategy = ThresholdClassification(threshold=config.get("classification_threshold", 0.5))
+    else:
+        strat_cls = CLASSIFICATION_STRATEGIES[strat_name]
+        classification_strategy = strat_cls()
+
+    early_stopping = None
+    if config.get("patience") is not None:
+        early_stopping = EarlyStopping(
+            patience=config["patience"],
             min_delta=config.get("min_delta", 0.0)
         )
         
@@ -98,7 +102,7 @@ def build_trainer(model, config: dict):
         model=model,
         loss_function=loss_fn,
         optimizer=optimizer,
+        classification_strategy=classification_strategy,
         learning_rate=config["learning_rate"],
-        patience=config.get("patience"),
-        min_delta=config.get("min_delta", 0.0)
+        early_stopping=early_stopping
     )

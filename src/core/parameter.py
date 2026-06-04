@@ -35,6 +35,14 @@ class Parameter:
         self._bias = bias
         self.bias_gradient = 0.0
 
+    """Uso de getter e setters p/ os pesos e o viés
+    isso traz duas vantagens:
+    permite identificar se pesos de tamanhos incorretos estão sendo atribuidos;
+    evita exposição direta das variaveis, então se for paralelizado no futuro evita 
+    concorrência de threads
+    Também já lida com as arrays numpy diretamente, sem que quem usa essa clase precise
+    se preocupar
+    """
     @property
     def weights(self) -> List[float]:
         return self._weights
@@ -43,7 +51,7 @@ class Parameter:
     def weights(self, new_weights: List[float]):
         if len(new_weights) != len(self._weights):
             raise ValueError(f"A qtde. de pesos informada é inválida.")
-        if getattr(self, "use_numpy", False):
+        if self.use_numpy:
             import numpy as np
             self._weights = np.array(new_weights, dtype=np.float64)
         else:
