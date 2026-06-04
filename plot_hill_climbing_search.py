@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 def main():
-    # 1. Localiza o relatório de busca local mais recente
+    #Localiza o relatório de busca local mais recente
     reports_dir = "outputs/reports"
     report_pattern = os.path.join(reports_dir, "*_hill_climbing_final.json")
     report_files = glob.glob(report_pattern)
@@ -28,10 +28,10 @@ def main():
         print("[Erro] O arquivo de relatório não contém resultados válidos na chave 'results'.")
         return
 
-    # Ordenar modelos pelo desempenho de validação (Acurácia decrescente, Loss crescente)
+    #Ordenar modelos pelo desempenho de validação
     sorted_results = sorted(results, key=lambda x: (-x.get("val_accuracy", 0.0), x.get("val_loss", float('inf'))))
 
-    # 2. Configurações estéticas globais (Estilo Minimalista Sleek)
+    #Configurações estéticas globais (Estilo Minimalista Sleek)
     plt.rcParams["font.family"] = "sans-serif"
     plt.rcParams["font.sans-serif"] = ["DejaVu Sans", "Helvetica", "Arial"]
     plt.rcParams["axes.edgecolor"] = "#CCCCCC"
@@ -39,15 +39,13 @@ def main():
     plt.rcParams["grid.color"] = "#EEEEEE"
     plt.rcParams["grid.linestyle"] = "--"
 
-    # =========================================================================
-    # GRÁFICO 1: CURVAS DE ERRO DE TODOS OS MODELOS (SPAGHETTI PLOT)
-    # =========================================================================
+    #Gráfico da curva de erro de todos os modelos
     plt.figure(figsize=(12, 7), dpi=300)
     
     top_n = 5
     colors = ["#1E88E5", "#D81B60", "#004D40", "#FFC107", "#8E24AA"] # Paleta vibrante e contrastante
     
-    # Plota primeiro os modelos menos eficientes em cinza translúcido
+    #Plota primeiro os modelos menos eficientes
     background_plotted = 0
     for idx, r in enumerate(sorted_results[top_n:]):
         history = r.get("detail", {}).get("history", {})
@@ -56,7 +54,7 @@ def main():
             plt.plot(val_loss, color="#CCCCCC", alpha=0.25, linewidth=0.8, zorder=1)
             background_plotted += 1
 
-    # Plota em destaque os Top 5 melhores modelos
+    #Plota em destaque os Top 5 melhores modelos
     for idx, r in enumerate(sorted_results[:top_n]):
         c = r["combo"]
         history = r.get("detail", {}).get("history", {})
@@ -105,9 +103,7 @@ def main():
     plt.close()
     print(f"[Plot] Gráfico 1 de erro salvo em: {chart1_path}")
 
-    # =========================================================================
-    # GRÁFICO 2: COMPARATIVO DE ACURÁCIA TREINO VS VALIDAÇÃO (TOP 15)
-    # =========================================================================
+    #Acurácia e validação dos top 15
     top_k = min(15, len(sorted_results))
     labels = []
     train_accs = []
@@ -136,7 +132,6 @@ def main():
 
     fig, ax = plt.subplots(figsize=(14, 7), dpi=300)
     
-    # Cores modernas para Treino e Validação (Aparência premium)
     rects1 = ax.bar(x - width/2, train_accs, width, label="Acurácia de Treino", color="#4682B4", zorder=3) # Steel Blue
     rects2 = ax.bar(x + width/2, val_accs, width, label="Acurácia de Validação", color="#FF7F50", zorder=3) # Coral
 
@@ -151,7 +146,7 @@ def main():
     ax.set_ylabel("Acurácia (%)", fontsize=11, labelpad=8)
     ax.set_xticks(x)
     ax.set_xticklabels(labels, fontsize=9)
-    ax.set_ylim(0, 108) # Espaço para os rótulos de dados
+    ax.set_ylim(0, 108)
     ax.grid(True, axis="y")
     ax.legend(
         loc="upper right", 
@@ -168,7 +163,7 @@ def main():
             ax.annotate(
                 f"{height:.1f}%",
                 xy=(rect.get_x() + rect.get_width() / 2, height),
-                xytext=(0, 3),  # 3 pontos de offset vertical
+                xytext=(0, 3),
                 textcoords="offset points",
                 ha="center", 
                 va="bottom", 
@@ -189,17 +184,6 @@ def main():
     plt.savefig(chart2_path, bbox_inches="tight")
     plt.close()
     print(f"[Plot] Gráfico 2 de comparação de acurácia salvo em: {chart2_path}")
-
-    # =========================================================================
-    # COPIA PARA DIRETÓRIO DE ARTEFATOS
-    # =========================================================================
-    artifacts_dir = "/home/elliot/.gemini/antigravity/brain/8fb976a9-4336-4911-9327-921278134689"
-    if os.path.exists(artifacts_dir):
-        os.makedirs(os.path.join(artifacts_dir, "reports"), exist_ok=True)
-        import shutil
-        shutil.copy(chart1_path, os.path.join(artifacts_dir, f"{experiment_id}_curvas_erro_todos_modelos.png"))
-        shutil.copy(chart2_path, os.path.join(artifacts_dir, f"{experiment_id}_comparativo_top_modelos.png"))
-        print("[Plot] Cópias salvas com sucesso na pasta de artefatos!")
 
 if __name__ == "__main__":
     main()
