@@ -33,7 +33,7 @@ CONFIG = {
 
     #Configurações de backpropagation e early stop
     "num_epochs": 600,
-    "learning_rate": 0.1, #0.001 funciona bem para softmax_cross_entropy, 0.01 funciona bem para MSE
+    "learning_rate": 0.1,
     "patience": 20,
     "min_delta": 0.0001,
 
@@ -54,7 +54,7 @@ CONFIG = {
     #configurações de camadas
     "layers": [
         {
-            "n_neurons": 72,#40 neuronios parece funcionar bem para softmax_cross_entropy e MSE
+            "n_neurons": 72,
             "activation": "sigmoid", #possíveis valores: ["relu", "leaky_relu", "linear", "sigmoid"].
             "initializer": "xavier" #possíveis valores: ["uniform", "normal", "he", "xavier"]
         },
