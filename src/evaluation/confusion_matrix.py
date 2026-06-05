@@ -14,6 +14,10 @@ Dataset = List[Tuple[List[float], List[float]]]
 
 
 class ConfusionMatrix:
+    """
+    Serve para calcular e representar a Matriz de Confusão de modelos de classificação
+    """
+
     def __init__(
         self,
         matriz: List[List[int]]
@@ -22,6 +26,9 @@ class ConfusionMatrix:
 
     @staticmethod
     def compute(dataset: Dataset, model, num_classes: int, classification_strategy):
+        #Gera uma nova Matriz de Confusão avaliando as predições do modelo sobre um dataset.
+        #Retorna uma nova instância da classe preenchida com os dados tabulados de ConfusionMatrix.
+
         matriz = [[0] * num_classes for _ in range(num_classes)]
 
         for x, y in dataset:
@@ -34,9 +41,11 @@ class ConfusionMatrix:
         return ConfusionMatrix(matriz)
     
     def tolist(self) -> List[List[int]]:
+        #exporta a matriz de confusão interna para o formato de lista de listas nativa do Python
         return self.matriz
     
     def __str__(self) -> str:
+        #Formata a matriz de confusão em uma string textual para exibição no console
         lines = []
         for row in self.matriz:
             lines.append(" ".join(f"{val:4d}" for val in row))

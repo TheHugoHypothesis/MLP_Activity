@@ -49,7 +49,7 @@ def exibir_dashboard_tempos(times: dict, n_epochs: int = None):
     
     print("\n".join(lines))
 
-#método para mostrar um dashboard das configurações escolhidas na main
+""" método para mostrar um dashboard das configurações escolhidas na main """
 def exibir_dashboard_configuracoes(config: dict):
     inner_w = 56
     def border(left, mid, right): return f"{left}{mid * (inner_w + 2)}{right}"

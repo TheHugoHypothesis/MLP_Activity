@@ -19,6 +19,11 @@ from src.strategies.weight_initializers import *
 from src.strategies.classification_strategy import *
 from src.strategies.early_stopping import *
 
+"""
+Esse módulo utiliza o padrão Factory para conseguir fazer as combinações
+das diversas Strategy com os arquivos de configuração.
+"""
+
 """ Dicionário de estratégias que podem ser utilizadas """
 ACTIVATIONS = {
     "relu": RELU,
@@ -51,8 +56,15 @@ CLASSIFICATION_STRATEGIES = {
     "threshold": ThresholdClassification
 }
 
-""" Construtores de treinador e modelo """
+
 def build_model(config: dict):
+    """ 
+    Constrói e inicializa a arquitetura da rede neural
+    Lê as especificações de tamanho de entrada, quantidade de neurônios, funções de 
+    ativação e métodos de inicialização para cada camada contidas no dicionário de 
+    configuração e instancia o modelo pronto para o uso.
+    """
+
     layer_configs = []
     for layer in config["layers"]:
         activation_cls = ACTIVATIONS[layer["activation"]]
@@ -73,6 +85,14 @@ def build_model(config: dict):
     )
 
 def build_trainer(model, config: dict):
+    """
+    Instancia e configura o ambiente de execução e treinamento (Trainer) do modelo.
+
+    Extrai os hiperparâmetros informados no dicionário de configuração (como taxa de 
+    aprendizado, otimizador, função de perda, critérios de parada e classificação) e 
+    os vincula ao modelo criado, estruturando o pipeline que executará o treino.
+    """
+
     loss_cls = LOSS_FUNCTIONS[config["loss_function"]]
     loss_fn = loss_cls()
     opt_config = config["optimizer"]

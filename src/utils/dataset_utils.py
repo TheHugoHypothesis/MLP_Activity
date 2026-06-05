@@ -13,10 +13,15 @@ from typing import List, Tuple
 
 Dataset = List[Tuple[List[float], List[float]]]
 
-"""
-Classe que lida com pré-processamento do dataset. 
-"""
 class DatasetUtils:
+
+    """
+    Classe utilitária de para pré-processamento de dados e validação estatística.
+    
+    Contém algoritmos para particionamento de dados (Holdout e K-Fold), manipulação 
+    de classes e balanceamento.
+    """
+
     @staticmethod
     def stratified_split(
         dataset: Dataset,
@@ -24,7 +29,8 @@ class DatasetUtils:
         p_val: float = 0.15
     ):
         """
-        Split estratificado manual (holdout)
+        Divide o dataset usando a estratégia Holdout Estratificada (Treino, Validação e Teste).
+
         """
 
         #Primeiro agrupamos os dados de acordo com a classe (letra) deles
@@ -48,6 +54,7 @@ class DatasetUtils:
             random.shuffle(samples)
 
             n_total = len(samples)
+            #Define os pontos de corte baseados nas porcentagens passadas
             n_train = int(n_total * p_train)
             n_val = int(n_total * (p_train + p_val))
 
@@ -68,8 +75,10 @@ class DatasetUtils:
         k: int
     ):
         """
-        Método de apoio para o K-Fold estratificado.
-        Retorna uma lista de tuplas (train_set, val_set) para cada fold.
+        Divide o dataset em K partições (folds) para Cross-Validation (Validação Cruzada) Estratificada.
+        
+        Cada um dos K folds gerados servirá uma vez como conjunto de validação, enquanto os outros 
+        K-1 folds servirão como treino. Cada fold mantém a proporção das classes originais.
         """
         #Primeiro agrupamos os dados de acordo com a classe (letra) deles
         classes = {}
@@ -116,9 +125,15 @@ class DatasetUtils:
             folds.append((train, val))
         return folds
     
-    #Mescla grupos de caracteres em classes únicas.
     @staticmethod
     def merge_classes(dataset: Dataset, merge_groups: List[List[any]]) -> Tuple[Dataset, int]:
+        """
+        Reestrutura dinamicamente o mapeamento de classes do dataset, agrupando sub-classes em super-classes.
+        
+        Utilizado para simplificar problemas de classificação. Por exemplo, agrupar caracteres de grafias 
+        semelhantes, ou letras maiúsculas/minúsculas no mesmo alvo numérico, recalculando as dimensões 
+        dos vetores One-Hot Encoding.
+        """
         groups_idx = []
         for group in merge_groups:
             idx_group = []
@@ -163,7 +178,12 @@ class DatasetUtils:
         p_train: float = 0.7,
         p_val: float = 0.15
     ):
-        """Split puramente aleatório, ignorando a estratificação de classes."""
+        """
+        Divide o dataset usando holdout puramente aleatório, ignorando a distribuição das classes.
+        
+        OBS: perigoso para datasets pequenos ou desbalanceados, pois há o risco 
+        de excluir completamente representações de classes raras do conjunto de teste ou validação.
+        """
         samples = list(dataset)
         random.shuffle(samples)
 
@@ -179,7 +199,13 @@ class DatasetUtils:
     
     @staticmethod
     def random_k_fold_split(dataset: Dataset, k: int) -> List[Tuple[Dataset, Dataset]]:
-        """Gera folds de K-Fold de forma puramente aleatória, sem estratificação."""
+        """
+        Gera os conjuntos de treino e validação para o K-Fold tradicional de forma puramente aleatória.
+        
+        Particiona a lista de amostras global de forma cega em K blocos, sem checar quais rótulos/classes 
+        caíram em cada bloco.
+        """
+
         samples = list(dataset)
         random.shuffle(samples)
 
@@ -195,8 +221,14 @@ class DatasetUtils:
             idx += size
         
         folds = []
+        #Para cada fold, isola uma fatia para validação e une todas as outras para o treino
         for i in range(k):
             val = slices[i]
+            # Concatena todos os slices exceto o de índice i
+            train = []
+            for j in range(k):
+                if j != i:
+                    train.extend(slices[j])
             folds.append((train, val))
         
         return folds
@@ -209,6 +241,14 @@ class DatasetUtils:
         fixed_test_size: int = 0,
         use_stratification: bool = True
     ) -> Tuple[Dataset, Dataset, Dataset]:
+        """
+        Interface controladora/orquestradora central para divisão de dados.
+        
+        Permite ao usuário alternar dinamicamente entre usar tamanhos fixos finais de teste 
+        ou frações percentuais, acionando os métodos estratificados ou puramente aleatórios de cima.
+        """
+
+        # Cenário A: Extração de um número fixo absoluto de amostras para Teste
         if fixed_test_size > 0:
             test_set = dataset[-fixed_test_size:]
             remaining_dataset = dataset[:-fixed_test_size]
@@ -228,6 +268,8 @@ class DatasetUtils:
                     p_train=p_train_adj,
                     p_val=p_val_adj
                 )
+        
+        # Cenário B: Divisão puramente percentual clássica sobre todo o conjunto de dados
         else:
             if use_stratification:
                 train_set, val_set, test_set = DatasetUtils.stratified_split(

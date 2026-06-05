@@ -14,8 +14,11 @@ import math
 
 """
 Classe abstrata que condensa funções de erro, tendo:
-- compute(...): calcula o erro total, dado duas listas de valores (preditos e reais)
+- compute(...): calcula o erro total, dado duas listas de valores (preditos e reais). Retonra um
+número real, que é o erro total
 - derivative(...): calcula a derivada do erro para cada par, dado duas listas de valores (preditos e reais)
+retorna o gradiente da função de erro em relação às predições, informando a direção em que os pesos devem ser atualizados
+durante o backpropagation.
 """
 class LossFunction(ABC):
     @abstractmethod
@@ -42,13 +45,14 @@ class MSE(LossFunction):
     ) -> float:
         total_error: float = 0.0
         
-        #A função zip() pega par-a-par de cada lista como elementos de `prediction` e `real`
+        #A função zip() pega par-a-par de cada lista como elementos de prediction e real
         for prediction, real in zip(y_pred, y_real):
             total_error += (real - prediction) ** 2
 
         #Normaliza o erro total
         return total_error / len(y_pred)
 
+    #Calcula a derivada do MSE, 2/n * (y_previsto - y_real) em relação a cada saida da rede
     def derivative(
         self,
         y_pred: List[float],
@@ -65,8 +69,14 @@ class MSE(LossFunction):
 class MAE(LossFunction):
     def compute(self, y_pred: List[float], y_real: List[float]) -> float:
         total_error = sum(abs(yp - yr) for yp, yr in zip(y_pred, y_real))
+        #Normaliza o erro total
         return total_error / len(y_pred)
-    
+
+    #Calcula a derivada da função módulo em relação a x normalizada.
+    #basicamente, se yp (o predito) for maior que yr (o real), retorna 1/n
+    #se o yp < yr, retorna -1/n 
+    #se for igual retorna 0.
+    #basicamente, o MAE não aumenta proporcional ao erro, mas somente indica a direção da correção
     def derivative(self, y_pred: List[float], y_real: List[float]) -> List[float]:
         n = len(y_pred)
         error_list = []
@@ -81,13 +91,35 @@ class MAE(LossFunction):
                 error_list.append(0.0) 
         return error_list
 
+"""
+Função de perda p/ problemas de classificação multiclasse. Implementa 2 operações
+(i) Softmax: converte os logits (saída bruta da última camada da rede) em distribuição de probabilidade pela fórmula
+P_i = exp(z_i) / Σ exp(z_j)
+- em que z_i é o logit da classe i e P_i é a probabilidade associada a classe i
+
+(ii) Cross Entropy: mede o quão distante a distribuição prevista está da distribuição alvo
+L = -Σ y_i log(P_i)
+- em que y_i é o valor esperado da classe i (tirado do dataset Y)
+- P_i é a probabilidade prevista para a classe i no Softmax
+
+Contudo, é muito comum combinar as duas fórmulas em uma só, porque a derivada em relação aos
+logits se simplifica
+dL/d(z_i) = P_i - y_i
+que é uma subtração simples.
+
+"""
 class SoftmaxCrossEntropy(LossFunction):
-    SOFT_MAX_EPSILON = 1e-15
+    CROSS_ENTROPY_EPSILON = 1e-15
 
     def __init__(self):
         self._last_y_pred = None
         self._last_probs = None
 
+    #Método que converte os logits em probabilidade
+    #Recebe a saída bruta da última camada da rede e aplica a função Softmax para produzir uma distribuição de probabilidade
+    #cuja soma dos elementos é igual a 1.
+    # essa implementação usa estabilização numérica: exp(logit - max_logit) para evitar overflow
+    # quando os logits são muito altos (números nativos Python tem dificuldade para números muito grandes)
     def _softmax(self, logits: List[float]) -> List[float]:
         #se for o mesmo vetor de entradas da ultima camada, retorna a probabilidade já calculada
         if self._last_y_pred is logits:
@@ -115,6 +147,7 @@ class SoftmaxCrossEntropy(LossFunction):
 
         return probabilities
 
+    # Calcula a perda Cross Entropy.
     def compute(self, y_pred: List[float], y_real: List[float]) -> float:
         #`y_pred` são os logits que é saída bruta da rede (antes do softmax)
         #nao representam probabilidade, i.e, são o campo local induzido da última camada
@@ -124,23 +157,22 @@ class SoftmaxCrossEntropy(LossFunction):
         loss = 0.0
 
         for predicted, target in zip(probs, y_real):
-
-            # evita log(0)
-            clipped = predicted
-            if clipped < self.SOFT_MAX_EPSILON:
-                clipped = self.SOFT_MAX_EPSILON
-            elif clipped > 1.0 - self.SOFT_MAX_EPSILON:
-                clipped = 1.0 - self.SOFT_MAX_EPSILON
-
+            
+            # Clipping é feito, uma vez que a probabilidade acumulada pode ficar
+            # muito próximo de 0 e o interpretador fazer clipping automático para 0,
+            # devido a limitações de ponto flutante.
+            # Ou seja, poderia ocorrer log(0), o que causa erro numérico. Assim, se o erro computado de predição
+            # e alvo for muito pequeno, estabelece um erro mínimo de CROSS_ENTROPY_EPSILON
+            clipped = max(predicted, self.CROSS_ENTROPY_EPSILON)
             loss -= target * math.log(clipped)
 
         return loss
 
+    # Calcula o gradiente da derivada composta softmax+crossentropy
     def derivative(self, y_pred: List[float], y_real: List[float]) -> List[float]:
-        # gradiente da softmax + cross entropy (em relação aos logits)
-
         probs = self._softmax(y_pred)
-
+        
+        # Calcula o gradiente par-a-par e retorna em forma de lista.
         gradients = []
         for predicted, target in zip(probs, y_real):
             gradients.append(predicted - target)

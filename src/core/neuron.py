@@ -61,7 +61,7 @@ class PerceptronNeuron:
     
     """Definições de getter e setter para os pesos e bias
     essas definições explícitas com @property e setter são úteis p/ type hinting
-    ( o que impede tipos errados serem atribuidos) e facilitar acesso, as variáveis, permitindo
+    ( o que impede tipos errados serem atribuidos) e facilitar acesso às variáveis, permitindo
     fazer neuron.weights, ao invés de neuron.parameter.weights (por exemplo),
     o que juntando com os getter e setter de Parameter() melhora a arquitetura
     """

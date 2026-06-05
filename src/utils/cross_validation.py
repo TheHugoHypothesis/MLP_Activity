@@ -28,8 +28,13 @@ from src.utils.dataset_utils import DatasetUtils, Dataset
 
 
 def _mean_and_std(values: List[float]) -> Dict[str, float]:
+    """
+    Função estatística auxiliar para calcular a tendência central (média) e a 
+    dispersão (desvio padrão populacional) de uma lista de métricas.\
+    """
     return {
         "mean": mean(values) if values else 0.0,
+        #pstdev evita erro caso haja apenas 1 elemento, exigindo tamanho > 1
         "std": pstdev(values) if len(values) > 1 else 0.0,
     }
 
@@ -44,6 +49,14 @@ def run_stratified_k_fold(
     experiment_id: str = None,
     use_stratification: bool = True
 ) -> Dict[str, Any]:
+    """
+    Executa o protocolo de validação cruzada (Cross-Validation) K-Fold Estratificada.
+    
+    Esta função gerencia múltiplos ciclos de treinamento isolados.
+    Ao treinar K modelos diferentes em K partições distintas, mitiga-se o viés de seleção de dados 
+    e avaliamos a capacidade real de generalização da arquitetura
+    """
+
     if use_stratification:
         folds = DatasetUtils.stratified_k_fold_split(dataset, k)
     else:
@@ -58,19 +71,23 @@ def run_stratified_k_fold(
     # itera sobre cada fold, treinando um modelo novo e coletando métricas
     for fold_index, (train_set, val_set) in enumerate(folds, start=1):
         print(f"\n=== Fold {fold_index}/{k} ===")
-
+        
+        # Reseta os pesos criando instâncias totalmente novas,
+        # evitando o vazamento de memória de pesos entre os folds (Data Leakage de parâmetros).
         model = build_model()
         trainer = build_trainer(model)
 
         if io_manager is not None and experiment_id is not None:
             io_manager.save_model(model, f"{experiment_id}_fold_{fold_index}_initial_weights")
 
+        #Treina o modelo na partição de treino e valida na de validação
         history = trainer.train(
             train_dataset=train_set,
             val_dataset=val_set,
             epochs=epochs
         )
 
+        #Salva as curvas de aprendizado (Loss vs Época) deste fold específico
         if io_manager is not None and experiment_id is not None:
             io_manager.save_training_history(history, f"{experiment_id}_fold_{fold_index}_training_history")
 

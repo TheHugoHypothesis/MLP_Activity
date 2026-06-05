@@ -55,8 +55,12 @@ class Trainer:
         self.early_stopping = early_stopping
         self.classification_strategy = classification_strategy
     
-    #Função de backpropagation que só calcula os deltas, mas não realiza atualização
+    #Função de backpropagation que só calcula os deltas (os gradientes), mas não realiza atualização
     def backpropagate(self, y_real: List[float]):
+
+        #Para calcular a perda da ultima camada, calcula a derivada da função de perda comparando
+        #com a saída da rede na com o valor esperado (que está no vetor y_real). Retorna um vetor
+        #de mesmo tamanho em que para cada i-ésima posição corresponde
         loss_gradient_list = self.loss_function.derivative(
             self.model.last_outputs[-1],
             y_real
@@ -64,7 +68,10 @@ class Trainer:
 
         #Cálculo do delta para última camada
         last_layer = self.model.layers[-1]
+
+        # o zip combina cada neurônio da saída com seu respectivo gradiente de erro calculado acima
         for neuron, loss_gradient in zip(last_layer.neurons, loss_gradient_list):
+            # aplica a regra da cadeia: delta_k = derivada da ativação * gradiente do erro
             neuron.delta_k = neuron.activation.derivative(
                 neuron.last_local_induced_field,
                 neuron.output
@@ -73,16 +80,19 @@ class Trainer:
             #popula gradiente para última camada
             self.update_neuron_gradients(neuron=neuron)
 
-        #Cálculo do delta para camadas seguintes
+        #Cálculo do delta para camadas seguintes (percorrendo de trás para frente)
         for l in reversed(range(len(self.model.layers) - 1)):
             actual_layer = self.model.layers[l]
             next_layer = self.model.layers[l + 1]
-
+            
             if self.model.use_numpy:
                 import numpy as np
                 deltas = np.array([neuron_k.delta_k for neuron_k in next_layer.neurons])
 
+            #Calcula o delta de cada neurônio da camada atual
             for i, neuron in enumerate(actual_layer.neurons):
+                #Implementa o produto escalar de delta da próxima camada * peso da próxima
+                # para estimar o erro da camada anterior.
                 if self.model.use_numpy:
                     weights_i = np.array([neuron_k.parameter.weights[i] for neuron_k in next_layer.neurons])
                     sum_delta_k = np.dot(deltas, weights_i)
@@ -91,6 +101,7 @@ class Trainer:
                     for neuron_k in next_layer.neurons:
                         sum_delta_k += neuron_k.delta_k * neuron_k.parameter.weights[i]
                 
+                #Regra da cadeia para camada oculta: Somatório dos erros propagados * derivada da ativação local
                 neuron.delta_k = sum_delta_k * neuron.activation.derivative(
                     neuron.last_local_induced_field,
                     neuron.output
@@ -99,6 +110,8 @@ class Trainer:
                 #popula os gradientes para camadas seguintes
                 self.update_neuron_gradients(neuron=neuron)
     
+    #Método que serve para guardar os gradientes internos do neurônio
+    #durante a fase de backpropagation, antes do ajuste de pesos.
     def update_neuron_gradients(self, neuron):
         neuron.parameter.bias_gradient = neuron.delta_k
 
@@ -107,11 +120,14 @@ class Trainer:
             neuron.parameter.weights_gradient = neuron.delta_k * np.array(neuron.last_entry)
         else:
             neuron.parameter.weights_gradient = [neuron.delta_k * x for x in neuron.last_entry]
-
+    
+    #Aciona o otimizador para aplicar os gradientes acumulados e alterar os pesos reais da rede
     def update_weights(self):
         for layer in self.model.layers:
             self.optimizer.step(layer_neurons=layer.neurons, learning_rate=self.learning_rate)
     
+    #Função que serve para avaliar o modelo em um conjunto de dados sem treinar
+    #isso serve para Early stopping, já que retorna o erro de validação.
     def evaluate(self, dataset: List) -> tuple[float, float]:
         total_loss = 0.0
         correct = 0
@@ -137,13 +153,15 @@ class Trainer:
             accuracy = 0.0
 
         return avg_loss, accuracy
-            
+
+    #Executa o ciclo completo de treinamento da MLP (Épocas, Forward, Backpropagation, Ajuste de Pesos e Validação)
     def train(
         self,
         train_dataset: List,
         val_dataset: List,
         epochs: int
     ):
+        #Dicionário de histórico para armazenar as métricas de evolução ao longo das épocas
         history = {
             "train_loss": [],
             "val_loss": [],
@@ -158,7 +176,6 @@ class Trainer:
             for x, y in train_dataset:
                 y_prediction = self.model.forward(x)
                 loss = self.loss_function.compute(y_prediction, y)
-
                 self.backpropagate(y)
                 self.update_weights()
 
@@ -173,6 +190,7 @@ class Trainer:
             average_train_loss = total_train_loss / len(train_dataset)
             average_train_acc = correct_train / len(train_dataset)
 
+            # Roda a validação para checar se a rede está generalizando bem ou sofrendo Overfitting
             average_val_loss, average_val_acc = self.evaluate(val_dataset)
 
             history["train_loss"].append(average_train_loss)
