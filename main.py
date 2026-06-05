@@ -9,6 +9,9 @@ Clara Pires Campardo - 15446433
 """
 
 import random
+import sys
+import json
+import os
 
 from src.fabric import build_model, build_trainer
 from src.evaluation.evaluator import Evaluator
@@ -21,7 +24,7 @@ from src.utils.cross_validation import run_stratified_k_fold
 from src.utils.console import exibir_dashboard_configuracoes, Timer, exibir_dashboard_tempos
 
 """ Configuração a ser usada """
-CONFIG = {
+DEFAULT_CONFIG = {
     "experiment_id": "exp_008",
     "use_numpy": True, #True para usar numpy (mais rápido e saida equivalente) ou False (mais lento, mas menos lib externa)
 
@@ -77,6 +80,21 @@ CONFIG = {
     #habilita estratificação na estratégia escolhida de dataset (seja holdout ou k-fold)
     "use_stratification": True
 }
+
+def load_config():
+    for arg in sys.argv:
+        if arg.endswith(".json"):
+            if os.path.exists(arg):
+                try:
+                    with open(arg, "r", encoding="utf-8") as f:
+                        return json.load(f)
+                except Exception as e:
+                    print(f"[Erro] Falha ao carregar o arquivo JSON {arg}: {e}")
+            else:
+                print(f"[Aviso] Arquivo de configuração {arg} não encontrado. Usando configuração padrão.")
+    return DEFAULT_CONFIG
+
+CONFIG = load_config()
 
 def main():
     random.seed(CONFIG["random_seed"])

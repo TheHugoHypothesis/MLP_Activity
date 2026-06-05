@@ -14,15 +14,33 @@ Utiliza a estratégia de Hill Climbing (Subida de Encosta) para encontrar
 a melhor combinação de parâmetros para a rede neural a partir de um espaço de busca.
 """
 
+import sys
+import json
+import os
+
 from src.utils.hill_climbing_search import run_hill_climbing_search
 from src.utils.data_loader import DataLoader
 from src.utils.io_manager import IOManager
-from main import CONFIG
 
 
 def main():
-    # Cria uma cópia da configuração base definida no main.py
-    base_config = CONFIG.copy()
+    json_path = None
+    for arg in sys.argv:
+        if arg.endswith(".json"):
+            json_path = arg
+            break
+
+    if json_path is None or not os.path.exists(json_path):
+        print("[Erro] É obrigatório passar um arquivo JSON de configuração válido como argumento.")
+        print("Uso: python3 run_hill_climbing_search.py <config_file.json>")
+        sys.exit(1)
+
+    try:
+        with open(json_path, "r", encoding="utf-8") as f:
+            base_config = json.load(f)
+    except Exception as e:
+        print(f"[Erro] Falha ao carregar o arquivo JSON {json_path}: {e}")
+        sys.exit(1)
 
     dataset = DataLoader.load_character_from_alphabet(
         base_config["x_path"],

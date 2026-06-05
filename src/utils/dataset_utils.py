@@ -116,13 +116,9 @@ class DatasetUtils:
             folds.append((train, val))
         return folds
     
+    #Mescla grupos de caracteres em classes únicas.
     @staticmethod
     def merge_classes(dataset: Dataset, merge_groups: List[List[str]]) -> Tuple[Dataset, int]:
-        """
-        Mescla grupos de caracteres em classes únicas.
-        Ex: merge_groups = [["D", "O"], ["I", "J"]]
-        Ajusta automaticamente os One-Hot targets de 26 elementos para o novo número de classes.
-        """
         #converte letras para indices
         groups_idx = []
         for group in merge_groups:
