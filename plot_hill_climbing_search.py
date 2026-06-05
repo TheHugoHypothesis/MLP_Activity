@@ -1,22 +1,30 @@
 import json
 import os
+import sys
 import glob
 import matplotlib.pyplot as plt
 import numpy as np
 
 def main():
-    #Localiza o relatório de busca local mais recente
-    reports_dir = "outputs/reports"
-    report_pattern = os.path.join(reports_dir, "*_hill_climbing_final.json")
-    report_files = glob.glob(report_pattern)
+    if len(sys.argv) > 1:
+        report_path = sys.argv[1]
+        if not os.path.exists(report_path):
+            print(f"[Erro] O arquivo de relatório {report_path} não existe.")
+            return
+        reports_dir = os.path.dirname(report_path) or "."
+    else:
+        #Localiza o relatório de busca local mais recente
+        reports_dir = "outputs/reports"
+        report_pattern = os.path.join(reports_dir, "*_hill_climbing_final.json")
+        report_files = glob.glob(report_pattern)
 
-    if not report_files:
-        print(f"[Erro] Nenhum arquivo de relatório encontrado em '{reports_dir}'")
-        return
+        if not report_files:
+            print(f"[Erro] Nenhum arquivo de relatório encontrado em '{reports_dir}'")
+            return
 
-    report_files.sort(key=os.path.getmtime, reverse=True)
-    report_path = report_files[0]
-    print(f"[Plot] Carregando o relatório mais recente: {os.path.basename(report_path)}")
+        report_files.sort(key=os.path.getmtime, reverse=True)
+        report_path = report_files[0]
+        print(f"[Plot] Carregando o relatório mais recente: {os.path.basename(report_path)}")
 
     with open(report_path, "r", encoding="utf-8") as f:
         data = json.load(f)

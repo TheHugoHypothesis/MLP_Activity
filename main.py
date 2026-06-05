@@ -25,13 +25,13 @@ from src.utils.console import exibir_dashboard_configuracoes, Timer, exibir_dash
 
 """ Configuração a ser usada """
 DEFAULT_CONFIG = {
-    "experiment_id": "exp_008",
+    "experiment_id": "exp_009",
     "use_numpy": True, #True para usar numpy (mais rápido e saida equivalente) ou False (mais lento, mas menos lib externa)
 
     #Configurações de separação do Dataset
     "use_cross_validation": False,#false=usa holdout, true=usa cross_validation
     "cross_validation_folds": 3,
-    "hold_out_p_train": 0.7, 
+    "hold_out_p_train": 0.85, 
     "hold_out_p_validation": 0.15, #o complemento 1 - (hold_out_p_train + hold_out_p_validation) é implicitamente hold_out_p_test
 
     #Configurações de backpropagation e early stop
@@ -70,15 +70,16 @@ DEFAULT_CONFIG = {
 
     #configurações de dados e randomização
     "random_seed": 3,
-    "x_path": "data/raw/X.npy",
-    "y_path": "data/raw/Y_classe.npy",
+    "x_path": "datasets/caracteres_completo/X.npy",
+    "y_path": "datasets/caracteres_completo/Y_classe.npy",
 
     #configurações de ruído
     #permite mesclar classes informando letras (como D e O, I e J), para desativar e usar as 26, basta definir como None
     #exemplo de mesclagem: "merge_classes": [["D", "O"], ["I", "J"]], 
     "merge_classes": None,
+    "fixed_test_size": 130,#usa 0 para usar o complemento o hold_out_p_test = 1 - (hold_out_p_train + hold_out_p_validation)
     #habilita estratificação na estratégia escolhida de dataset (seja holdout ou k-fold)
-    "use_stratification": True
+    "use_stratification": False
 }
 
 def load_config():
@@ -108,14 +109,22 @@ def main():
     io = IOManager()
 
     with Timer() as t_data:
-        dataset = DataLoader.load_character_from_alphabet(
+        dataset = DataLoader.load_from_npy(
             CONFIG["x_path"],
-            CONFIG["y_path"]
+            CONFIG["y_path"],
+            normalize_x=CONFIG.get("normalize_x"),
+            convert_to_one_hot=CONFIG.get("convert_to_one_hot", False)
         )
     tempos["load_data"] = t_data.interval
 
+    # Ajusta as configurações da rede dinamicamente com base no dataset carregado
+    input_size = len(dataset[0][0])
+    num_classes = len(dataset[0][1])
+    CONFIG["input_size"] = input_size
+    CONFIG["num_classes"] = num_classes
+    CONFIG["layers"][-1]["n_neurons"] = num_classes
+
     #Modificações do dataset de ruído
-    num_classes = CONFIG["num_classes"]
     if CONFIG.get("merge_classes"):
         dataset, num_classes = DatasetUtils.merge_classes(dataset, CONFIG["merge_classes"])
         CONFIG["num_classes"] = num_classes
@@ -126,10 +135,13 @@ def main():
     run_name = io.start_run(CONFIG["experiment_id"])
     io.save_experiment_config(CONFIG, f"{CONFIG['experiment_id']}_experiment_config")
 
+    fixed_test_size = CONFIG.get("fixed_test_size", 0)
+
     if CONFIG["use_cross_validation"]:
+        cv_dataset = dataset[:-fixed_test_size] if fixed_test_size > 0 else dataset
         with Timer() as t_train:
             result = run_stratified_k_fold(
-                dataset=dataset,
+                dataset=cv_dataset,
                 k=CONFIG["cross_validation_folds"],
                 build_model=lambda: build_model(CONFIG),
                 build_trainer=lambda m: build_trainer(m, CONFIG),
@@ -149,20 +161,13 @@ def main():
         exibir_dashboard_tempos(tempos, n_epochs=epocas_reais)
         
     else:
-        #holdout estratificado
-        if CONFIG.get("use_stratification", True):
-            train_set, val_set, test_set = DatasetUtils.stratified_split(
-                dataset=dataset,
-                p_train=CONFIG["hold_out_p_train"],
-                p_val=CONFIG["hold_out_p_validation"]
-            )
-        #holdout randomizado
-        else:
-            train_set, val_set, test_set = DatasetUtils.random_split(
-                dataset=dataset,
-                p_train=CONFIG["hold_out_p_train"],
-                p_val=CONFIG["hold_out_p_validation"]
-            )
+        train_set, val_set, test_set = DatasetUtils.split_dataset(
+            dataset=dataset,
+            p_train=CONFIG["hold_out_p_train"],
+            p_val=CONFIG["hold_out_p_validation"],
+            fixed_test_size=fixed_test_size,
+            use_stratification=CONFIG.get("use_stratification", True)
+        )
 
         mlp = build_model(CONFIG)
         io.save_model(mlp, f"{CONFIG['experiment_id']}_initial_weights")

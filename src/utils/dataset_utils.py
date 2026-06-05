@@ -118,25 +118,29 @@ class DatasetUtils:
     
     #Mescla grupos de caracteres em classes únicas.
     @staticmethod
-    def merge_classes(dataset: Dataset, merge_groups: List[List[str]]) -> Tuple[Dataset, int]:
-        #converte letras para indices
+    def merge_classes(dataset: Dataset, merge_groups: List[List[any]]) -> Tuple[Dataset, int]:
         groups_idx = []
         for group in merge_groups:
-            groups_idx.append([ord(char.upper()) - 65 for char in group])
+            idx_group = []
+            for item in group:
+                if isinstance(item, str) and len(item) == 1 and item.isalpha():
+                    idx_group.append(ord(item.upper()) - 65)
+                else:
+                    idx_group.append(int(item))
+            groups_idx.append(idx_group)
         
         old_to_new = {}
         current_new_idx = 0
         mapped_old_indices = set()
 
-        #mapeamento de classes unificadas
         for group in groups_idx:
             for old_idx in group:
                 old_to_new[old_idx] = current_new_idx
                 mapped_old_indices.add(old_idx)
             current_new_idx += 1
 
-        #mapeia classes restantes
-        for old_idx in range(26):
+        orig_classes = len(dataset[0][1])
+        for old_idx in range(orig_classes):
             if old_idx not in mapped_old_indices:
                 old_to_new[old_idx] = current_new_idx
                 current_new_idx += 1
@@ -144,7 +148,6 @@ class DatasetUtils:
         new_num_classes = current_new_idx
         modified_dataset = []
         
-        #reconstroi vetores do dataset p nova dimensão reduzida
         for x, y in dataset:
             old_class_idx = y.index(max(y))
             new_class_idx = old_to_new[old_class_idx]
@@ -194,12 +197,48 @@ class DatasetUtils:
         folds = []
         for i in range(k):
             val = slices[i]
-            train = []
-            for j in range(k):
-                if j != i:
-                    train.extend(slices[j])
-            random.shuffle(train)
-            random.shuffle(val)
             folds.append((train, val))
         
         return folds
+
+    @staticmethod
+    def split_dataset(
+        dataset: Dataset,
+        p_train: float = 0.7,
+        p_val: float = 0.15,
+        fixed_test_size: int = 0,
+        use_stratification: bool = True
+    ) -> Tuple[Dataset, Dataset, Dataset]:
+        if fixed_test_size > 0:
+            test_set = dataset[-fixed_test_size:]
+            remaining_dataset = dataset[:-fixed_test_size]
+            total_p = p_train + p_val
+            p_train_adj = p_train / total_p if total_p > 0 else 0.8
+            p_val_adj = p_val / total_p if total_p > 0 else 0.2
+            
+            if use_stratification:
+                train_set, val_set, _ = DatasetUtils.stratified_split(
+                    dataset=remaining_dataset,
+                    p_train=p_train_adj,
+                    p_val=p_val_adj
+                )
+            else:
+                train_set, val_set, _ = DatasetUtils.random_split(
+                    dataset=remaining_dataset,
+                    p_train=p_train_adj,
+                    p_val=p_val_adj
+                )
+        else:
+            if use_stratification:
+                train_set, val_set, test_set = DatasetUtils.stratified_split(
+                    dataset=dataset,
+                    p_train=p_train,
+                    p_val=p_val
+                )
+            else:
+                train_set, val_set, test_set = DatasetUtils.random_split(
+                    dataset=dataset,
+                    p_train=p_train,
+                    p_val=p_val
+                )
+        return train_set, val_set, test_set

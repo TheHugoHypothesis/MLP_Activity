@@ -10,10 +10,20 @@ Clara Pires Campardo - 15446433
 
 import json
 import os
-report_path = r"outputs\reports\exp_008_hill_hill_climbing_final.json"
-if not os.path.exists(report_path):
-    report_path = r"outputs\reports\exp_008_hill_hill_climbing_final.json"
+import sys
+
+report_path = "outputs/reports/exp_008_hill_hill_climbing_final.json"
 output_path = "hill_climbing_search.md"
+
+if len(sys.argv) > 1:
+    report_path = sys.argv[1]
+if len(sys.argv) > 2:
+    output_path = sys.argv[2]
+
+if not os.path.exists(report_path):
+    print(f"[Erro] O arquivo de relatório {report_path} não existe.")
+    sys.exit(1)
+
 with open(report_path, "r", encoding="utf-8") as f:
     data = json.load(f)
 results = data.get("results", [])

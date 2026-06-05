@@ -51,6 +51,8 @@ class PerceptronNeuron:
             #isso evita carregamento desnecessário se formos usar a versão sem numpy
             #e permite essa parte do código rodar sem que tenha a biblioteca instalada no sistema
             import numpy as np
+
+            #essa linha utiliza a função np.dot(...) que equivale a um produto escalar entre duas listas numpy
             self.last_local_induced_field = np.dot(entry_list, self.weights) + self.bias
         else:
             self.last_local_induced_field = scalar_product(entry_list, self.weights) + self.bias

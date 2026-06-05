@@ -26,7 +26,13 @@ class Parameter:
         self.use_numpy = use_numpy
         if use_numpy:
             import numpy as np
+            #essa instrução converte as listas de valores em objeto Python em um array Numpy com
+            #elementos do tipo float64 (que são tipos nativos C de números reais) e guarda no objeto
+            #self._weights
             self._weights = np.array(weights, dtype=np.float64)
+            #essa instrução cria um novo array com a mesma dimensão e formato do self._weights criado acima
+            #preenchido inicialmente com zeros (por isso uso de np.zeros_like). É o vetor usado para
+            #armazenar os gradientes calculados.
             self.weights_gradient = np.zeros_like(self._weights)
         else:
             self._weights = weights
@@ -41,7 +47,7 @@ class Parameter:
     evita exposição direta das variaveis, então se for paralelizado no futuro evita 
     concorrência de threads
     Também já lida com as arrays numpy diretamente, sem que quem usa essa clase precise
-    se preocupar
+    se preocupar com o tipo de rede.
     """
     @property
     def weights(self) -> List[float]:

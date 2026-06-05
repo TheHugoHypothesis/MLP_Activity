@@ -74,9 +74,12 @@ def evaluate_combo(
     start = time.time()
 
     # Executa o experimento (Validação Cruzada ou Holdout)
+    fixed_test_size = cfg.get("fixed_test_size", 0)
+
     if cfg.get("use_cross_validation", False):
+        cv_dataset = dataset[:-fixed_test_size] if fixed_test_size > 0 else dataset
         result = run_stratified_k_fold(
-            dataset=dataset,
+            dataset=cv_dataset,
             k=cfg.get("cross_validation_folds", 3),
             build_model=lambda: build_model(cfg),
             build_trainer=lambda m: build_trainer(m, cfg),
@@ -92,19 +95,13 @@ def evaluate_combo(
         run_info = {"type": "k_fold", "result": result}
 
     else:
-        # Modo Holdout (estratificado ou randomizado)
-        if cfg.get("use_stratification", True):
-            train_set, val_set, test_set = DatasetUtils.stratified_split(
-                dataset=dataset,
-                p_train=cfg.get("hold_out_p_train", 0.7),
-                p_val=cfg.get("hold_out_p_validation", 0.15)
-            )
-        else:
-            train_set, val_set, test_set = DatasetUtils.random_split(
-                dataset=dataset,
-                p_train=cfg.get("hold_out_p_train", 0.7),
-                p_val=cfg.get("hold_out_p_validation", 0.15)
-            )
+        train_set, val_set, test_set = DatasetUtils.split_dataset(
+            dataset=dataset,
+            p_train=cfg.get("hold_out_p_train", 0.7),
+            p_val=cfg.get("hold_out_p_validation", 0.15),
+            fixed_test_size=fixed_test_size,
+            use_stratification=cfg.get("use_stratification", True)
+        )
 
         model = build_model(cfg)
         trainer = build_trainer(model, cfg)
