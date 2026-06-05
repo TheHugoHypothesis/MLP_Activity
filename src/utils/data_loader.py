@@ -118,6 +118,8 @@ class DataLoader:
             #tolist() converte arrays NumPy para listas Python
             dataset.append((x_processed[i].tolist(), y_raw[i].tolist()))
 
+        return dataset
+
     @staticmethod
     def load_character_from_alphabet(
         x_path: str,

@@ -62,7 +62,7 @@ def main():
         "optimizer_type": ["sgd", "sgd_momentum"],
         "momentum": [0.0, 0.5, 0.8, 0.9, 0.99],
         "l2_decay": [0.0, 1e-6, 1e-5, 1e-4, 1e-3],
-        "p_train": [0.7, 0.8],
+        "p_train": [0.7, 0.85],
     }
 
     # Executa a busca através do Hill Climbing e salva os relatórios resultantes

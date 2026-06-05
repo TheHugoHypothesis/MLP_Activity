@@ -106,6 +106,13 @@ def main():
             val_m = fold.get("val_metrics", {})
             if "confusion_matrix" in val_m:
                 plotar_matriz_confusao(val_m["confusion_matrix"], figures_dir, prefix, "validation")
+
+        if "final_training_history" in report and report["final_training_history"]:
+            plotar_curva_aprendizado(report["final_training_history"], figures_dir, f"{exp_id}_final")
+            
+        final_test_m = report.get("final_test_metrics", {})
+        if "confusion_matrix" in final_test_m:
+            plotar_matriz_confusao(final_test_m["confusion_matrix"], figures_dir, f"{exp_id}_final", "test")
                 
     #Fluxo holdout normal
     else:

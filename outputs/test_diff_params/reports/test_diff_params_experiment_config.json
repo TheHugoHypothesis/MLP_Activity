@@ -1,0 +1,40 @@
+{
+    "experiment_id": "test_diff_params",
+    "use_numpy": true,
+    "use_cross_validation": false,
+    "cross_validation_folds": 3,
+    "hold_out_p_train": 0.85,
+    "hold_out_p_validation": 0.15,
+    "num_epochs": 400,
+    "learning_rate": 0.2,
+    "patience": 15,
+    "min_delta": 0.0001,
+    "input_size": 120,
+    "num_classes": 26,
+    "loss_function": "mse",
+    "classification_strategy": "argmax",
+    "classification_threshold": 0.5,
+    "optimizer": {
+        "type": "sgd",
+        "momentum": 0.0,
+        "l2_decay": 0.0
+    },
+    "layers": [
+        {
+            "n_neurons": 48,
+            "activation": "sigmoid",
+            "initializer": "xavier"
+        },
+        {
+            "n_neurons": 26,
+            "activation": "sigmoid",
+            "initializer": "xavier"
+        }
+    ],
+    "random_seed": 3,
+    "x_path": "datasets/caracteres_completo/X.npy",
+    "y_path": "datasets/caracteres_completo/Y_classe.npy",
+    "merge_classes": null,
+    "fixed_test_size": 130,
+    "use_stratification": true
+}

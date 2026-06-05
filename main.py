@@ -153,11 +153,33 @@ def main():
             )
         tempos["train"] = t_train.interval
         
+        test_set = dataset[-fixed_test_size:] if fixed_test_size > 0 else []
+        avg_epochs = int(sum(len(fold["history"]["train_loss"]) for fold in result["folds"]) / len(result["folds"]))
+        mlp_final = build_model(CONFIG)
+        trainer_final = build_trainer(mlp_final, CONFIG)
+        trainer_final.early_stopping = None
+        #usa a média dos folds como limite de épocas do modelo final
+        history_final = trainer_final.train(train_dataset=cv_dataset, val_dataset=[], epochs=avg_epochs)
+        if len(test_set) > 0:
+            evaluator = Evaluator(mlp_final, classification_strategy=trainer_final.classification_strategy, loss_function=trainer_final.loss_function)
+            print("\n=== CONJUNTO DE TESTE (MODELO FINAL) ===")
+            test_metrics = evaluator.evaluate(test_set, num_classes=CONFIG["num_classes"])
+            result["final_test_metrics"] = test_metrics
+            io.save_predictions(mlp_final, test_set, CONFIG['experiment_id'] + "_test_outputs")
+        result["final_training_history"] = history_final
+        io.save_model(mlp_final, CONFIG['experiment_id'] + "_final_weights")
+        
+        epocas_reais = sum(len(fold["history"]["train_loss"]) for fold in result["folds"])
+        result["timing"] = {
+            "load_data_time": tempos.get("load_data", 0.0),
+            "train_time": tempos.get("train", 0.0),
+            "time_per_epoch": tempos.get("train", 0.0) / epocas_reais if epocas_reais > 0 else 0.0,
+            "total_epochs": epocas_reais
+        }
         result["experiment_id"] = CONFIG["experiment_id"]
         result["num_epochs"] = CONFIG["num_epochs"]
         result["patience"] = CONFIG.get("patience")
         io.save_training_history(result, f"{CONFIG['experiment_id']}_cross_validation_report")
-        epocas_reais = sum(len(fold["history"]["train_loss"]) for fold in result["folds"])
         exibir_dashboard_tempos(tempos, n_epochs=epocas_reais)
         
     else:
@@ -196,6 +218,7 @@ def main():
         print("\n=== CONJUNTO DE TESTE ===")
         test_metrics = evaluator.evaluate(test_set, num_classes=CONFIG["num_classes"])
 
+        epocas_reais = len(history["train_loss"])
         report = {
             "experiment_id": CONFIG["experiment_id"],
             "num_epochs": CONFIG["num_epochs"],
@@ -203,10 +226,15 @@ def main():
             "history": history,
             "train_metrics": train_metrics,
             "val_metrics": val_metrics,
-            "test_metrics": test_metrics
+            "test_metrics": test_metrics,
+            "timing": {
+                "load_data_time": tempos.get("load_data", 0.0),
+                "train_time": tempos.get("train", 0.0),
+                "time_per_epoch": tempos.get("train", 0.0) / epocas_reais if epocas_reais > 0 else 0.0,
+                "total_epochs": epocas_reais
+            }
         }
 
-        #SAVE FINAL MODELO + REPORT
         io.save_model(mlp, CONFIG['experiment_id'] + "_final_weights")
         io.save_predictions(mlp, test_set, CONFIG['experiment_id'] + "_test_outputs")   
         io.save_report(report, f"{CONFIG['experiment_id']}_report")
