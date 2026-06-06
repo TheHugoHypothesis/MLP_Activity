@@ -9,7 +9,7 @@
     "num_epochs": 600,
     "learning_rate": 0.05,
     "patience": 20,
-    "min_delta": 0.00001,
+    "min_delta": 1e-05,
     "input_size": 120,
     "num_classes": 26,
     "classification_strategy": "argmax",

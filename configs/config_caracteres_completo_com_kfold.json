@@ -1,7 +1,7 @@
 {
-    "experiment_id": "exp_melhor_caracteres_completo",
+    "experiment_id": "exp_melhor_caracteres_completo_com_kfold",
     "use_numpy": true,
-    "use_cross_validation": false,
+    "use_cross_validation": true,
     "cross_validation_folds": 3,
     "hold_out_p_train": 0.7,
     "hold_out_p_validation": 0.15,

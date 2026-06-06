@@ -1,7 +1,7 @@
 {
-    "experiment_id": "exp_melhor_caracteres_completo",
+    "experiment_id": "exp_melhor_caracteres_completo_com_kfold",
     "use_numpy": true,
-    "use_cross_validation": false,
+    "use_cross_validation": true,
     "cross_validation_folds": 3,
     "hold_out_p_train": 0.7,
     "hold_out_p_validation": 0.15,
@@ -9,7 +9,7 @@
     "num_epochs": 600,
     "learning_rate": 0.05,
     "patience": 20,
-    "min_delta": 0.00001,
+    "min_delta": 1e-05,
     "input_size": 120,
     "num_classes": 26,
     "classification_strategy": "argmax",
