@@ -134,7 +134,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.00897560376596421,
-            "elapsed_seconds": 14.3534517288208,
+            "elapsed_seconds": 86.1207103729248,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -2388,7 +2388,7 @@
             },
             "val_accuracy": 0.9,
             "val_loss": 0.008751985394212933,
-            "elapsed_seconds": 15.192739963531494,
+            "elapsed_seconds": 91.15643978118896,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -4790,7 +4790,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.008772708559675015,
-            "elapsed_seconds": 15.622681140899658,
+            "elapsed_seconds": 93.73608684539795,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -7104,7 +7104,7 @@
             },
             "val_accuracy": 0.8944444444444445,
             "val_loss": 0.007512199937796153,
-            "elapsed_seconds": 5.0279951095581055,
+            "elapsed_seconds": 30.167970657348633,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -8430,7 +8430,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.009579228522381546,
-            "elapsed_seconds": 3.8453142642974854,
+            "elapsed_seconds": 23.071885585784912,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -9648,7 +9648,7 @@
             },
             "val_accuracy": 0.9,
             "val_loss": 0.008241164143590581,
-            "elapsed_seconds": 16.0012366771698,
+            "elapsed_seconds": 96.0074200630188,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -12022,7 +12022,7 @@
             },
             "val_accuracy": 0.8222222222222222,
             "val_loss": 0.013039346732976699,
-            "elapsed_seconds": 19.853321075439453,
+            "elapsed_seconds": 119.11992645263672,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -14844,7 +14844,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.00897560376596421,
-            "elapsed_seconds": 14.269535779953003,
+            "elapsed_seconds": 85.61721467971802,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -17098,7 +17098,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.00897560376596421,
-            "elapsed_seconds": 14.370151281356812,
+            "elapsed_seconds": 86.22090768814087,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -19352,7 +19352,7 @@
             },
             "val_accuracy": 0.1,
             "val_loss": 0.036928347576881786,
-            "elapsed_seconds": 2.1521193981170654,
+            "elapsed_seconds": 12.912716388702393,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -20338,7 +20338,7 @@
             },
             "val_accuracy": 0.9,
             "val_loss": 0.007310288164957942,
-            "elapsed_seconds": 6.115643501281738,
+            "elapsed_seconds": 36.69386100769043,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -21736,7 +21736,7 @@
             },
             "val_accuracy": 0.8777777777777778,
             "val_loss": 0.01015206586009487,
-            "elapsed_seconds": 10.988163232803345,
+            "elapsed_seconds": 65.92897939682007,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -23638,7 +23638,7 @@
             },
             "val_accuracy": 0.8944444444444445,
             "val_loss": 0.00803849768056126,
-            "elapsed_seconds": 19.53757405281067,
+            "elapsed_seconds": 117.22544431686401,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -26448,7 +26448,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.00897560376596421,
-            "elapsed_seconds": 14.127395868301392,
+            "elapsed_seconds": 84.76437520980835,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -28702,7 +28702,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.00897560376596421,
-            "elapsed_seconds": 14.401323080062866,
+            "elapsed_seconds": 86.4079384803772,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -30956,7 +30956,7 @@
             },
             "val_accuracy": 0.8,
             "val_loss": 0.019376285161046825,
-            "elapsed_seconds": 17.143062591552734,
+            "elapsed_seconds": 102.8583755493164,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -34122,7 +34122,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.011075502976799687,
-            "elapsed_seconds": 22.70409059524536,
+            "elapsed_seconds": 136.22454357147217,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -37288,7 +37288,7 @@
             },
             "val_accuracy": 0.8944444444444445,
             "val_loss": 0.008062895616963663,
-            "elapsed_seconds": 9.74864912033081,
+            "elapsed_seconds": 58.49189472198486,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -39074,7 +39074,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.00836116149179647,
-            "elapsed_seconds": 14.729825973510742,
+            "elapsed_seconds": 88.37895584106445,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -41372,7 +41372,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.01458799360296058,
-            "elapsed_seconds": 15.217308282852173,
+            "elapsed_seconds": 91.30384969711304,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -43710,7 +43710,7 @@
             },
             "val_accuracy": 0.8962264150943396,
             "val_loss": 0.008663309582860114,
-            "elapsed_seconds": 14.44313645362854,
+            "elapsed_seconds": 86.65881872177124,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -46020,7 +46020,7 @@
             },
             "val_accuracy": 0.9,
             "val_loss": 0.00707841559623111,
-            "elapsed_seconds": 5.9338059425354,
+            "elapsed_seconds": 35.6028356552124,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -47442,7 +47442,7 @@
             },
             "val_accuracy": 0.9,
             "val_loss": 0.007311463064958058,
-            "elapsed_seconds": 6.10201621055603,
+            "elapsed_seconds": 36.61209726333618,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -48816,7 +48816,7 @@
             },
             "val_accuracy": 0.8944444444444445,
             "val_loss": 0.007242389337308561,
-            "elapsed_seconds": 2.1442148685455322,
+            "elapsed_seconds": 12.865289211273193,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -49818,7 +49818,7 @@
             },
             "val_accuracy": 0.8833333333333333,
             "val_loss": 0.010025399735370854,
-            "elapsed_seconds": 1.1334929466247559,
+            "elapsed_seconds": 6.800957679748535,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -50712,7 +50712,7 @@
             },
             "val_accuracy": 0.9055555555555556,
             "val_loss": 0.006840819722321862,
-            "elapsed_seconds": 5.773043155670166,
+            "elapsed_seconds": 34.638258934020996,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -52094,7 +52094,7 @@
             },
             "val_accuracy": 0.9166666666666666,
             "val_loss": 0.008294241694470909,
-            "elapsed_seconds": 11.971895694732666,
+            "elapsed_seconds": 71.831374168396,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -54136,7 +54136,7 @@
             },
             "val_accuracy": 0.9,
             "val_loss": 0.007310288164957942,
-            "elapsed_seconds": 5.962007522583008,
+            "elapsed_seconds": 35.77204513549805,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -55534,7 +55534,7 @@
             },
             "val_accuracy": 0.9,
             "val_loss": 0.007310288164957942,
-            "elapsed_seconds": 6.050573110580444,
+            "elapsed_seconds": 36.303438663482666,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -56932,7 +56932,7 @@
             },
             "val_accuracy": 0.9055555555555556,
             "val_loss": 0.007076358349220012,
-            "elapsed_seconds": 4.169830799102783,
+            "elapsed_seconds": 25.0189847946167,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -58122,7 +58122,7 @@
             },
             "val_accuracy": 0.8944444444444445,
             "val_loss": 0.007841943266196295,
-            "elapsed_seconds": 4.4426140785217285,
+            "elapsed_seconds": 26.65568447113037,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -59352,7 +59352,7 @@
             },
             "val_accuracy": 0.9055555555555556,
             "val_loss": 0.007004404196186415,
-            "elapsed_seconds": 7.896213054656982,
+            "elapsed_seconds": 47.377278327941895,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -60954,7 +60954,7 @@
             },
             "val_accuracy": 0.9,
             "val_loss": 0.007310288164957942,
-            "elapsed_seconds": 5.8769519329071045,
+            "elapsed_seconds": 35.26171159744263,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -62352,7 +62352,7 @@
             },
             "val_accuracy": 0.9,
             "val_loss": 0.007310288164957942,
-            "elapsed_seconds": 6.085917711257935,
+            "elapsed_seconds": 36.51550626754761,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -63750,7 +63750,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.00831060229448807,
-            "elapsed_seconds": 10.950472354888916,
+            "elapsed_seconds": 65.7028341293335,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -66048,7 +66048,7 @@
             },
             "val_accuracy": 0.8944444444444445,
             "val_loss": 0.008067043981335634,
-            "elapsed_seconds": 9.732025623321533,
+            "elapsed_seconds": 58.3921537399292,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -67834,7 +67834,7 @@
             },
             "val_accuracy": 0.9055555555555556,
             "val_loss": 0.007078063275620314,
-            "elapsed_seconds": 4.083555459976196,
+            "elapsed_seconds": 24.501332759857178,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -69024,7 +69024,7 @@
             },
             "val_accuracy": 0.9055555555555556,
             "val_loss": 0.0066374368861428345,
-            "elapsed_seconds": 6.241445302963257,
+            "elapsed_seconds": 37.44867181777954,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -70450,7 +70450,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.01375819076014481,
-            "elapsed_seconds": 4.917035818099976,
+            "elapsed_seconds": 29.502214908599854,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -71736,7 +71736,7 @@
             },
             "val_accuracy": 0.9056603773584906,
             "val_loss": 0.0071775682192486276,
-            "elapsed_seconds": 5.6887922286987305,
+            "elapsed_seconds": 34.13275337219238,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -73110,7 +73110,7 @@
             },
             "val_accuracy": 0.9166666666666666,
             "val_loss": 0.008453974188380481,
-            "elapsed_seconds": 10.923206090927124,
+            "elapsed_seconds": 65.53923654556274,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -75080,7 +75080,7 @@
             },
             "val_accuracy": 0.9055555555555556,
             "val_loss": 0.008331278273678085,
-            "elapsed_seconds": 12.64842700958252,
+            "elapsed_seconds": 75.89056205749512,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -77134,7 +77134,7 @@
             },
             "val_accuracy": 0.18888888888888888,
             "val_loss": 0.03358693668796429,
-            "elapsed_seconds": 0.9259812831878662,
+            "elapsed_seconds": 5.555887699127197,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -77996,7 +77996,7 @@
             },
             "val_accuracy": 0.05555555555555555,
             "val_loss": 0.03784189191926049,
-            "elapsed_seconds": 0.6437168121337891,
+            "elapsed_seconds": 3.8623008728027344,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -78830,7 +78830,7 @@
             },
             "val_accuracy": 0.9166666666666666,
             "val_loss": 0.008294241694470909,
-            "elapsed_seconds": 12.244652509689331,
+            "elapsed_seconds": 73.46791505813599,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -80872,7 +80872,7 @@
             },
             "val_accuracy": 0.9166666666666666,
             "val_loss": 0.008294241694470909,
-            "elapsed_seconds": 12.58368992805481,
+            "elapsed_seconds": 75.50213956832886,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -82914,7 +82914,7 @@
             },
             "val_accuracy": 0.9222222222222223,
             "val_loss": 0.007298562890251912,
-            "elapsed_seconds": 8.833045244216919,
+            "elapsed_seconds": 52.998271465301514,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -84612,7 +84612,7 @@
             },
             "val_accuracy": 0.8722222222222222,
             "val_loss": 0.009804315933301002,
-            "elapsed_seconds": 8.039874792098999,
+            "elapsed_seconds": 48.239248752593994,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -86214,7 +86214,7 @@
             },
             "val_accuracy": 0.9222222222222223,
             "val_loss": 0.007251910169862865,
-            "elapsed_seconds": 18.430572509765625,
+            "elapsed_seconds": 110.58343505859375,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -88868,7 +88868,7 @@
             },
             "val_accuracy": 0.9166666666666666,
             "val_loss": 0.008294241694470909,
-            "elapsed_seconds": 12.458636999130249,
+            "elapsed_seconds": 74.7518219947815,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -90910,7 +90910,7 @@
             },
             "val_accuracy": 0.9166666666666666,
             "val_loss": 0.008294241694470909,
-            "elapsed_seconds": 12.380374670028687,
+            "elapsed_seconds": 74.28224802017212,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -92952,7 +92952,7 @@
             },
             "val_accuracy": 0.8111111111111111,
             "val_loss": 0.014171273968417443,
-            "elapsed_seconds": 13.389601469039917,
+            "elapsed_seconds": 80.3376088142395,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -95566,7 +95566,7 @@
             },
             "val_accuracy": 0.8611111111111112,
             "val_loss": 0.01053542077195106,
-            "elapsed_seconds": 16.815844774246216,
+            "elapsed_seconds": 100.8950686454773,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -98076,7 +98076,7 @@
             },
             "val_accuracy": 0.9222222222222223,
             "val_loss": 0.007297089001153492,
-            "elapsed_seconds": 8.89560866355896,
+            "elapsed_seconds": 53.37365198135376,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -99774,7 +99774,7 @@
             },
             "val_accuracy": 0.8444444444444444,
             "val_loss": 0.010702279278065772,
-            "elapsed_seconds": 10.28550124168396,
+            "elapsed_seconds": 61.71300745010376,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -101592,7 +101592,7 @@
             },
             "val_accuracy": 0.8777777777777778,
             "val_loss": 0.013635150826610485,
-            "elapsed_seconds": 5.386976718902588,
+            "elapsed_seconds": 32.32186031341553,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -102922,7 +102922,7 @@
             },
             "val_accuracy": 0.9198113207547169,
             "val_loss": 0.007807891910482125,
-            "elapsed_seconds": 13.002871990203857,
+            "elapsed_seconds": 78.01723194122314,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -105084,7 +105084,7 @@
             },
             "val_accuracy": 0.9277777777777778,
             "val_loss": 0.007305644850559643,
-            "elapsed_seconds": 17.38053250312805,
+            "elapsed_seconds": 104.28319501876831,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -107722,7 +107722,7 @@
             },
             "val_accuracy": 0.9166666666666666,
             "val_loss": 0.00749694266788951,
-            "elapsed_seconds": 18.219850301742554,
+            "elapsed_seconds": 109.31910181045532,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -110296,7 +110296,7 @@
             },
             "val_accuracy": 0.32222222222222224,
             "val_loss": 0.029873866666936734,
-            "elapsed_seconds": 4.270543336868286,
+            "elapsed_seconds": 25.623260021209717,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -111530,7 +111530,7 @@
             },
             "val_accuracy": 0.05555555555555555,
             "val_loss": 0.03784189191926049,
-            "elapsed_seconds": 0.9886150360107422,
+            "elapsed_seconds": 5.931690216064453,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -112404,7 +112404,7 @@
             },
             "val_accuracy": 0.9277777777777778,
             "val_loss": 0.007548074895273641,
-            "elapsed_seconds": 15.264363050460815,
+            "elapsed_seconds": 91.58617830276489,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -114770,7 +114770,7 @@
             },
             "val_accuracy": 0.9222222222222223,
             "val_loss": 0.007251910169862865,
-            "elapsed_seconds": 17.88610029220581,
+            "elapsed_seconds": 107.31660175323486,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -117424,7 +117424,7 @@
             },
             "val_accuracy": 0.8388888888888889,
             "val_loss": 0.012162494761241583,
-            "elapsed_seconds": 22.853233337402344,
+            "elapsed_seconds": 137.11940002441406,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -120590,7 +120590,7 @@
             },
             "val_accuracy": 0.9222222222222223,
             "val_loss": 0.006985636503325369,
-            "elapsed_seconds": 10.8750319480896,
+            "elapsed_seconds": 65.2501916885376,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -122492,7 +122492,7 @@
             },
             "val_accuracy": 0.9222222222222223,
             "val_loss": 0.006946800613721011,
-            "elapsed_seconds": 21.582069158554077,
+            "elapsed_seconds": 129.49241495132446,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -125550,7 +125550,7 @@
             },
             "val_accuracy": 0.9222222222222223,
             "val_loss": 0.007251910169862865,
-            "elapsed_seconds": 18.22538471221924,
+            "elapsed_seconds": 109.35230827331543,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -128204,7 +128204,7 @@
             },
             "val_accuracy": 0.9222222222222223,
             "val_loss": 0.007251910169862865,
-            "elapsed_seconds": 17.908230543136597,
+            "elapsed_seconds": 107.44938325881958,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -130858,7 +130858,7 @@
             },
             "val_accuracy": 0.8333333333333334,
             "val_loss": 0.013133430435713783,
-            "elapsed_seconds": 17.104791164398193,
+            "elapsed_seconds": 102.62874698638916,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -134024,7 +134024,7 @@
             },
             "val_accuracy": 0.8888888888888888,
             "val_loss": 0.009142501312630126,
-            "elapsed_seconds": 22.694706201553345,
+            "elapsed_seconds": 136.16823720932007,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -137190,7 +137190,7 @@
             },
             "val_accuracy": 0.9222222222222223,
             "val_loss": 0.006987655780812192,
-            "elapsed_seconds": 10.691747426986694,
+            "elapsed_seconds": 64.15048456192017,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -139088,7 +139088,7 @@
             },
             "val_accuracy": 0.8666666666666667,
             "val_loss": 0.009970997060453762,
-            "elapsed_seconds": 14.269720554351807,
+            "elapsed_seconds": 85.61832332611084,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -141358,7 +141358,7 @@
             },
             "val_accuracy": 0.8833333333333333,
             "val_loss": 0.013325137906479588,
-            "elapsed_seconds": 7.425873517990112,
+            "elapsed_seconds": 44.555241107940674,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -142904,7 +142904,7 @@
             },
             "val_accuracy": 0.9292452830188679,
             "val_loss": 0.00697646738271737,
-            "elapsed_seconds": 17.110856533050537,
+            "elapsed_seconds": 102.66513919830322,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -145554,7 +145554,7 @@
             },
             "val_accuracy": 0.9292452830188679,
             "val_loss": 0.0070333915988806065,
-            "elapsed_seconds": 16.67272639274597,
+            "elapsed_seconds": 100.03635835647583,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -148224,7 +148224,7 @@
             },
             "val_accuracy": 0.9292452830188679,
             "val_loss": 0.007105149857136431,
-            "elapsed_seconds": 18.475085735321045,
+            "elapsed_seconds": 110.85051441192627,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -150854,7 +150854,7 @@
             },
             "val_accuracy": 0.8773584905660378,
             "val_loss": 0.008987605431044758,
-            "elapsed_seconds": 16.932670831680298,
+            "elapsed_seconds": 101.59602499008179,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -153516,7 +153516,7 @@
             },
             "val_accuracy": 0.0660377358490566,
             "val_loss": 0.03719535045187447,
-            "elapsed_seconds": 1.036161184310913,
+            "elapsed_seconds": 6.2169671058654785,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -154398,7 +154398,7 @@
             },
             "val_accuracy": 0.9056603773584906,
             "val_loss": 0.006860996913433033,
-            "elapsed_seconds": 7.465116262435913,
+            "elapsed_seconds": 44.79069757461548,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -155972,7 +155972,7 @@
             },
             "val_accuracy": 0.9245283018867925,
             "val_loss": 0.007286884258390736,
-            "elapsed_seconds": 14.81121039390564,
+            "elapsed_seconds": 88.86726236343384,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -158338,7 +158338,7 @@
             },
             "val_accuracy": 0.9292452830188679,
             "val_loss": 0.00697646738271737,
-            "elapsed_seconds": 17.47462272644043,
+            "elapsed_seconds": 104.84773635864258,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -160988,7 +160988,7 @@
             },
             "val_accuracy": 0.839622641509434,
             "val_loss": 0.012107946587234885,
-            "elapsed_seconds": 22.046791315078735,
+            "elapsed_seconds": 132.2807478904724,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -164154,7 +164154,7 @@
             },
             "val_accuracy": 0.9292452830188679,
             "val_loss": 0.006605719293468525,
-            "elapsed_seconds": 11.162058591842651,
+            "elapsed_seconds": 66.97235155105591,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -166108,7 +166108,7 @@
             },
             "val_accuracy": 0.9245283018867925,
             "val_loss": 0.006498726028029295,
-            "elapsed_seconds": 21.86044454574585,
+            "elapsed_seconds": 131.1626672744751,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -169274,7 +169274,7 @@
             },
             "val_accuracy": 0.9292452830188679,
             "val_loss": 0.00697646738271737,
-            "elapsed_seconds": 17.52768349647522,
+            "elapsed_seconds": 105.16610097885132,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -171924,7 +171924,7 @@
             },
             "val_accuracy": 0.9292452830188679,
             "val_loss": 0.00697646738271737,
-            "elapsed_seconds": 17.439750909805298,
+            "elapsed_seconds": 104.63850545883179,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -174574,7 +174574,7 @@
             },
             "val_accuracy": 0.8349056603773585,
             "val_loss": 0.012959509201330878,
-            "elapsed_seconds": 16.77679467201233,
+            "elapsed_seconds": 100.66076803207397,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -177740,7 +177740,7 @@
             },
             "val_accuracy": 0.8962264150943396,
             "val_loss": 0.009144830684485288,
-            "elapsed_seconds": 22.280110120773315,
+            "elapsed_seconds": 133.6806607246399,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -180906,7 +180906,7 @@
             },
             "val_accuracy": 0.9292452830188679,
             "val_loss": 0.006598734272451783,
-            "elapsed_seconds": 10.955667734146118,
+            "elapsed_seconds": 65.73400640487671,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -182856,7 +182856,7 @@
             },
             "val_accuracy": 0.8726415094339622,
             "val_loss": 0.009805003631652006,
-            "elapsed_seconds": 14.689144849777222,
+            "elapsed_seconds": 88.13486909866333,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -185222,7 +185222,7 @@
             },
             "val_accuracy": 0.8962264150943396,
             "val_loss": 0.013194201204948538,
-            "elapsed_seconds": 7.539982080459595,
+            "elapsed_seconds": 45.23989248275757,
             "detail": {
                 "type": "holdout",
                 "history": {
@@ -186801,7 +186801,7 @@
         },
         "val_accuracy": 0.9292452830188679,
         "val_loss": 0.006598734272451783,
-        "elapsed_seconds": 10.955667734146118,
+        "elapsed_seconds": 65.73400640487671,
         "detail": {
             "type": "holdout",
             "history": {

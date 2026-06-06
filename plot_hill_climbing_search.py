@@ -399,5 +399,92 @@ def main():
     plt.close()
     print(f"[Plot] Gráfico 4 de trajetória de busca salvo em: {chart4_path}")
 
+    plt.figure(figsize=(12, 7), dpi=300)
+    times = [r.get("elapsed_seconds", 0.0) for r in results]
+    accs_pct = [r.get("val_accuracy", 0.0) * 100.0 for r in results]
+    neurons = [r["combo"].get("hidden_neurons", 0) for r in results]
+    
+    sc = plt.scatter(
+        times, 
+        accs_pct, 
+        c=neurons, 
+        cmap="viridis", 
+        s=80, 
+        alpha=0.75, 
+        edgecolor="#555555", 
+        linewidths=0.7, 
+        zorder=3
+    )
+    
+    cbar = plt.colorbar(sc)
+    cbar.set_label("Número de Neurônios Ocultos", fontsize=11, labelpad=8)
+    
+    best_idx = np.argmax(accs_pct)
+    plt.scatter(
+        times[best_idx], 
+        accs_pct[best_idx], 
+        color="#D81B60", 
+        marker="*", 
+        s=220, 
+        edgecolor="black", 
+        linewidths=1.2, 
+        zorder=5
+    )
+    
+    plt.title(
+        f"Eficiência da Busca Local: Acurácia vs. Tempo de Treinamento\n"
+        f"Análise de Trade-off (Total de {len(results)} modelos avaliados)",
+        fontsize=14, 
+        fontweight="bold", 
+        pad=15, 
+        color="#222222"
+    )
+    plt.xlabel("Tempo de Execução do Treinamento (segundos)", fontsize=11, labelpad=8)
+    plt.ylabel("Acurácia de Validação (%)", fontsize=11, labelpad=8)
+    plt.grid(True)
+    
+    if times:
+        plt.xlim(min(times) * 0.9, max(times) * 1.1)
+    if accs_pct:
+        plt.ylim(min(accs_pct) * 0.95, min(max(accs_pct) * 1.05, 105.0))
+        
+    total_time = sum(times)
+    mean_time = np.mean(times) if times else 0.0
+    best_time = times[best_idx] if times else 0.0
+    best_acc_val = accs_pct[best_idx] if accs_pct else 0.0
+    
+    best_handle = mlines.Line2D(
+        [], [], 
+        color="#D81B60", 
+        marker="*", 
+        markersize=12, 
+        linestyle="None", 
+        markeredgecolor="black", 
+        label="Melhor Configuração Encontrada"
+    )
+    legend_header = mlines.Line2D([], [], color="none", label="Estatísticas de Execução:")
+    stats_total = mlines.Line2D([], [], color="none", label=f"Tempo Total de Busca: {total_time:.1f}s")
+    stats_mean = mlines.Line2D([], [], color="none", label=f"Tempo Médio por Modelo: {mean_time:.1f}s")
+    stats_best = mlines.Line2D([], [], color="none", label=f"Melhor Modelo: {best_time:.1f}s (Acc: {best_acc_val:.1f}%)")
+    
+    plt.legend(
+        handles=[best_handle, legend_header, stats_total, stats_mean, stats_best],
+        loc="upper left",
+        bbox_to_anchor=(1.25, 1.0),
+        frameon=True,
+        facecolor="#FFFFFF",
+        edgecolor="#E0E0E0",
+        fontsize=10
+    )
+    
+    for spine in ["top", "right"]:
+        plt.gca().spines[spine].set_visible(False)
+        
+    plt.tight_layout()
+    chart5_path = os.path.join(reports_dir, f"{experiment_id}_analise_tempo.png")
+    plt.savefig(chart5_path, bbox_inches="tight")
+    plt.close()
+    print(f"[Plot] Gráfico 5 de análise de tempo salvo em: {chart5_path}")
+
 if __name__ == "__main__":
     main()
