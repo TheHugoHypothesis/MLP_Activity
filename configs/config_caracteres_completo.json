@@ -22,7 +22,7 @@
     },
     "layers": [
         {
-            "n_neurons": 72,
+            "n_neurons": 60,
             "activation": "sigmoid",
             "initializer": "xavier"
         },
