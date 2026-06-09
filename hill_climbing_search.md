@@ -1,3 +1,12 @@
+"""
+Atividade de IA. Integrantes:
+
+Hugo Cardoso Ferreira de Araújo - 15459500
+Higor Gabriel de Freitas - 15575879
+Enrico Lechar de Barros Aranha - 15449652
+Renan Rodrigues Moreira - 15744874
+Clara Pires Campardo - 15446433
+"""
 # Resumo da Otimização por Hill Climbing
 Tabela resumida contendo todas as **91 combinações** de hiperparâmetros testadas e avaliadas pelo algoritmo de Hill Climbing, ordenadas da **melhor para a pior** com base na acurácia do conjunto de validação.
 ## Melhor Configuração Encontrada
